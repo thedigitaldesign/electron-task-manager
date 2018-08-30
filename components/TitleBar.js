@@ -1,6 +1,6 @@
 // Made with ❤ by Gutty Mora
 
-class MenuBar extends HTMLElement {
+class TitleBar extends HTMLElement {
     constructor(){
         super();
 
@@ -15,6 +15,7 @@ class MenuBar extends HTMLElement {
                 height: 30px;
                 width: 100%;
                 display: block;
+                position: fixed;
                 -webkit-app-region: drag;
             }
         `;
@@ -22,4 +23,4 @@ class MenuBar extends HTMLElement {
     }
 }
 
-window.customElements.define('menu-bar', MenuBar);
+window.customElements.define('title-bar', TitleBar);

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Task Manager</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
 </head>
 <style>
     body, html {
@@ -12,14 +13,17 @@
         height: 100%;
         width: 100%;
         background-color: #694baf; /*#38285a es mas oscuro*/
+        font-family: 'Open Sans';
     }
 </style>
 <body>
-    <menu-bar>
+    <title-bar>
         <button-bar></button-bar>
-    </menu-bar>
+    </title-bar>
+    <sidebar-tools></sidebar-tools>
 </body>
 
-<script src="components/MenuBar.js"></script>
+<script src="components/TitleBar.js"></script>
 <script src="components/ButtonBar.js"></script>
+<script src="components/SidebarTools.js"></script>
 </html>
