@@ -8,7 +8,7 @@ function createWindow(){
         width: 800,
         height: 600,
         frame: false, // Remove window frame
-        titleBarStyle: 'hidden' // Remove frame for macOS
+        titleBarStyle: 'customButtonsOnHover' // For custom window buttons
     });
     // Load file when window is open
     win.loadFile('index.html');

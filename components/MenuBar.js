@@ -4,16 +4,21 @@ class MenuBar extends HTMLElement {
     constructor(){
         super();
 
-        let showRoot = this.attachShadow({mode: 'open'});
+        const shadowRoot = this.attachShadow({mode: 'open'});
+        shadowRoot.innerHTML = `
+            <slot></slot>
+        `;
 
-        // Style
-        this.style.height = '30px';
-        this.style.width = '100%';
-        this.style.display = 'block';
-        this.style.background = '#ccc';
-        this.style['-webkit-app-region'] = 'drag';
-
-        // Events
+        let style = document.createElement('style');
+        style.textContent = `
+            :host {
+                height: 30px;
+                width: 100%;
+                display: block;
+                -webkit-app-region: drag;
+            }
+        `;
+        shadowRoot.appendChild(style);
     }
 }
 
