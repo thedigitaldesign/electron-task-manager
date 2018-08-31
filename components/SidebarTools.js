@@ -26,13 +26,30 @@ class SidebarTools extends HTMLElement {
         style.textContent = `
             :host {
                 background-color: #38285a;
+                display: flex;
                 width: 25%;
                 max-width: 250px;
                 min-width: 200px;
                 height: 100vh;
-                display: flex;
                 align-items: center;
                 padding: 0 20px;
+                position: relative;
+                left: -30px;
+                opacity: 0;
+                animation: appearSidebar 0.5s;
+                animation-fill-mode: forwards;
+                animation-delay: 0.3s;
+            }
+            
+            @keyframes appearSidebar {
+                0% {
+                    left: -30px;
+                    opacity: 0;
+                }
+                100% {
+                    left: 0px;
+                    opacity: 1;
+                }
             }
             
             ul {
