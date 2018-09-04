@@ -1,4 +1,5 @@
 // Made with ❤ by Gutty Mora
+const AuthService = require('../services/AuthorizationService');
 
 class SidebarTools extends HTMLElement {
     constructor(){
@@ -7,6 +8,10 @@ class SidebarTools extends HTMLElement {
         const shadowRoot = this.attachShadow({mode: 'open'});
         shadowRoot.innerHTML = `
             <ul>
+                <li id="login">
+                    Iniciar sesión
+                    <span></span>
+                </li>
                 <li>
                     Nueva tarea
                     <span></span>
@@ -94,6 +99,9 @@ class SidebarTools extends HTMLElement {
             }
         `;
         shadowRoot.appendChild(style);
+    }
+
+    connectedCallback(){
     }
 }
 

@@ -17,13 +17,13 @@ function initialize(){
         //win.webContents.openDevTools(); // Stay dev tools open
 
         // Delete window element when it is closed
-        mainWindow.on('closed', function() {
+        mainWindow.on('closed', () => {
             mainWindow = null;
         });
     }
 
     // When app is ready, open window
-    app.on('ready', function(){
+    app.on('ready', () => {
         createWindow();
     });
 

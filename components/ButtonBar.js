@@ -43,15 +43,15 @@ class ButtonBar extends HTMLElement {
             .window-btn span {
                 color: #ffffff;
                 font-family: "Segoe MDL2 Assets";
-                font-size:10px;
+                font-size:8px;
             }
             
             #restore-window, #close-window {
-                line-height: 30px;
+                line-height: 28px;
             }
             
             #minimize-window {
-                line-height: 40px;
+                line-height: 37px;
             }
         `;
         shadowRoot.appendChild(style);
