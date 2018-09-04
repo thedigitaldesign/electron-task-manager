@@ -1,9 +1,8 @@
 // Made with ❤ by Gutty Mora
 
-class TitleBar extends HTMLElement {
+class Container extends HTMLElement {
     constructor(){
         super();
-
         const shadowRoot = this.attachShadow({mode: 'open'});
         shadowRoot.innerHTML = `
             <slot></slot>
@@ -12,17 +11,19 @@ class TitleBar extends HTMLElement {
         let style = document.createElement('style');
         style.textContent = `
             :host {
-                height: 30px;
-                width: 100%;
                 display: block;
-                position: fixed;
-                -webkit-app-region: drag;
-                align-self: flex-start;
-                z-index: 100;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                padding-top: 30px;
+                position: relative;
+                top: 0;
+                box-sizing: border-box;
             }
         `;
+
         shadowRoot.appendChild(style);
     }
 }
 
-window.customElements.define('title-bar', TitleBar);
+window.customElements.define('main-container', Container);

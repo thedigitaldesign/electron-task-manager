@@ -1,6 +1,6 @@
 // Made with ❤ by Gutty Mora
 
-class ButtonBar extends HTMLElement {
+class WindowButtonBar extends HTMLElement {
     constructor(){
         super();
 
@@ -89,4 +89,4 @@ class ButtonBar extends HTMLElement {
     }
 }
 
-window.customElements.define('button-bar', ButtonBar);
+window.customElements.define('window-button-bar', WindowButtonBar);

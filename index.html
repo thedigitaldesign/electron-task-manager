@@ -12,23 +12,28 @@
         padding: 0;
         height: 100%;
         width: 100%;
-        background-color: #694baf;
+        background-color: #1b1e28; /* lighter: #2b2f3e */
         font-family: 'Open Sans';
     }
 </style>
 <body>
+    <!-- Title bar with z-index: 100 -->
     <title-bar>
-        <button-bar></button-bar>
+        <window-button-bar></window-button-bar>
     </title-bar>
-    <sidebar-tools></sidebar-tools>
+    <!-- Everything goes here -->
+    <main-container>
+        <login-form></login-form>
+    </main-container>
 </body>
 
 <script>
     // Components
     require('./components/Bus');
     require('./components/TitleBar');
-    require('./components/ButtonBar');
-    require('./components/SidebarTools');
+    require('./components/WindowButtonBar');
+    require('./components/Container');
+    require('./components/LoginForm');
 
     // Front-end processes
 
