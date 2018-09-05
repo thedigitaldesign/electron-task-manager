@@ -1,5 +1,5 @@
 // Made with ❤ by Gutty Mora
-const AuthService = require('../services/AuthorizationService');
+const AuthService = require('../../services/AuthorizationService');
 
 class SidebarTools extends HTMLElement {
     constructor(){
