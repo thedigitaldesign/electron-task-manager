@@ -1,0 +1,9 @@
+:host {
+    height: 30px;
+    width: 100%;
+    display: block;
+    position: fixed;
+    -webkit-app-region: drag;
+    align-self: flex-start;
+    z-index: 100;
+}

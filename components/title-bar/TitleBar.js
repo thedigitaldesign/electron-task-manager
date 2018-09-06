@@ -11,15 +11,7 @@ class TitleBar extends HTMLElement {
 
         let style = document.createElement('style');
         style.textContent = `
-            :host {
-                height: 30px;
-                width: 100%;
-                display: block;
-                position: fixed;
-                -webkit-app-region: drag;
-                align-self: flex-start;
-                z-index: 100;
-            }
+            @import url(./components/title-bar/title-bar.css);
         `;
         shadowRoot.appendChild(style);
     }

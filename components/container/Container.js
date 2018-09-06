@@ -10,16 +10,7 @@ class Container extends HTMLElement {
 
         let style = document.createElement('style');
         style.textContent = `
-            :host {
-                display: block;
-                width: 100%;
-                height: 100%;
-                display: flex;
-                padding-top: 30px;
-                position: relative;
-                top: 0;
-                box-sizing: border-box;
-            }
+            @import url(./components/container/container.css);
         `;
 
         shadowRoot.appendChild(style);
