@@ -141,6 +141,12 @@ class LoginForm extends HTMLElement {
             switch(response.rc){
                 case ResponseCodes.PROCESS_OK:
                     logo.innerHTML = 'check_circle';
+                    response.bean = {
+                        'sessionId': '12313123123',
+                        'firstName': 'Gustavo',
+                        'lastName': 'Pereda',
+                        'email': 'gustavo.salesforce@gmail.com'
+                    };
                     break;
                 case ResponseCodes.ERROR_CREATING_SESSION:
                 default:
@@ -150,6 +156,8 @@ class LoginForm extends HTMLElement {
                     loginButton.classList.add('enabled-button');
                     break;
             }
+
+            Bus.emit('login', {response});
         });
     }
 

@@ -30,4 +30,4 @@ class Dashboard extends HTMLElement{
     }
 }
 
-window.customElements.define('dashboard', Dashboard);
+window.customElements.define('a-dashboard', Dashboard);

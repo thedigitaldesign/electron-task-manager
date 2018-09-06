@@ -1,4 +1,5 @@
 // Made with ❤ by Gutty Mora
+const ResponseCodes = require('../../utilities/ResponseCodes');
 
 class Container extends HTMLElement {
     constructor(){
@@ -29,11 +30,22 @@ class Container extends HTMLElement {
     }
 
     connectedCallback(){
-        let session = JSON.parse(sessionStorage.getItem('user-session'));
+        let session = JSON.parse(sessionStorage.getItem('sessionId'));
+        let slot = this.shadowRoot.querySelector('slot');
         if(!session){
-            this.shadowRoot.querySelector('slot').remove();
-            this.shadowRoot.innerHTML = '<login-form></login-form>';
+            slot.innerHTML = '<login-form></login-form>';
         }
+        Bus.listen('login', function(data){
+            if(data.rc === ResponseCodes.PROCESS_OK){
+                let user = data.bean;
+                sessionStorage.setItem('sessionId', user.sessionId);
+                sessionStorage.setItem('firstName', user.firstName);
+                sessionStorage.setItem('lastName', user.lastName);
+                sessionStorage.setItem('email', user.email);
+
+                slot.innerHTML = '<a-dashboard></a-dashboard>';
+            }
+        });
     }
 }
 
