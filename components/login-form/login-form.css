@@ -1,4 +1,4 @@
-@import 'https://fonts.googleapis.com/icon?family=Material+Icons';
+@import "../../node_modules/material-design-icons/iconfont/material-icons.css";
 
 :host {
     width: 100%;
@@ -28,6 +28,13 @@
     color: rgba(255,255,255,1);
 }
 
+.user-field-icon, .password-field-icon {
+    color: rgba(255,255,255,0.2);
+    position: absolute;
+    bottom: 14px;
+    right: 0;
+}
+
 form {
     display: flex;
     justify-content: center;
@@ -53,7 +60,7 @@ span {
 
 label {
     position: absolute;
-    top: 25px;
+    top: 30px;
     transform-origin: 0 0;
     transition: transform 0.2s;
     box-sizing: border-box;
@@ -88,11 +95,11 @@ input[type="text"]:not(:placeholder-shown), input[type="password"]:not(:placehol
 }
 
 input:not(:placeholder-shown) + label {
-    transform: scale(0.85) translateY(-20px);
+    transform: scale(0.85) translateY(-25px);
 }
 
 input:focus + label {
-    transform: scale(0.85) translateY(-20px);
+    transform: scale(0.85) translateY(-25px);
 }
 
 input[type="button"] {

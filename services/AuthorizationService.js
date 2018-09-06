@@ -25,6 +25,7 @@ class AuthorizationService {
                 'password': hash
             };
             let httpResponse = await axios.post(url, auth);
+
             response = ResponseHandler.handleHttp(httpResponse);
         }catch(err){
             console.log('[!] Could not create session: ' + err);

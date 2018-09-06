@@ -24,6 +24,26 @@ class Container extends HTMLElement {
 
         shadowRoot.appendChild(style);
     }
+
+    static get observedAttributes(){
+        return ['session-required'];
+    }
+
+    get sessionRequired(){
+        return this.getAttribute('session-required');
+    }
+
+    set sessionRequired(val){
+        this.setAttribute('session-required', val);
+    }
+
+    connectedCallback(){
+        let session = JSON.parse(sessionStorage.getItem('user-session'));
+        if(!session){
+            this.shadowRoot.querySelector('slot').remove();
+            this.shadowRoot.innerHTML = '<login-form></login-form>';
+        }
+    }
 }
 
 window.customElements.define('main-container', Container);

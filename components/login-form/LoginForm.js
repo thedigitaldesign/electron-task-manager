@@ -1,4 +1,6 @@
 // Made with ❤ by Gutty Mora
+let AuthorizationService = require('../../services/AuthorizationService');
+const ResponseCodes = require('../../utilities/ResponseCodes');
 
 class LoginForm extends HTMLElement {
     constructor(){
@@ -7,16 +9,18 @@ class LoginForm extends HTMLElement {
         const shadowRoot = this.attachShadow({mode: 'open'});
         shadowRoot.innerHTML = `
             <form id="login-form">
-                <i class="material-icons login-logo disabled-logo">account_circle</i>
+                <i class="material-icons login-logo disabled-logo">fingerprint</i>
                 <span>
+                    <i class="material-icons user-field-icon">account_circle</i>
                     <input type="text" placeholder="&nbsp;" class="username-field">
                     <label>Your username</label>
                 </span>
                 <span>
+                    <i class="material-icons password-field-icon">vpn_key</i>
                     <input type="password" placeholder="&nbsp;" class="password-field">
                     <label>Your secret code</label>
                 </span>
-                <input type="button" id="login-button" value="i'm done" class="disabled-button">
+                <input type="button" id="login-button" text="i'm done" class="disabled-button">
             </form>
         `;
 
@@ -69,22 +73,26 @@ class LoginForm extends HTMLElement {
             case 'filled-count':
                 if(parseInt(newValue) === 2){
                     let loginButton = this.shadowRoot.querySelector('#login-button');
-                    let loginLogo = this.shadowRoot.querySelector('.login-logo');
-
                     loginButton.classList.remove('disabled-button');
                     loginButton.classList.add('enabled-button');
 
+                    let loginLogo = this.shadowRoot.querySelector('.login-logo');
                     loginLogo.classList.remove('disabled-logo');
                     loginLogo.classList.add('enabled-logo');
+
+                    // Enable login process
+                    let usernameField = this.shadowRoot.querySelector('.username-field');
+                    let passwordField = this.shadowRoot.querySelector('.password-field');
+                    this.login(usernameField.value, passwordField.value);
                 }else{
-                    let loginButton = this.shadowRoot.querySelector('#login-button');
                     let loginLogo = this.shadowRoot.querySelector('.login-logo');
-
-                    loginButton.classList.remove('enabled-button');
-                    loginButton.classList.add('disabled-button');
-
+                    loginLogo.innerHTML = 'fingerprint';
                     loginLogo.classList.remove('enabled-logo');
                     loginLogo.classList.add('disabled-logo');
+
+                    let loginButton = this.shadowRoot.querySelector('#login-button');
+                    loginButton.classList.remove('enabled-button');
+                    loginButton.classList.add('disabled-button');
                 }
                 break;
         }
@@ -114,7 +122,38 @@ class LoginForm extends HTMLElement {
                 thiz.passwordFilled = 0;
             }
         });
+
+        let loginButton = this.shadowRoot.querySelector('#login-button');
+        loginButton.value = loginButton.getAttribute('text');
     }
+
+    login(username, password){
+        let logo = this.shadowRoot.querySelector('.login-logo');
+        let loginButton = this.shadowRoot.querySelector('#login-button');
+        loginButton.addEventListener('click', async function(){
+            logo.innerHTML = 'schedule';
+            loginButton.classList.remove('enabled-button');
+            loginButton.classList.add('disabled-button');
+            loginButton.value = 'waiting...';
+
+            let response = await AuthorizationService.startSession(username, password);
+            console.log('response:', response);
+            switch(response.rc){
+                case ResponseCodes.PROCESS_OK:
+                    logo.innerHTML = 'check_circle';
+                    break;
+                case ResponseCodes.ERROR_CREATING_SESSION:
+                default:
+                    logo.innerHTML = 'error';
+                    loginButton.value = loginButton.getAttribute('text');
+                    loginButton.classList.remove('disabled-button');
+                    loginButton.classList.add('enabled-button');
+                    break;
+            }
+        });
+    }
+
+
 }
 
 window.customElements.define('login-form', LoginForm);

@@ -2,16 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ec84c702-851b-4d8d-bd01-89a3e4bd5575" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/components/login-form/login-form.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/dashboard/Dashboard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Bus.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/bus/Bus.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Container.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/container/Container.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Input.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/input/Input.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/LoginForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/login-form/LoginForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/SidebarTools.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/sidebar-tools/SidebarTools.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/TitleBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/title-bar/TitleBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/WindowButtonBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/window-button-bar/WindowButtonBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/container/Container.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/container/Container.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/login-form/LoginForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/login-form/LoginForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/login-form/login-form.css" beforeDir="false" afterPath="$PROJECT_DIR$/components/login-form/login-form.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/processes/ResponseHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/processes/ResponseHandler.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/AuthorizationService.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/AuthorizationService.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -25,11 +25,38 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="57" selection-start-line="5" selection-start-column="57" selection-end-line="5" selection-end-column="57" />
+            <state relative-caret-position="70">
+              <caret line="26" column="21" lean-forward="true" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LoginForm.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/components/login-form/LoginForm.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="172">
+              <caret line="142" column="52" selection-start-line="142" selection-start-column="52" selection-end-line="142" selection-end-column="52" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Dashboard.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/components/dashboard/Dashboard.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="206">
+              <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Container.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/components/container/Container.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-153">
+              <caret selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -39,8 +66,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -55,6 +83,9 @@
       <find>fonta</find>
       <find>/</find>
       <find>font-fa</find>
+      <find>label</find>
+      <find>-20</find>
+      <find>cir</find>
     </findStrings>
     <replaceStrings>
       <replace>mainWindow</replace>
@@ -80,10 +111,8 @@
         <option value="$PROJECT_DIR$/components/ButtonBar.js" />
         <option value="$PROJECT_DIR$/main.js" />
         <option value="$PROJECT_DIR$/Utilities/ResponseCodes.js" />
-        <option value="$PROJECT_DIR$/processes/ResponseHandler.js" />
         <option value="$PROJECT_DIR$/utilities/ResponseCodes.js" />
         <option value="$PROJECT_DIR$/components/SidebarTools.js" />
-        <option value="$PROJECT_DIR$/services/AuthorizationService.js" />
         <option value="$PROJECT_DIR$/components/Input.js" />
         <option value="$PROJECT_DIR$/components/Bus.js" />
         <option value="$PROJECT_DIR$/components/Container.js" />
@@ -91,8 +120,14 @@
         <option value="$PROJECT_DIR$/components/WindowButtonBar.js" />
         <option value="$PROJECT_DIR$/components/LoginForm.js" />
         <option value="$PROJECT_DIR$/components/login-form/login-form.css" />
-        <option value="$PROJECT_DIR$/components/login-form/LoginForm.js" />
+        <option value="$PROJECT_DIR$/services/AuthorizationService.js" />
+        <option value="$PROJECT_DIR$/processes/ResponseHandler.js" />
+        <option value="$PROJECT_DIR$/profile.html" />
+        <option value="$PROJECT_DIR$/dashboard.html" />
+        <option value="$PROJECT_DIR$/components/container/Container.js" />
+        <option value="$PROJECT_DIR$/components/dashboard/Dashboard.js" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/components/login-form/LoginForm.js" />
       </list>
     </option>
   </component>
@@ -130,6 +165,17 @@
               <item name="electron-task-manager" type="b2602c69:ProjectViewProjectNode" />
               <item name="electron-task-manager" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="electron-task-manager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="electron-task-manager" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="electron-task-manager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="electron-task-manager" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="login-form" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -137,6 +183,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Repasar_V1" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -188,12 +235,12 @@
       <workItem from="1536069967724" duration="26000" />
       <workItem from="1536070541974" duration="1450000" />
       <workItem from="1536085003261" duration="1337000" />
-      <workItem from="1536105164992" duration="21207000" />
+      <workItem from="1536105164992" duration="38999000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71942000" />
+    <option name="totallyTimeSpent" value="89734000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -203,6 +250,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32838285" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -216,7 +264,6 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -363,31 +410,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/processes/ResponseHandler.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="11" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/components/sidebar-tools/SidebarTools.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="155">
           <caret line="101" column="5" lean-forward="true" selection-start-line="101" selection-start-column="5" selection-end-line="101" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109021">
-          <caret line="6426" column="12" selection-start-line="6426" selection-start-column="12" selection-end-line="6426" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/services/AuthorizationService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="28" selection-start-column="28" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -402,13 +428,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="20" column="29" lean-forward="true" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/container/Container.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -459,22 +478,64 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/components/login-form/login-form.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        <state relative-caret-position="188">
+          <caret line="100" column="21" lean-forward="true" selection-start-line="100" selection-start-column="21" selection-end-line="100" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/login-form/LoginForm.js">
+    <entry file="file://$PROJECT_DIR$/processes/ResponseHandler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/AuthorizationService.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="25" column="10" lean-forward="true" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
+          <caret line="26" column="59" selection-start-line="26" selection-start-column="59" selection-end-line="26" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="8" column="20" lean-forward="true" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1564">
+          <caret line="5534" column="10" selection-start-line="5534" selection-start-column="10" selection-end-line="5534" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/container/Container.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-153">
+          <caret selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/dashboard/Dashboard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="57" selection-start-line="5" selection-start-column="57" selection-end-line="5" selection-end-column="57" />
+        <state relative-caret-position="70">
+          <caret line="26" column="21" lean-forward="true" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/login-form/LoginForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="142" column="52" selection-start-line="142" selection-start-column="52" selection-end-line="142" selection-end-column="52" />
         </state>
       </provider>
     </entry>

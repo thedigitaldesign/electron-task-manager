@@ -3,27 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Task Manager</title>
-    <link href="https://fonts.googleapis.com/icon?familys=Material+Icons" rel="stylesheet">
+    <link href="./node_modules/material-design-icons/iconfont/material-icons.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+    <style>
+        body, html {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            background-color: #1b1e28; /* lighter: #2b2f3e */
+        }
+    </style>
 </head>
-<style>
-    body, html {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-        height: 100%;
-        width: 100%;
-        background-color: #1b1e28; /* lighter: #2b2f3e */
-    }
-</style>
 <body>
     <!-- Title bar with z-index: 100 -->
     <title-bar>
         <window-button-bar></window-button-bar>
     </title-bar>
     <!-- Everything goes here -->
-    <main-container>
-        <login-form></login-form>
+    <main-container session-required="true">
+        <dashboard></dashboard>
     </main-container>
 </body>
 
@@ -34,11 +34,6 @@
     require('./components/window-button-bar/WindowButtonBar');
     require('./components/container/Container');
     require('./components/login-form/LoginForm');
-
-    // Front-end processes
-
-    // Services
-
-    // Structured code
+    require('./components/dashboard/Dashboard');
 </script>
 </html>
