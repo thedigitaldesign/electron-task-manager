@@ -13,39 +13,23 @@ class Container extends HTMLElement {
         style.textContent = `
             @import url(./components/container/container.css);
         `;
-
         shadowRoot.appendChild(style);
     }
 
-    static get observedAttributes(){
-        return ['session-required'];
-    }
-
-    get sessionRequired(){
-        return this.getAttribute('session-required');
-    }
-
-    set sessionRequired(val){
-        this.setAttribute('session-required', val);
+    showLoginForm(){
+        let node = document.createElement('login-form');
+        if(this.shadowRoot.firstChild){
+            this.shadowRoot.insertBefore(node, this.shadowRoot.firstChild);
+        }else{
+            this.shadowRoot.appendChild(node);
+        }
     }
 
     connectedCallback(){
         let session = JSON.parse(sessionStorage.getItem('sessionId'));
-        let slot = this.shadowRoot.querySelector('slot');
-        if(!session){
-            slot.innerHTML = '<login-form></login-form>';
+        if(session){ // Change for: !session
+            this.showLoginForm();
         }
-        Bus.listen('login', function(data){
-            if(data.rc === ResponseCodes.PROCESS_OK){
-                let user = data.bean;
-                sessionStorage.setItem('sessionId', user.sessionId);
-                sessionStorage.setItem('firstName', user.firstName);
-                sessionStorage.setItem('lastName', user.lastName);
-                sessionStorage.setItem('email', user.email);
-
-                slot.innerHTML = '<a-dashboard></a-dashboard>';
-            }
-        });
     }
 }
 

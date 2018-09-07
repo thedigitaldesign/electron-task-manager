@@ -3,6 +3,17 @@
 class Dashboard extends HTMLElement{
     constructor(){
         super();
+
+        const shadowRoot = this.attachShadow({mode: 'open'});
+        shadowRoot.innerHTML = `
+            <slot></slot>
+        `;
+
+        let style = document.createElement('style');
+        style.textContent = `
+            @import url(./components/dashboard/dashboard.css);
+        `;
+        shadowRoot.appendChild(style);
     }
 
     static get observedAttributes(){
@@ -30,4 +41,4 @@ class Dashboard extends HTMLElement{
     }
 }
 
-window.customElements.define('a-dashboard', Dashboard);
+window.customElements.define('j-dashboard', Dashboard);

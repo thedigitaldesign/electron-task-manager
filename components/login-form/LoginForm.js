@@ -128,6 +128,7 @@ class LoginForm extends HTMLElement {
     }
 
     login(username, password){
+        let thiz = this;
         let logo = this.shadowRoot.querySelector('.login-logo');
         let loginButton = this.shadowRoot.querySelector('#login-button');
         loginButton.addEventListener('click', async function(){
@@ -141,12 +142,13 @@ class LoginForm extends HTMLElement {
             switch(response.rc){
                 case ResponseCodes.PROCESS_OK:
                     logo.innerHTML = 'check_circle';
-                    response.bean = {
-                        'sessionId': '12313123123',
-                        'firstName': 'Gustavo',
-                        'lastName': 'Pereda',
-                        'email': 'gustavo.salesforce@gmail.com'
-                    };
+
+                    sessionStorage.setItem('sessionId', '2985692119283');
+                    sessionStorage.setItem('firstName', 'Gustavo');
+                    sessionStorage.setItem('lastName', 'Mora');
+
+                    thiz.fadeOut();
+                    Bus.emit('login-success', null);
                     break;
                 case ResponseCodes.ERROR_CREATING_SESSION:
                 default:
@@ -156,12 +158,23 @@ class LoginForm extends HTMLElement {
                     loginButton.classList.add('enabled-button');
                     break;
             }
-
-            Bus.emit('login', {response});
         });
     }
 
-
+    fadeOut(time=40) {
+        let thiz = this;
+        let fadeEffect = setInterval(function () {
+            if (!thiz.style.opacity) {
+                thiz.style.opacity = 1;
+            }
+            if (thiz.style.opacity > 0) {
+                thiz.style.opacity -= 0.05;
+            } else {
+                clearInterval(fadeEffect);
+                thiz.style.display = 'none';
+            }
+        }, time);
+    }
 }
 
 window.customElements.define('login-form', LoginForm);
