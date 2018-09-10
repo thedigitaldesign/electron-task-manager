@@ -1,3 +1,5 @@
+require('../dashboard-sidebar/DashboardSidebar');
+
 // Made with ❤ by Gutty Mora
 
 class Dashboard extends HTMLElement{
@@ -6,7 +8,10 @@ class Dashboard extends HTMLElement{
 
         const shadowRoot = this.attachShadow({mode: 'open'});
         shadowRoot.innerHTML = `
-            <slot></slot>
+            <dashboard-sidebar></dashboard-sidebar>
+            <div id="dashboard-actions">
+                <slot></slot>
+            </div>
         `;
 
         let style = document.createElement('style');

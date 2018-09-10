@@ -6,6 +6,7 @@
     position: absolute;
     top: 0;
     left: 0;
+    background-color: rgba(18,20,27, 0.9);
     display: flex;
     font-weight: 300;
     justify-content: center;

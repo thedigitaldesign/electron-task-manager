@@ -27,7 +27,7 @@ class Container extends HTMLElement {
 
     connectedCallback(){
         let session = JSON.parse(sessionStorage.getItem('sessionId'));
-        if(session){ // Change for: !session
+        if(!session){ // Change for: !session
             this.showLoginForm();
         }
     }

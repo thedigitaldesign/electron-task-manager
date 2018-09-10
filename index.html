@@ -20,11 +20,14 @@
     <!-- Title bar with z-index: 100 -->
     <title-bar>
         <window-button-bar></window-button-bar>
+        <!-- <switch-mode-button style="float: right; margin-top: 7.5px; margin-right: 5px;"></switch-mode-button> -->
     </title-bar>
     <!-- Everything goes here -->
-    <main-container session-required="true">
+    <main-container>
         <j-dashboard>
-            <module-button icon="offline_pin" title="Nueva tarea"></module-button>
+            <module-button status="active" icon="playlist_add" title="Nueva tarea"></module-button>
+            <module-button icon="list" title="Ver tareas"></module-button>
+            <module-button icon="http" title="Nuevo servicio"></module-button>
         </j-dashboard>
     </main-container>
 </body>
@@ -34,6 +37,7 @@
     require('./components/bus/Bus');
     require('./components/title-bar/TitleBar');
     require('./components/window-button-bar/WindowButtonBar');
+    require('./components/switch-mode-button/SwitchModeButton');
     require('./components/container/Container');
     require('./components/login-form/LoginForm');
     require('./components/dashboard/Dashboard');

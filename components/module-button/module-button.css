@@ -2,33 +2,43 @@
 
 :host {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-evenly;
     align-items: center;
-    background: none;
-    border: 1px solid rgba(255,255,255,0.2);
-    border-radius: 7px;
-    width: 150px;
-    height: 120px;
+    background-color: #2b2f3e;
+    border-radius: 5px;
+    width: 160px;
+    height: 50px;
     transform-origin: center;
+    box-shadow: 0 0 2px #0d121d;
     transition: all 0.3s;
 }
 
-:host(:hover) {
+:host([status="active"]:hover) {
     cursor: pointer;
-    border-color: white;
-    transform: translateY(-5px);
+    box-shadow: 0 0 20px #0d121d;
+    transform: translateY(-10px);
 }
 
 .module-icon {
     color: rgba(255,255,255,0.2);
-    font-size: 50px;
+    font-size: 35px;
+}
+
+:host([status="active"]) .module-icon {
+    color: #fff;
+    transition: all 0.4s;
 }
 
 .module-title {
     font-family: 'Open Sans';
-    font-weight: 400;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: 0.5px;
     color: rgba(255,255,255,0.2);
     font-size: 12px;
-    margin-top: 10px;
+}
+
+:host([status="active"]) .module-title {
+    color: #fff;
 }
