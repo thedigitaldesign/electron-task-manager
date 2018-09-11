@@ -1,5 +1,7 @@
 const {app, BrowserWindow} = require('electron');
 
+// Made with ❤ by Gutty Mora
+
 let mainWindow;
 
 // Initialize all system functions

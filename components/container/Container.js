@@ -1,5 +1,7 @@
-// Made with ❤ by Gutty Mora
 const ResponseCodes = require('../../utilities/ResponseCodes');
+const Render = require('../../processors/Renderer');
+
+// Made with ❤ by Gutty Mora
 
 class Container extends HTMLElement {
     constructor(){
@@ -30,6 +32,11 @@ class Container extends HTMLElement {
         if(!session){ // Change for: !session
             this.showLoginForm();
         }
+
+        // Listen when login is successfully
+        Bus.listen('login-success', function(){
+            Render.dashboard();
+        });
     }
 }
 

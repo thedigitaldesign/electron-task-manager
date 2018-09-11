@@ -2,7 +2,7 @@
 
 const axios = require('axios');
 const crypto = require('crypto');
-const ResponseHandler = require('../processes/ResponseHandler');
+const ResponseHandler = require('../processors/ResponseHandler');
 const ResponseCodes = require('../utilities/ResponseCodes');
 
 class AuthorizationService {

@@ -46,4 +46,4 @@ class Dashboard extends HTMLElement{
     }
 }
 
-window.customElements.define('j-dashboard', Dashboard);
+window.customElements.define('user-dashboard', Dashboard);

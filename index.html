@@ -15,6 +15,9 @@
             background-color: #1b1e28; /* lighter: #2b2f3e */
         }
     </style>
+
+    <!-- HTML imports -->
+    <link rel="import" href="sections/dashboard.html" id="dashboard-section">
 </head>
 <body>
     <!-- Title bar with z-index: 100 -->
@@ -23,13 +26,7 @@
         <!-- <switch-mode-button style="float: right; margin-top: 7.5px; margin-right: 5px;"></switch-mode-button> -->
     </title-bar>
     <!-- Everything goes here -->
-    <main-container>
-        <j-dashboard>
-            <module-button status="active" icon="playlist_add" title="Nueva tarea"></module-button>
-            <module-button icon="list" title="Ver tareas"></module-button>
-            <module-button icon="http" title="Nuevo servicio"></module-button>
-        </j-dashboard>
-    </main-container>
+    <main-container></main-container>
 </body>
 
 <script>
@@ -41,6 +38,6 @@
     require('./components/container/Container');
     require('./components/login-form/LoginForm');
     require('./components/dashboard/Dashboard');
-    require('./components/module-button/ModuleButton');
+    require('./components/dashboard-action-button/DashboardActionButton');
 </script>
 </html>

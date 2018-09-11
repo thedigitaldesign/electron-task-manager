@@ -148,6 +148,7 @@ class LoginForm extends HTMLElement {
                     sessionStorage.setItem('lastName', 'Mora');
 
                     thiz.fadeOut();
+                    // Emit event when login is successfully
                     Bus.emit('login-success', null);
                     break;
                 case ResponseCodes.ERROR_CREATING_SESSION:
@@ -161,7 +162,7 @@ class LoginForm extends HTMLElement {
         });
     }
 
-    fadeOut(time=40) {
+    fadeOut(time=20) {
         let thiz = this;
         let fadeEffect = setInterval(function () {
             if (!thiz.style.opacity) {

@@ -1,6 +1,6 @@
 // Made with ❤ by Gutty Mora
 
-class ModuleButton extends HTMLElement {
+class DashboardActionButton extends HTMLElement {
     constructor(){
         super();
 
@@ -28,10 +28,10 @@ class ModuleButton extends HTMLElement {
 
         let style = document.createElement('style');
         style.textContent = `
-            @import url(./components/module-button/module-button.css);
+            @import url(./components/dashboard-action-button/dashboard-action-button.css);
         `;
         this.shadowRoot.appendChild(style);
     }
 }
 
-window.customElements.define('module-button', ModuleButton);
+window.customElements.define('da-button', DashboardActionButton);
