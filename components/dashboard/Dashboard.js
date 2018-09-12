@@ -1,4 +1,4 @@
-require('../dashboard-sidebar/DashboardSidebar');
+require('../app-menu/AppMenu');
 
 // Made with ❤ by Gutty Mora
 

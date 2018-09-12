@@ -31,11 +31,13 @@ class Container extends HTMLElement {
         let session = JSON.parse(sessionStorage.getItem('sessionId'));
         if(!session){ // Change for: !session
             this.showLoginForm();
+        }else{
+            Render.appMenu();
         }
 
         // Listen when login is successfully
         Bus.listen('login-success', function(){
-            Render.dashboard();
+            Render.appMenu();
         });
     }
 }

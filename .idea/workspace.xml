@@ -2,18 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ec84c702-851b-4d8d-bd01-89a3e4bd5575" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/processors/Render.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sections/dashboard.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/container/Container.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/container/Container.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/dashboard-sidebar/DashboardSidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/app-menu/AppMenu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/dashboard-sidebar/dashboard-sidebar.css" beforeDir="false" afterPath="$PROJECT_DIR$/components/app-menu/app-menu.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/dashboard/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/dashboard/Dashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/login-form/LoginForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/login-form/LoginForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/module-button/ModuleButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/dashboard-action-button/DashboardActionButton.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/module-button/module-button.css" beforeDir="false" afterPath="$PROJECT_DIR$/components/dashboard-action-button/dashboard-action-button.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/processes/ResponseHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/processors/ResponseHandler.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/AuthorizationService.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/AuthorizationService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/processors/Renderer.js" beforeDir="false" afterPath="$PROJECT_DIR$/processors/Renderer.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -30,26 +25,26 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="40" column="74" selection-start-line="40" selection-start-column="74" selection-end-line="40" selection-end-column="74" />
+            <state relative-caret-position="102">
+              <caret line="6" column="87" lean-forward="true" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="87" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoginForm.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/components/login-form/LoginForm.js">
+      <file leaf-file-name="AppMenu.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/components/app-menu/AppMenu.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="131">
-              <caret line="150" column="60" selection-start-line="150" selection-start-column="60" selection-end-line="150" selection-end-column="60" />
+            <state relative-caret-position="145">
+              <caret line="26" column="18" lean-forward="true" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Container.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/components/container/Container.js">
+      <file leaf-file-name="app-menu.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/components/app-menu/app-menu.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="38" column="11" lean-forward="true" selection-start-line="38" selection-start-column="11" selection-end-line="38" selection-end-column="11" />
+            <state relative-caret-position="248">
+              <caret line="23" column="14" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -85,6 +80,7 @@
       <find>no-dr</find>
       <find>observed</find>
       <find>antia</find>
+      <find>material icons</find>
     </findStrings>
     <replaceStrings>
       <replace>mainWindow</replace>
@@ -100,8 +96,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/components/WindowButtonPanel.js" />
-        <option value="$PROJECT_DIR$/renderer.js" />
         <option value="$PROJECT_DIR$/window-button-controls.js" />
         <option value="$PROJECT_DIR$/components/MenuBar.js" />
         <option value="$PROJECT_DIR$/components/SideBar.js" />
@@ -135,7 +129,6 @@
         <option value="$PROJECT_DIR$/components/switch-button/SwitchButton.js" />
         <option value="$PROJECT_DIR$/components/switch-mode-button/switch-mode-button.css" />
         <option value="$PROJECT_DIR$/components/switch-mode-button/SwitchModeButton.js" />
-        <option value="$PROJECT_DIR$/components/dashboard-sidebar/DashboardSidebar.js" />
         <option value="$PROJECT_DIR$/components/container/container.css" />
         <option value="$PROJECT_DIR$/components/login-form/login-form.css" />
         <option value="$PROJECT_DIR$/components/dashboard/dashboard.css" />
@@ -147,9 +140,13 @@
         <option value="$PROJECT_DIR$/components/dashboard/Dashboard.js" />
         <option value="$PROJECT_DIR$/main.js" />
         <option value="$PROJECT_DIR$/processors/Render.js" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/components/login-form/LoginForm.js" />
+        <option value="$PROJECT_DIR$/components/dashboard-sidebar/DashboardSidebar.js" />
+        <option value="$PROJECT_DIR$/processors/Renderer.js" />
         <option value="$PROJECT_DIR$/components/container/Container.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/components/app-menu/AppMenu.js" />
+        <option value="$PROJECT_DIR$/components/app-menu/app-menu.css" />
       </list>
     </option>
   </component>
@@ -179,7 +176,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -190,18 +186,26 @@
             <path>
               <item name="electron-task-manager" type="b2602c69:ProjectViewProjectNode" />
               <item name="electron-task-manager" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="electron-task-manager" type="b2602c69:ProjectViewProjectNode" />
               <item name="electron-task-manager" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="login-form" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+              <item name="material-design-icons" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="electron-task-manager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="electron-task-manager" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+              <item name="material-design-icons" type="462c0819:PsiDirectoryNode" />
+              <item name="iconfont" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -262,12 +266,13 @@
       <workItem from="1536269820341" duration="15348000" />
       <workItem from="1536594047274" duration="13240000" />
       <workItem from="1536614951865" duration="1306000" />
-      <workItem from="1536626941435" duration="4475000" />
+      <workItem from="1536626941435" duration="9769000" />
+      <workItem from="1536713483014" duration="3220000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="125348000" />
+    <option name="totallyTimeSpent" value="133862000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -305,13 +310,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="8" lean-forward="true" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/components/login-form/LoginForm.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1156">
@@ -461,31 +459,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/dashboard-sidebar/DashboardSidebar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="39" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/components/container/container.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/login-form/login-form.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/dashboard-sidebar/dashboard-sidebar.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="9" lean-forward="true" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -533,36 +510,64 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sections/dashboard.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="21" lean-forward="true" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+        <state relative-caret-position="102">
+          <caret line="6" column="11" lean-forward="true" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/processors/Render.js">
+    <entry file="file://$PROJECT_DIR$/processors/Renderer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="23" lean-forward="true" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="40" column="74" selection-start-line="40" selection-start-column="74" selection-end-line="40" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/login-form/LoginForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="150" column="60" selection-start-line="150" selection-start-column="60" selection-end-line="150" selection-end-column="60" />
+        <state relative-caret-position="255">
+          <caret line="15" column="39" lean-forward="true" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/components/container/Container.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="38" column="11" lean-forward="true" selection-start-line="38" selection-start-column="11" selection-end-line="38" selection-end-column="11" />
+        <state relative-caret-position="110">
+          <caret line="29" column="21" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/login-form/login-form.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/login-form/LoginForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="13" column="44" lean-forward="true" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/material-design-icons/iconfont/material-icons.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="30" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="87" lean-forward="true" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/app-menu/AppMenu.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="26" column="18" lean-forward="true" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/app-menu/app-menu.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="23" column="14" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
         </state>
       </provider>
     </entry>

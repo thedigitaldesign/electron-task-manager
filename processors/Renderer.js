@@ -9,6 +9,12 @@ class Renderer {
         let container = document.getElementsByTagName('main-container')[0];
         container.appendChild(clone);
     }
+
+    static appMenu(){
+        let appMenu = document.createElement('app-menu');
+        let container = document.getElementsByTagName('main-container')[0];
+        container.appendChild(appMenu);
+    }
 }
 
 module.exports = Renderer;

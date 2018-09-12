@@ -1,0 +1,69 @@
+@import "../../node_modules/material-design-icons/iconfont/material-icons.css";
+
+* {
+    box-sizing: border-box;
+}
+
+:host {
+    width: 200px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    padding-top: 30px;
+    box-sizing: border-box;
+}
+
+#user-data {
+    width: 100%;
+    height: 120px;
+    padding: 0 10px;
+}
+
+#user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    background-color: #b6c6cf;
+}
+
+#menu {
+    width: 100%;
+    height: auto;
+    list-style: none;
+    font-family: 'Open Sans';
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+}
+
+#menu li {
+    display: flex;
+    color: #93a7b2;
+    width: 100%;
+    height: 40px;
+    padding-left: 20px;
+    line-height: 40px;
+    align-items: center;
+}
+
+#menu li:hover {
+    color: #72cd2c;
+}
+
+#menu li i {
+    font-size: 24px;
+    display: block;
+    height: 24px;
+    width: 24px;
+    transform-origin: center;
+    transform: scale(0.8);
+}
+
+#menu li span {
+    font-size: 15px;
+    margin-left: 20px;
+}
+
+.material-icons.material-icons--sharp {
+    font-family: 'Material Icons Sharp';
+}
