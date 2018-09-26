@@ -1,0 +1,5 @@
+{
+  "auth-services-url": "http://localhost:3000/v1/auth",
+  "encrypt-secret": "teamo0605",
+  "token-expiration-time": 300000
+}

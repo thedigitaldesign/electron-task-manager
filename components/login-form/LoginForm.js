@@ -10,17 +10,18 @@ class LoginForm extends HTMLElement {
         shadowRoot.innerHTML = `
             <form id="login-form">
                 <i class="material-icons login-logo disabled-logo">fingerprint</i>
-                <span>
+                <span class="input-container">
                     <i class="material-icons user-field-icon">account_circle</i>
                     <input type="text" placeholder="&nbsp;" class="username-field">
                     <label>Your username</label>
                 </span>
-                <span>
+                <span class="input-container">
                     <i class="material-icons password-field-icon">vpn_key</i>
                     <input type="password" placeholder="&nbsp;" class="password-field">
                     <label>Your secret code</label>
                 </span>
                 <input type="button" id="login-button" text="i'm done" class="disabled-button">
+                <span text="Nothing to show" id="login-message"></span>
             </form>
         `;
 
@@ -79,11 +80,6 @@ class LoginForm extends HTMLElement {
                     let loginLogo = this.shadowRoot.querySelector('.login-logo');
                     loginLogo.classList.remove('disabled-logo');
                     loginLogo.classList.add('enabled-logo');
-
-                    // Enable login process
-                    let usernameField = this.shadowRoot.querySelector('.username-field');
-                    let passwordField = this.shadowRoot.querySelector('.password-field');
-                    this.login(usernameField.value, passwordField.value);
                 }else{
                     let loginLogo = this.shadowRoot.querySelector('.login-logo');
                     loginLogo.innerHTML = 'fingerprint';
@@ -104,11 +100,11 @@ class LoginForm extends HTMLElement {
         this.filledCount = 0;
 
         let thiz = this;
-        let usernameField = this.shadowRoot.querySelector('.username-field');
+        let emailField = this.shadowRoot.querySelector('.username-field');
         let passwordField = this.shadowRoot.querySelector('.password-field');
 
-        usernameField.focus();
-        usernameField.addEventListener('input', function(){
+        emailField.focus();
+        emailField.addEventListener('input', function(){
             if(this.value != null && this.value.trim() != ''){
                 thiz.usernameFilled = 1
             }else{
@@ -125,41 +121,53 @@ class LoginForm extends HTMLElement {
 
         let loginButton = this.shadowRoot.querySelector('#login-button');
         loginButton.value = loginButton.getAttribute('text');
+
+        // Enable login process
+        loginButton.addEventListener('click', async function(){
+            thiz.login();
+        });
     }
 
-    login(username, password){
+    async login(){
         let thiz = this;
         let logo = this.shadowRoot.querySelector('.login-logo');
         let loginButton = this.shadowRoot.querySelector('#login-button');
-        loginButton.addEventListener('click', async function(){
-            logo.innerHTML = 'schedule';
-            loginButton.classList.remove('enabled-button');
-            loginButton.classList.add('disabled-button');
-            loginButton.value = 'waiting...';
+        let loginMessage = this.shadowRoot.querySelector('#login-message');
+        let emailField = this.shadowRoot.querySelector('.username-field');
+        let passwordField = this.shadowRoot.querySelector('.password-field');
 
-            let response = await AuthorizationService.startSession(username, password);
-            console.log('response:', response);
-            switch(response.rc){
-                case ResponseCodes.PROCESS_OK:
-                    logo.innerHTML = 'check_circle';
+        logo.innerHTML = 'schedule';
+        loginButton.classList.remove('enabled-button');
+        loginButton.classList.add('disabled-button');
+        loginButton.value = 'waiting...';
 
-                    sessionStorage.setItem('sessionId', '2985692119283');
-                    sessionStorage.setItem('firstName', 'Gustavo');
-                    sessionStorage.setItem('lastName', 'Mora');
+        let response = await AuthorizationService.startSession(emailField.value, passwordField.value);
+        switch(response.rc){
+            case ResponseCodes.PROCESS_OK:
+                logo.innerHTML = 'check_circle';
+                loginMessage.style.display = 'none';
 
-                    thiz.fadeOut();
-                    // Emit event when login is successfully
-                    Bus.emit('login-success', null);
-                    break;
-                case ResponseCodes.ERROR_CREATING_SESSION:
-                default:
-                    logo.innerHTML = 'error';
-                    loginButton.value = loginButton.getAttribute('text');
-                    loginButton.classList.remove('disabled-button');
-                    loginButton.classList.add('enabled-button');
-                    break;
-            }
-        });
+                thiz.fadeOut();
+                // Emit event when login is successfully
+                Bus.emit('login-success', null);
+                break;
+            case ResponseCodes.INVALID_LOGIN:
+                logo.innerHTML = 'error';
+                loginButton.value = loginButton.getAttribute('text');
+                loginButton.classList.remove('disabled-button');
+                loginButton.classList.add('enabled-button');
+                loginMessage.style.display = 'block';
+                loginMessage.textContent = '¡Hey, te equivocaste!';
+                break;
+            default:
+                logo.innerHTML = 'error';
+                loginButton.value = loginButton.getAttribute('text');
+                loginButton.classList.remove('disabled-button');
+                loginButton.classList.add('enabled-button');
+                loginMessage.style.display = 'block';
+                loginMessage.textContent = 'Ocurrió un error. ¿Por qué no lo intentas más tarde?';
+                break;
+        }
     }
 
     fadeOut(time=20) {

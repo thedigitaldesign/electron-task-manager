@@ -40,6 +40,7 @@ form {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
     background-color: #2b2f3e;
     width: 300px;
     height: auto;
@@ -49,7 +50,7 @@ form {
     box-sizing: border-box;
 }
 
-span {
+span.input-container {
     color: #fff;
     font-size: 12px;
     width: 200px;
@@ -79,6 +80,7 @@ input[type="text"], input[type="password"] {
     background: none;
     height: 40px;
     padding-top: 15px;
+    padding-right: 26px;
     color: #fff;
     width: 100%;
     box-sizing: border-box;
@@ -135,4 +137,13 @@ input[type="button"] {
 
 .enabled-button:hover {
     cursor: pointer;
+}
+
+#login-message {
+    display: none;
+    position: absolute;
+    bottom: 15px;
+    font-size: 12px;
+    color: #fff;
+    font-family: 'Open Sans';
 }

@@ -3,6 +3,8 @@
     width: 100%;
     display: block;
     position: fixed;
+    top: 0;
+    background-color: #1b1e28;
     -webkit-app-region: drag;
     align-self: flex-start;
     z-index: 100;

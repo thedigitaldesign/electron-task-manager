@@ -11,8 +11,10 @@ class ResponseHandler {
                 case 200:
                     response.rc = ResponseCodes.PROCESS_OK;
                     response.msg = ResponseCodes.PROCESS_OK_MSG;
-                    response.bean = response.data;
-
+                    response.bean = httpRes.data;
+                    break;
+                case 400:
+                    response = httpRes.data;
                     break;
                 default:
                     response.rc = ResponseCodes.INTERNAL_SERVER_ERROR;
@@ -23,7 +25,6 @@ class ResponseHandler {
             console.log('[!] Error handling http response: ' + err);
             response = this.buildError();
         }
-        console.log('server response:', response);
 
         return response;
     }

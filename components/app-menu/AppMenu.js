@@ -18,12 +18,20 @@ class AppMenu extends HTMLElement {
                 'reference': 'tasks',
                 'icon': 'assignment',
                 'label': 'My tasks'
-            }
+            },
+            {
+                'reference': 'smm',
+                'icon': 'chrome_reader_mode',
+                'label': 'SSM'
+            },
         ];
         const shadowRoot = this.attachShadow({mode: 'open'});
         this.shadowRoot.innerHTML = `
             <div id="user-data">
                 <div id="user-avatar"></div>
+                <div id="user-info">
+                    <span id="user-name"></span>
+                </div>
             </div>
             <ul id="menu"></ul>
         `;
@@ -36,11 +44,15 @@ class AppMenu extends HTMLElement {
     }
 
     connectedCallback() {
+        // Set user info
+        let session = JSON.parse(sessionStorage.getItem('session'));
+        let userInfo = this.shadowRoot.getElementById('user-name');
+        userInfo.textContent = session.firstName + ' ' + session.lastName;
+
         let menu = this.shadowRoot.getElementById('menu');
         if (this.options.length === 0) {
 
         } else {
-            console.log('esta lleno');
             for (let i in this.options) {
                 let li = document.createElement('li');
                 li.setAttribute('reference', this.options[i].reference);

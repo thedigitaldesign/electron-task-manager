@@ -4,6 +4,7 @@ const axios = require('axios');
 const crypto = require('crypto');
 const ResponseHandler = require('../processors/ResponseHandler');
 const ResponseCodes = require('../utilities/ResponseCodes');
+const appConfig = require('../app-config');
 
 class AuthorizationService {
     constructor(){};
@@ -15,25 +16,31 @@ class AuthorizationService {
         }
     }
 
-    static async startSession(user, password){
+    static async startSession(email, password){
         let response = {};
         try{
-            const url = 'https://fffa7a99-efe3-44ec-baeb-ec3568f20da1.mock.pstmn.io/auth';
-            const hash = crypto.createHmac('sha256', '12345678').update(password).digest('hex');
+            const url = appConfig["auth-services-url"];
+            const hash = crypto.createHmac('sha256', appConfig["encrypt-secret"]).update(password).digest('hex');
             const auth = {
-                'user': user,
+                'email': email,
                 'password': hash
             };
             let httpResponse = await axios.post(url, auth);
+            if(httpResponse.data.rc === ResponseCodes.PROCESS_OK){
+                // Create session object
+                let user = httpResponse.data.bean;
+                user.expiresAt = Date.now() + appConfig["token-expiration-time"];
+                sessionStorage.setItem('user', JSON.stringify(user));
+            }
 
-            response = ResponseHandler.handleHttp(httpResponse);
+            return ResponseHandler.handleHttp(httpResponse);
         }catch(err){
-            console.log('[!] Could not create session: ' + err);
+            console.log('[!] Create session error: ' + err);
             response.rc = ResponseCodes.ERROR_CREATING_SESSION;
             response.msg = ResponseCodes.ERROR_CREATING_SESSION_MSG;
-        }
 
-        return response;
+            return ResponseHandler.handleHttp(err.response);
+        }
     }
 }
 

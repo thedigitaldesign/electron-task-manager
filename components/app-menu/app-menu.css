@@ -8,22 +8,33 @@
     width: 200px;
     height: 100%;
     background-color: #fff;
+    padding: 10px;
     box-shadow: 0 0 20px rgba(0,0,0,0.1);
-    padding-top: 30px;
     box-sizing: border-box;
 }
 
 #user-data {
     width: 100%;
-    height: 120px;
-    padding: 0 10px;
+    height: auto;
+    display: flex;
+    font-family: "Open Sans";
 }
 
 #user-avatar {
     width: 40px;
     height: 40px;
+    margin-bottom: 10px;
     border-radius: 4px;
     background-color: #b6c6cf;
+}
+
+#user-info {
+    margin-left: 10px;
+    color: #93a7b2;
+}
+
+#user-name {
+    font-size: 12px;
 }
 
 #menu {
@@ -34,6 +45,7 @@
     font-weight: 300;
     margin: 0;
     padding: 0;
+    border-top: 1px solid rgba(0,0,0,0.1);
 }
 
 #menu li {
@@ -41,13 +53,13 @@
     color: #93a7b2;
     width: 100%;
     height: 40px;
-    padding-left: 20px;
     line-height: 40px;
     align-items: center;
 }
 
 #menu li:hover {
     color: #72cd2c;
+    cursor: pointer;
 }
 
 #menu li i {
@@ -60,8 +72,8 @@
 }
 
 #menu li span {
-    font-size: 15px;
-    margin-left: 20px;
+    font-size: 12px;
+    margin-left: 10px;
 }
 
 .material-icons.material-icons--sharp {
