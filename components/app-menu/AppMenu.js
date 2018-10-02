@@ -4,15 +4,15 @@ class AppMenu extends HTMLElement {
 
         this.options = [
             {
-                'reference': 'inbox',
-                'icon': 'move_to_inbox',
-                'label': 'Inbox'
-            },
-            {
                 'reference': 'dashboard',
                 'item-id': '',
                 'icon': 'dashboard',
                 'label': 'Dashboard'
+            },
+            {
+                'reference': 'inbox',
+                'icon': 'move_to_inbox',
+                'label': 'Inbox'
             },
             {
                 'reference': 'tasks',
@@ -22,13 +22,13 @@ class AppMenu extends HTMLElement {
             {
                 'reference': 'smm',
                 'icon': 'chrome_reader_mode',
-                'label': 'SSM'
+                'label': 'SMM'
             },
         ];
         const shadowRoot = this.attachShadow({mode: 'open'});
         this.shadowRoot.innerHTML = `
             <div id="user-data">
-                <div id="user-avatar"></div>
+                <img id="user-avatar">
                 <div id="user-info">
                     <span id="user-name"></span>
                 </div>
@@ -45,15 +45,16 @@ class AppMenu extends HTMLElement {
 
     connectedCallback() {
         // Set user info
-        let session = JSON.parse(sessionStorage.getItem('session'));
+        let session = JSON.parse(sessionStorage.getItem('user'));
         let userInfo = this.shadowRoot.getElementById('user-name');
         userInfo.textContent = session.firstName + ' ' + session.lastName;
+        this.setAvatar(session.avatar);
 
         let menu = this.shadowRoot.getElementById('menu');
-        if (this.options.length === 0) {
+        if(this.options.length === 0){
 
-        } else {
-            for (let i in this.options) {
+        }else{
+            for (let i in this.options){
                 let li = document.createElement('li');
                 li.setAttribute('reference', this.options[i].reference);
 
@@ -70,6 +71,11 @@ class AppMenu extends HTMLElement {
                 menu.appendChild(li);
             }
         }
+    }
+
+    setAvatar(img){
+        let avatar = this.shadowRoot.querySelector('#user-avatar');
+        avatar.setAttribute('src', img);
     }
 }
 

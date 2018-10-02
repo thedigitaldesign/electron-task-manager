@@ -2,11 +2,11 @@
 
 const axios = require('axios');
 const crypto = require('crypto');
-const ResponseHandler = require('../processors/ResponseHandler');
+const ResponseHandler = require('./ResponseHandler');
 const ResponseCodes = require('../utilities/ResponseCodes');
 const appConfig = require('../app-config');
 
-class AuthorizationService {
+class AuthProcessor {
     constructor(){};
 
     static checkSession(){
@@ -26,22 +26,30 @@ class AuthorizationService {
                 'password': hash
             };
             let httpResponse = await axios.post(url, auth);
-            if(httpResponse.data.rc === ResponseCodes.PROCESS_OK){
-                // Create session object
-                let user = httpResponse.data.bean;
-                user.expiresAt = Date.now() + appConfig["token-expiration-time"];
-                sessionStorage.setItem('user', JSON.stringify(user));
-            }
+            response = {
+                status: httpResponse.status,
+                data: httpResponse.data
+            };
 
-            return ResponseHandler.handleHttp(httpResponse);
+            // Create session object
+            let user = response.data;
+            user.expiresAt = Date.now() + appConfig['auth-endpoints']['login'];
+            sessionStorage.setItem('user', JSON.stringify(user));
+
+            return ResponseHandler.handleHttp(response);
         }catch(err){
             console.log('[!] Create session error: ' + err);
-            response.rc = ResponseCodes.ERROR_CREATING_SESSION;
-            response.msg = ResponseCodes.ERROR_CREATING_SESSION_MSG;
+            if(!err.response){
+                console.log('[!] Could not connect to server');
+                response.rc = ResponseCodes.SERVER_CONNECTION_ERROR;
+                response.msg = ResponseCodes.SERVER_CONNECTION_ERROR_MSG;
+
+                return response;
+            }
 
             return ResponseHandler.handleHttp(err.response);
         }
     }
 }
 
-module.exports = AuthorizationService;
+module.exports = AuthProcessor;

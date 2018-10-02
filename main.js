@@ -11,6 +11,8 @@ function initialize(){
         mainWindow = new BrowserWindow({
             width: 800,
             height: 600,
+            minHeight: 600,
+            minWidth: 600,
             frame: false, // Remove window frame
             titleBarStyle: 'customButtonsOnHover' // For custom window buttons
         });

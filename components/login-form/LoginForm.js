@@ -1,5 +1,5 @@
 // Made with ❤ by Gutty Mora
-let AuthorizationService = require('../../services/AuthorizationService');
+let AuthProcessor = require('../../processors/AuthProcessor');
 const ResponseCodes = require('../../utilities/ResponseCodes');
 
 class LoginForm extends HTMLElement {
@@ -141,7 +141,7 @@ class LoginForm extends HTMLElement {
         loginButton.classList.add('disabled-button');
         loginButton.value = 'waiting...';
 
-        let response = await AuthorizationService.startSession(emailField.value, passwordField.value);
+        let response = await AuthProcessor.startSession(emailField.value, passwordField.value);
         switch(response.rc){
             case ResponseCodes.PROCESS_OK:
                 logo.innerHTML = 'check_circle';
@@ -152,12 +152,20 @@ class LoginForm extends HTMLElement {
                 Bus.emit('login-success', null);
                 break;
             case ResponseCodes.INVALID_LOGIN:
-                logo.innerHTML = 'error';
+                logo.innerHTML = 'error_outline';
                 loginButton.value = loginButton.getAttribute('text');
                 loginButton.classList.remove('disabled-button');
                 loginButton.classList.add('enabled-button');
                 loginMessage.style.display = 'block';
                 loginMessage.textContent = '¡Hey, te equivocaste!';
+                break;
+            case ResponseCodes.SERVER_CONNECTION_ERROR:
+                logo.innerHTML = 'report';
+                loginButton.value = loginButton.getAttribute('text');
+                loginButton.classList.remove('disabled-button');
+                loginButton.classList.add('enabled-button');
+                loginMessage.style.display = 'block';
+                loginMessage.textContent = 'Hubo un error al conectar con el servidor';
                 break;
             default:
                 logo.innerHTML = 'error';

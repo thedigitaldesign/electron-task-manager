@@ -2,18 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ec84c702-851b-4d8d-bd01-89a3e4bd5575" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/app-config.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/app-content/AppContent.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/button/Button.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/button/button.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/processors/TaskProcessor.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-config.json" beforeDir="false" afterPath="$PROJECT_DIR$/app-config.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/app-menu/AppMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/app-menu/AppMenu.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/app-menu/app-menu.css" beforeDir="false" afterPath="$PROJECT_DIR$/components/app-menu/app-menu.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/container/container.css" beforeDir="false" afterPath="$PROJECT_DIR$/components/container/container.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/container/Container.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/container/Container.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/dashboard/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/dashboard/Dashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/dashboard/dashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/components/dashboard/dashboard.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/login-form/LoginForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/login-form/LoginForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/login-form/login-form.css" beforeDir="false" afterPath="$PROJECT_DIR$/components/login-form/login-form.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/title-bar/title-bar.css" beforeDir="false" afterPath="$PROJECT_DIR$/components/title-bar/title-bar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/processors/ResponseHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/processors/ResponseHandler.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/AuthorizationService.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/AuthorizationService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/processors/Renderer.js" beforeDir="false" afterPath="$PROJECT_DIR$/processors/Renderer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sections/dashboard.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/AuthorizationService.js" beforeDir="false" afterPath="$PROJECT_DIR$/processors/AuthProcessor.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utilities/ResponseCodes.js" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/ResponseCodes.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -28,29 +34,47 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.html">
+      <file leaf-file-name="Dashboard.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/components/dashboard/Dashboard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="42" column="9" selection-start-line="42" selection-start-column="9" selection-end-line="42" selection-end-column="9" />
+            <state relative-caret-position="189">
+              <caret line="29" column="34" lean-forward="true" selection-start-line="29" selection-start-column="34" selection-end-line="29" selection-end-column="34" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoginForm.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/components/login-form/LoginForm.js">
+      <file leaf-file-name="login-form.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/components/login-form/login-form.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="147" column="52" selection-start-line="147" selection-start-column="52" selection-end-line="147" selection-end-column="52" />
+            <state relative-caret-position="70">
+              <caret line="132" column="39" selection-start-line="132" selection-start-column="22" selection-end-line="132" selection-end-column="39" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AuthorizationService.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/services/AuthorizationService.js">
+      <file leaf-file-name="app-menu.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/components/app-menu/app-menu.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="32" column="69" selection-start-line="32" selection-start-column="69" selection-end-line="32" selection-end-column="69" />
+            <state relative-caret-position="92">
+              <caret line="61" column="20" lean-forward="true" selection-start-line="61" selection-start-column="20" selection-end-line="61" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AuthProcessor.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/processors/AuthProcessor.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" selection-start-line="5" selection-end-line="5" selection-end-column="60" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TaskProcessor.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/processors/TaskProcessor.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="234">
+              <caret line="16" column="36" lean-forward="true" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -60,8 +84,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="HTML File" />
+        <option value="CSS File" />
         <option value="JavaScript File" />
       </list>
     </option>
@@ -86,9 +110,14 @@
       <find>no-dr</find>
       <find>observed</find>
       <find>antia</find>
-      <find>material icons</find>
+      <find />
       <find>username</find>
       <find>thiz</find>
+      <find>session</find>
+      <find>sessions</find>
+      <find>user-a</find>
+      <find>append</find>
+      <find>auth</find>
     </findStrings>
     <replaceStrings>
       <replace>mainWindow</replace>
@@ -104,12 +133,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/components/SideBar.js" />
-        <option value="$PROJECT_DIR$/services/Session.js" />
-        <option value="$PROJECT_DIR$/services/TestModule.js" />
-        <option value="$PROJECT_DIR$/processes/TestModule.js" />
-        <option value="$PROJECT_DIR$/processes/AuthProcess.js" />
-        <option value="$PROJECT_DIR$/components/gm-input.js" />
         <option value="$PROJECT_DIR$/components/ButtonBar.js" />
         <option value="$PROJECT_DIR$/Utilities/ResponseCodes.js" />
         <option value="$PROJECT_DIR$/components/SidebarTools.js" />
@@ -132,29 +155,35 @@
         <option value="$PROJECT_DIR$/components/switch-button/SwitchButton.js" />
         <option value="$PROJECT_DIR$/components/switch-mode-button/switch-mode-button.css" />
         <option value="$PROJECT_DIR$/components/switch-mode-button/SwitchModeButton.js" />
-        <option value="$PROJECT_DIR$/components/dashboard/dashboard.css" />
         <option value="$PROJECT_DIR$/components/dashboard-sidebar/dashboard-sidebar.css" />
         <option value="$PROJECT_DIR$/components/module-button/module-button.css" />
         <option value="$PROJECT_DIR$/components/dashboard-action-button/dashboard-action-button.js" />
         <option value="$PROJECT_DIR$/components/dashboard-action-button/DashboardActionButton.js" />
-        <option value="$PROJECT_DIR$/sections/dashboard.html" />
-        <option value="$PROJECT_DIR$/components/dashboard/Dashboard.js" />
-        <option value="$PROJECT_DIR$/main.js" />
         <option value="$PROJECT_DIR$/processors/Render.js" />
         <option value="$PROJECT_DIR$/components/dashboard-sidebar/DashboardSidebar.js" />
-        <option value="$PROJECT_DIR$/processors/Renderer.js" />
-        <option value="$PROJECT_DIR$/components/container/Container.js" />
         <option value="$PROJECT_DIR$/components/title-bar/title-bar.css" />
         <option value="$PROJECT_DIR$/components/container/container.css" />
-        <option value="$PROJECT_DIR$/components/app-menu/app-menu.css" />
-        <option value="$PROJECT_DIR$/components/app-menu/AppMenu.js" />
-        <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/utilities/ResponseCodes.js" />
         <option value="$PROJECT_DIR$/components/login-form/login-form.css" />
         <option value="$PROJECT_DIR$/processors/ResponseHandler.js" />
-        <option value="$PROJECT_DIR$/app-config.json" />
+        <option value="$PROJECT_DIR$/utilities/ResponseCodes.js" />
+        <option value="$PROJECT_DIR$/sections/canvas.html" />
+        <option value="$PROJECT_DIR$/sections/dashboard.html" />
+        <option value="$PROJECT_DIR$/processors/Renderer.js" />
+        <option value="$PROJECT_DIR$/components/container/Container.js" />
+        <option value="$PROJECT_DIR$/components/app-menu/AppMenu.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/components/button/Button.js" />
+        <option value="$PROJECT_DIR$/main.js" />
         <option value="$PROJECT_DIR$/services/AuthorizationService.js" />
         <option value="$PROJECT_DIR$/components/login-form/LoginForm.js" />
+        <option value="$PROJECT_DIR$/processors/AuthProcessor.js" />
+        <option value="$PROJECT_DIR$/app-config.json" />
+        <option value="$PROJECT_DIR$/processors/TaskProcessor.js" />
+        <option value="$PROJECT_DIR$/components/app-content/AppContent.js" />
+        <option value="$PROJECT_DIR$/components/button/button.css" />
+        <option value="$PROJECT_DIR$/components/dashboard/dashboard.css" />
+        <option value="$PROJECT_DIR$/components/dashboard/Dashboard.js" />
+        <option value="$PROJECT_DIR$/components/app-menu/app-menu.css" />
       </list>
     </option>
   </component>
@@ -172,7 +201,7 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-7" />
     <option name="y" value="18" />
     <option name="width" value="1346" />
@@ -192,6 +221,17 @@
               <item name="electron-task-manager" type="b2602c69:ProjectViewProjectNode" />
               <item name="electron-task-manager" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="electron-task-manager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="electron-task-manager" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="electron-task-manager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="electron-task-manager" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="app-menu" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -201,7 +241,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Repasar_V1" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -209,16 +249,16 @@
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\analiticom\WebstormProjects\electron-task-manager\public\fontawesome\css" />
+      <recent name="C:\Users\analiticom\WebstormProjects\electron-task-manager\public\fontawesome" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\analiticom\WebstormProjects\electron-task-manager\processors" />
       <recent name="C:\Users\analiticom\WebstormProjects\electron-task-manager\components\window-button-bar" />
       <recent name="C:\Users\analiticom\WebstormProjects\electron-task-manager\components\title-bar" />
       <recent name="C:\Users\analiticom\WebstormProjects\electron-task-manager\components\sidebar-tools" />
       <recent name="C:\Users\analiticom\WebstormProjects\electron-task-manager\components\input" />
-      <recent name="C:\Users\analiticom\WebstormProjects\electron-task-manager\components\container" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\analiticom\WebstormProjects\electron-task-manager\public\fontawesome\css" />
-      <recent name="C:\Users\analiticom\WebstormProjects\electron-task-manager\public\fontawesome" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -262,23 +302,31 @@
       <workItem from="1537193612790" duration="9767000" />
       <workItem from="1537469443259" duration="299000" />
       <workItem from="1537917679504" duration="6943000" />
+      <workItem from="1538052353043" duration="193000" />
+      <workItem from="1538063900938" duration="1080000" />
+      <workItem from="1538091113940" duration="72000" />
+      <workItem from="1538147349800" duration="5076000" />
+      <workItem from="1538356701461" duration="7119000" />
+      <workItem from="1538413811036" duration="21953000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="151541000" />
+    <option name="totallyTimeSpent" value="187034000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22767857" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22767857" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32838285" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32838285" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32838285" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="TypeScript" order="7" />
@@ -288,7 +336,6 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32838285" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -303,35 +350,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="26" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/input/Input.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="7" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/sidebar-tools/SidebarTools.js" />
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="7" lean-forward="true" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/components/sidebar-tools/SidebarTools.js" />
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -417,13 +435,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/dashboard/dashboard.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="34" lean-forward="true" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/components/dashboard-action-button/dashboard-action-button.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -431,38 +442,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/dashboard-action-button/DashboardActionButton.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="5" lean-forward="true" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/dashboard/Dashboard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="45" column="5" lean-forward="true" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/material-design-icons/iconfont/material-icons.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="13" column="30" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/container/Container.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="29" column="21" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -480,20 +463,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/app-menu/app-menu.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1139">
-          <caret line="67" column="17" selection-start-line="67" selection-start-column="17" selection-end-line="67" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/app-menu/AppMenu.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="46" column="24" selection-start-line="46" selection-start-column="24" selection-end-line="46" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/components/bus/Bus.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -501,66 +470,142 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/processors/ResponseHandler.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="42" column="9" selection-start-line="42" selection-start-column="9" selection-end-line="42" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sections/dashboard.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="11" lean-forward="true" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/processors/Renderer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="39" lean-forward="true" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
+        <state relative-caret-position="85">
+          <caret line="5" column="11" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/utilities/ResponseCodes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="30" lean-forward="true" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+        <state relative-caret-position="187">
+          <caret line="11" column="27" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="27" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/login-form/login-form.css">
+    <entry file="file://$PROJECT_DIR$/sections/canvas.html" />
+    <entry file="file://$PROJECT_DIR$/components/dashboard-action-button/DashboardActionButton.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="141" column="14" lean-forward="true" selection-start-line="141" selection-start-column="14" selection-end-line="141" selection-end-column="14" />
+        <state relative-caret-position="-185">
+          <caret line="10" column="5" lean-forward="true" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/processors/ResponseHandler.js">
+    <entry file="file://$PROJECT_DIR$/sections/dashboard.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+        <state relative-caret-position="34">
+          <caret line="2" column="9" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/processors/Renderer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="5" column="36" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/app-menu/AppMenu.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-459" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="27" column="16" lean-forward="true" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/container/Container.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="37" column="9" lean-forward="true" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/login-form/LoginForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="143" column="48" selection-start-line="143" selection-start-column="48" selection-end-line="143" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="24" lean-forward="true" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/button/Button.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app-config.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
-          <caret line="3" column="33" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
+          <caret line="3" column="45" selection-start-line="3" selection-start-column="45" selection-end-line="3" selection-end-column="45" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/services/AuthorizationService.js">
+    <entry file="file://$PROJECT_DIR$/processors/TaskProcessor.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="32" column="69" selection-start-line="32" selection-start-column="69" selection-end-line="32" selection-end-column="69" />
+        <state relative-caret-position="234">
+          <caret line="16" column="36" lean-forward="true" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/login-form/LoginForm.js">
+    <entry file="file://$PROJECT_DIR$/processors/AuthProcessor.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="147" column="52" selection-start-line="147" selection-start-column="52" selection-end-line="147" selection-end-column="52" />
+        <state relative-caret-position="85">
+          <caret line="5" selection-start-line="5" selection-end-line="5" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/app-content/AppContent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/button/button.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="29" column="20" lean-forward="true" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/dashboard/Dashboard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="29" column="34" lean-forward="true" selection-start-line="29" selection-start-column="34" selection-end-line="29" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/dashboard/dashboard.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="60" column="21" lean-forward="true" selection-start-line="60" selection-start-column="21" selection-end-line="60" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/login-form/login-form.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="70">
+          <caret line="132" column="39" selection-start-line="132" selection-start-column="22" selection-end-line="132" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/app-menu/app-menu.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="61" column="20" lean-forward="true" selection-start-line="61" selection-start-column="20" selection-end-line="61" selection-end-column="20" />
         </state>
       </provider>
     </entry>
