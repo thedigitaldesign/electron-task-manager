@@ -10,63 +10,100 @@
     box-sizing: border-box;
     width: 100%;
     height: 100%;
-    padding: 10px;
     color: #aaa;
-    font-family: 'Open Sans';
+    font-family: 'Open Sans', sans-serif;
 }
 
-#keypad {
-    width: 220px;
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: space-between;
+.dashboard-section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0 20px;
+    pointer-events: none;
+    visibility: hidden;
+    opacity: 0;
+    /* Animation */
+    transition: visibility 0s .12s linear , opacity .12s ease-in;
+}
+
+.dashboard-section.is-shown {
+    pointer-events: auto;
+    visibility: visible;
+    opacity: 1;
+    /* Animation */
+    transition: visibility 0s .12s linear , opacity .8s ease-out;
+}
+
+.d-title {
+    color: #666;
+    font-size: 18px;
+    margin: 30px 0;
+    padding: 0 10px;
+    text-transform: uppercase;
 }
 
 #card-list {
     width: 100%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     flex-wrap: wrap;
 }
 
-.card {
-    height: auto;
-    display: flex;
-    width: 150px;
-    justify-content: left;
-    flex-direction: column;
+.d-card {
+    padding: 10px;
     background-color: #fff;
-    box-shadow: 0 1px rgba(0,0,0,0.1);
-    border-radius: 1px;
-    padding: 0 10px;
-    font-weight: bold;
-    font-size: 10px;
-    text-transform: uppercase;
-}
-
-.card .title {
-    width: 100%;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
+    border: 1px solid rgba(0,0,0,0.1);
+    box-shadow: 3px 3px 5px rgba(0,0,0,0.1);
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 150px;
+    border-radius: 2px;
+    margin: 10px;
 }
 
-.card .title i {
-    width: 24px;
-    height: 24px;
+.d-card:hover {
+    cursor: pointer;
+}
+
+.d-card-icon {
+    font-size: 30px;
     color: rgba(221,64,91,1);
 }
 
-.card .title span {
-    margin-left: 5px;
-}
-
-.card .results {
-    width: 100%;
-    font-size: 15px;
-    color: rgba(14, 14, 28, 0.64);
-}
-
-.card .title, .card .results {
+.d-card-icon, .d-card-title {
+    text-align: center;
     padding: 10px 0;
+}
+
+.d-card-title {
+    color: #999;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.new-card {
+    border: 2px dashed #ccc;
+    box-shadow: none;
+    background: none;
+}
+
+.new-card .d-card-title, .new-card .d-card-icon {
+    color: #ccc;
+}
+
+#create-task {
+    display: flex;
+    flex-direction: column;
+}
+
+#create-task input[type="text"] {
+    max-width: 200px;
+}
+
+#date-wrapper {
+    display: flex;
 }

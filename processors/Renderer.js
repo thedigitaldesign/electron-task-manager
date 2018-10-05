@@ -1,26 +1,24 @@
 // Made with ❤ by Gutty Mora
+const _container = document.getElementsByTagName('main-container')[0];
 
 // Handle template rendering
 class Renderer {
     static dashboard(){
         let dashboard = document.createElement('app-dashboard');
-        let container = document.getElementsByTagName('app-content')[0];
-        while (container.firstChild){
-            container.removeChild(container.firstChild);
+        while (_container.firstChild){
+            _container.removeChild(_container.firstChild);
         }
-        container.appendChild(dashboard);
+        _container.appendChild(dashboard);
     }
 
     static appMenu(){
         let appMenu = document.createElement('app-menu');
-        let container = document.getElementsByTagName('main-container')[0];
-        container.appendChild(appMenu);
+        _container.appendChild(appMenu);
     }
 
     static appContent(){
         let appContent = document.createElement('app-content');
-        let container = document.getElementsByTagName('main-container')[0];
-        container.appendChild(appContent);
+        _container.appendChild(appContent);
     }
 }
 

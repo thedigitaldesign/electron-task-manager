@@ -30,10 +30,11 @@
 
 #user-info {
     margin-left: 10px;
-    color: #93a7b2;
+    color: #999;
 }
 
 #user-name {
+    display: block;
     font-size: 12px;
 }
 
@@ -50,7 +51,7 @@
 
 #menu li {
     display: flex;
-    color: #93a7b2;
+    color: #999;
     width: 100%;
     height: 40px;
     line-height: 40px;

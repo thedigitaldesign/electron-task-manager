@@ -12,7 +12,7 @@
     align-items: center;
     background-color: #fff;
     border: 1px solid rgba(0,0,0,0.1);
-    border-radius: 1px;
+    border-radius: 2px;
     color: #93a7b2;
     font-family: 'Open Sans';
 }
@@ -30,5 +30,5 @@ span {
     font-size: 12px;
     display: flex;
     align-items: center;
-    padding: 0 5px;
+    padding-right: 5px;
 }

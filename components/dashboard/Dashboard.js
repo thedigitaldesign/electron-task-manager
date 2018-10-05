@@ -1,6 +1,8 @@
 require('../button/Button');
+require('../input/Input');
 const TaskProcessor = require('../../processors/TaskProcessor');
 const ResponseCodes = require('../../utilities/ResponseCodes');
+const Render = require('../../processors/Renderer');
 
 // Made with ❤ by Gutty Mora
 
@@ -10,32 +12,43 @@ class Dashboard extends HTMLElement{
 
         const shadowRoot = this.attachShadow({mode: 'open'});
         shadowRoot.innerHTML = `
-            <div id="keypad">
-                <app-button icon="add">Nueva tarea</app-button>
-                <app-button icon="add">Nueva lista</app-button>
-            </div>
-            <div id="card-list">
-                <div id="tasks-card" class="card">
-                    <div class="title">
-                        <i class="material-icons">bookmark</i>
-                        <span>tareas</span>
+            <div id="dashboard-main" class="dashboard-section">
+                <h1 class="d-title">Dashboard</h1>
+                <div id="card-list">
+                    <div id="task-card" class="d-card">
+                        <i class="d-card-icon material-icons">bookmark</i>
+                        <span class="d-card-title">tareas</span>
                     </div>
-                    <div class="results"></div>
-                </div>
-                <div id="task-lists-card" class="card">
-                    <div class="title">
-                        <i class="material-icons">list_alt</i>
-                        <span>lista de tareas</span>
+                    <div id="task-list-card" class="d-card">
+                        <i class="d-card-icon material-icons">list</i>
+                        <span class="d-card-title">listas</span>
                     </div>
-                    <div class="results"></div>
-                </div>
-                <div id="another-card" class="card">
-                    <div class="title">
-                        <i class="material-icons">autorenew</i>
-                        <span>sincronización</span>
+                    <div id="task-lists-card" class="d-card">
+                        <i class="d-card-icon material-icons">autorenew</i>
+                        <span class="d-card-title">sync</span>
                     </div>
-                    <div class="results"></div>
+                    <div class="d-card new-card">
+                        <i class="d-card-icon material-icons">add</i>
+                        <span class="d-card-title">nueva app</span>
+                    </div>
                 </div>
+            </div> 
+            
+            <div id="create-task" class="dashboard-section is-shown">
+                <h1 class="d-title">Nueva tarea</h1>
+                <app-input icon="default" icon-align="left" placeholder="Título"></app-input>
+                <div id="date-wrapper">
+                    <div class="column">
+                        <label>Fecha inicio</label>
+                        <input type="date">
+                    </div>
+                    <div class="column">
+                        <label>Fecha fin</label>
+                        <input type="date">
+                    </div>
+                </div>
+                <input type="file">
+                <input type="submit" value="crear">
             </div>
         `;
 
@@ -68,8 +81,7 @@ class Dashboard extends HTMLElement{
 
     connectedCallback(){
         this.state = 0;
-        this.getTasks();
-        this.getTaskLists();
+        this.showCreateTaskView();
     }
 
     getTasks(){
@@ -82,10 +94,18 @@ class Dashboard extends HTMLElement{
         }
     }
 
-    getTaskLists(){
-        let taskLists = this.shadowRoot.querySelector('#task-lists-card');
-        taskLists.querySelector('.results').textContent = '0 listas';
-        taskLists.style.alignItems = 'center';
+    showCreateTaskView(){
+        this.shadowRoot.querySelector('#task-card').addEventListener('click', function(){
+            this.switchSection('create-task');
+        }.bind(this));
+    }
+
+    switchSection(section){
+        let sections = this.shadowRoot.querySelector('.is-shown');
+        sections.classList.remove('is-shown');
+
+        let createTask = this.shadowRoot.getElementById(section);
+        createTask.classList.add('is-shown');
     }
 }
 

@@ -21,6 +21,13 @@ class AppContent extends HTMLElement {
         `;
         shadowRoot.appendChild(style);
     }
+
+    connectedCallback(){
+        if(!this.firstChild){
+            let dashboard = document.createElement('app-dashboard');
+            this.appendChild(dashboard);
+        }
+    }
 }
 
 window.customElements.define('app-content', AppContent);

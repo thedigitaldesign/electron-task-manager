@@ -1,0 +1,45 @@
+@import "../../node_modules/material-design-icons/iconfont/material-icons.css";
+
+* {
+    box-sizing: border-box;
+}
+
+:host {
+    display: flex;
+    height: 24px;
+    width: 200px;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.icon, input {
+    position: absolute;
+    top: 0;
+}
+
+.icon {
+    right: 0;
+    width: 24px;
+    height: 100%;
+    font-size: 16px !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+input {
+    left: 0;
+    border: none;
+    background: none;
+    height: 100%;
+    width: 100%;
+    font-size: 15px;
+    outline: none;
+    font-family: 'Open Sans';
+    color: #555;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #999;
+}

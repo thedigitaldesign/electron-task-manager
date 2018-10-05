@@ -1,10 +1,10 @@
 {
   "auth-endpoints": {
-    "login": "http://localhost:3000/v1/auth",
-    "logout": "http://localhost:3000/v1/auth"
+    "login": "http://localhost:3000/account-service/v1/auth",
+    "logout": "http://localhost:3000/account-service/v1/auth"
   },
   "task-endpoints": {
-    "getByUser": "http://localhost:3000/v1/task/{user-id}"
+    "getByUser": "http://localhost:3001/v1/task-manager-service/{user-id}"
   },
   "encrypt-secret": "teamo0605",
   "token-expiration-time": 300000

@@ -19,7 +19,7 @@ class AuthProcessor {
     static async startSession(email, password){
         let response = {};
         try{
-            const url = appConfig["auth-services-url"];
+            const url = appConfig['auth-endpoints']['login'];
             const hash = crypto.createHmac('sha256', appConfig["encrypt-secret"]).update(password).digest('hex');
             const auth = {
                 'email': email,
@@ -33,7 +33,7 @@ class AuthProcessor {
 
             // Create session object
             let user = response.data;
-            user.expiresAt = Date.now() + appConfig['auth-endpoints']['login'];
+            user.expiresAt = Date.now() + appConfig['token-expiration-time'];
             sessionStorage.setItem('user', JSON.stringify(user));
 
             return ResponseHandler.handleHttp(response);

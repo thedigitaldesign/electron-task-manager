@@ -34,12 +34,12 @@ class Container extends HTMLElement {
         }else{
             Render.appMenu();
             Render.appContent();
-            Render.dashboard();
         }
 
         // Listen when login is successfully
         Bus.listen('login-success', function(){
             Render.appMenu();
+            Render.appContent();
         });
     }
 }
