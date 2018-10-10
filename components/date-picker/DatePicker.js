@@ -29,11 +29,6 @@ class DatePicker extends HTMLElement {
             this.showCalendarWindow();
         }.bind(this));
 
-        // Remove calendar
-        this.shadowRoot.getElementById('date-input').addEventListener('blur', function(){
-            this.removeCalendar();
-        }.bind(this));
-
         if(this.getAttribute('placeholder')){
             this.shadowRoot.getElementById('date-input').setAttribute('placeholder', this.getAttribute('placeholder'));
         }
@@ -45,6 +40,12 @@ class DatePicker extends HTMLElement {
             calendar.id = 'calendar';
             this.generateCalendar(calendar);
             this.shadowRoot.appendChild(calendar);
+
+            calendar.tabIndex = 1; // Div does not have focus. Set tab index to can be set it
+            calendar.focus(); // Set focus
+            calendar.onblur = function(){ // When calendar loses focus, remove itself
+                this.removeCalendar();
+            }.bind(this);
         }
     }
 

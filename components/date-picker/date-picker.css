@@ -55,6 +55,7 @@ input {
     animation: expandCalendar 0.4s;
     animation-fill-mode: forwards;
     z-index: 90;
+    outline: none;
 }
 
 #calendar-header {
