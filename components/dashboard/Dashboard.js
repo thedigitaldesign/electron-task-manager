@@ -1,5 +1,6 @@
 require('../button/Button');
 require('../input/Input');
+require('../date-picker/DatePicker');
 const TaskProcessor = require('../../processors/TaskProcessor');
 const ResponseCodes = require('../../utilities/ResponseCodes');
 const Render = require('../../processors/Renderer');
@@ -37,18 +38,7 @@ class Dashboard extends HTMLElement{
             <div id="create-task" class="dashboard-section is-shown">
                 <h1 class="d-title">Nueva tarea</h1>
                 <app-input icon="default" icon-align="left" placeholder="Título"></app-input>
-                <div id="date-wrapper">
-                    <div class="column">
-                        <label>Fecha inicio</label>
-                        <input type="date">
-                    </div>
-                    <div class="column">
-                        <label>Fecha fin</label>
-                        <input type="date">
-                    </div>
-                </div>
-                <input type="file">
-                <input type="submit" value="crear">
+                <date-picker></date-picker>
             </div>
         `;
 

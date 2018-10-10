@@ -15,6 +15,19 @@
             width: 100%;
             background-color: #f2f5f7 /* darker: #1b1e28, lighter: #2b2f3e */
         }
+
+        .overlay {
+            height: 100vh;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+
+        .date-picker-overlay {
+            display: block;
+        }
         /* font color: #93a7b2 */
     </style>
 
@@ -29,20 +42,19 @@
     </title-bar>
     <!-- Everything goes here -->
     <main-container></main-container>
-</body>
 
+    <!-- Overlay for avoid mouse actions in some elements -->
+    <div class="overlay"></div>
 <script>
     // Components
     require('./components/bus/Bus');
     require('./components/title-bar/TitleBar');
     require('./components/window-button-bar/WindowButtonBar');
-    //require('./components/switch-mode-button/SwitchModeButton');
     require('./components/container/Container');
     require('./components/login-form/LoginForm');
     require('./components/app-menu/AppMenu');
     require('./components/app-content/AppContent');
     require('./components/dashboard/Dashboard');
-    //require('./components/dashboard/Dashboard');
-    //require('./components/dashboard-action-button/DashboardActionButton');
 </script>
+</body>
 </html>
