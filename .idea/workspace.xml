@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ec84c702-851b-4d8d-bd01-89a3e4bd5575" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/components/date-picker/date-picker.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/dashboard/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/dashboard/Dashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/bus/Bus.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/bus/Bus.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/date-picker/DatePicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/date-picker/DatePicker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/input/input.css" beforeDir="false" afterPath="$PROJECT_DIR$/components/input/input.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -24,26 +21,35 @@
       <file leaf-file-name="Dashboard.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/components/dashboard/Dashboard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-119">
+            <state relative-caret-position="680">
               <caret line="40" column="43" selection-start-line="40" selection-start-column="43" selection-end-line="40" selection-end-column="43" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DatePicker.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DatePicker.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/components/date-picker/DatePicker.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-447">
-              <caret line="50" column="37" selection-start-line="50" selection-start-column="37" selection-end-line="50" selection-end-column="37" />
+            <state relative-caret-position="272">
+              <caret line="139" column="34" selection-start-line="139" selection-start-column="34" selection-end-line="139" selection-end-column="34" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="date-picker.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Bus.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/components/bus/Bus.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="16" column="33" lean-forward="true" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="date-picker.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/components/date-picker/date-picker.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+            <state relative-caret-position="121">
+              <caret line="151" column="9" lean-forward="true" selection-start-line="151" selection-start-column="9" selection-end-line="151" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -77,7 +83,7 @@
       <find>no-dr</find>
       <find>observed</find>
       <find>antia</find>
-      <find />
+      <find>material icons</find>
       <find>username</find>
       <find>thiz</find>
       <find>session</find>
@@ -106,7 +112,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/components/Container.js" />
         <option value="$PROJECT_DIR$/components/TitleBar.js" />
         <option value="$PROJECT_DIR$/components/WindowButtonBar.js" />
         <option value="$PROJECT_DIR$/components/LoginForm.js" />
@@ -155,8 +160,9 @@
         <option value="$PROJECT_DIR$/components/input/input.css" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/components/dashboard/Dashboard.js" />
-        <option value="$PROJECT_DIR$/components/date-picker/DatePicker.js" />
         <option value="$PROJECT_DIR$/components/date-picker/date-picker.css" />
+        <option value="$PROJECT_DIR$/components/bus/Bus.js" />
+        <option value="$PROJECT_DIR$/components/date-picker/DatePicker.js" />
       </list>
     </option>
   </component>
@@ -174,7 +180,7 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-7" />
     <option name="y" value="18" />
     <option name="width" value="1346" />
@@ -192,11 +198,6 @@
             <path>
               <item name="electron-task-manager" type="b2602c69:ProjectViewProjectNode" />
               <item name="electron-task-manager" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="electron-task-manager" type="b2602c69:ProjectViewProjectNode" />
-              <item name="electron-task-manager" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -281,12 +282,13 @@
       <workItem from="1538965564354" duration="130000" />
       <workItem from="1539002027457" duration="21000" />
       <workItem from="1539025045864" duration="1349000" />
-      <workItem from="1539030031905" duration="27175000" />
+      <workItem from="1539030031905" duration="27883000" />
+      <workItem from="1539179087467" duration="5338000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="245679000" />
+    <option name="totallyTimeSpent" value="251725000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -417,13 +419,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="27" lean-forward="true" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/bus/Bus.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="20" lean-forward="true" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -576,22 +571,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/components/dashboard/Dashboard.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-119">
+        <state relative-caret-position="680">
           <caret line="40" column="43" selection-start-line="40" selection-start-column="43" selection-end-line="40" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/date-picker/DatePicker.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-447">
-          <caret line="50" column="37" selection-start-line="50" selection-start-column="37" selection-end-line="50" selection-end-column="37" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/components/date-picker/date-picker.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+        <state relative-caret-position="121">
+          <caret line="151" column="9" lean-forward="true" selection-start-line="151" selection-start-column="9" selection-end-line="151" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/bus/Bus.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="16" column="33" lean-forward="true" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/date-picker/DatePicker.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="139" column="34" selection-start-line="139" selection-start-column="34" selection-end-line="139" selection-end-column="34" />
         </state>
       </provider>
     </entry>

@@ -13,7 +13,7 @@ let _observers = [];
 let _callbacks = [];
 
 class Bus {
-    static emit(link, data){
+    static emit(link, data=null){
         for(let i in _observers){
             if(link === _observers[i]){
                 _callbacks[i](data);

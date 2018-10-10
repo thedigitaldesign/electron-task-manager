@@ -26,6 +26,12 @@ class DatePicker extends HTMLElement {
         }.bind(this), false);
 
         this.removeCalendar();
+
+        // Bus events
+        Bus.listen('/update-date-header', function(){
+            let headerDate = this.shadowRoot.querySelector('#calendar-header h2');
+            headerDate.innerHTML = _date.toLocaleDateString('es-mx', { month: 'short' }) + ' ' + _date.getFullYear();
+        }.bind(this));
     }
 
     showCalendarWindow(){
@@ -50,10 +56,7 @@ class DatePicker extends HTMLElement {
         header.appendChild(this.buildMonthArrows());
         calendar.appendChild(header);
 
-        let table = document.createElement('table');
-        table.id = 'calendar-table';
-        this.buildDayBlocks(table);
-        calendar.appendChild(table);
+        calendar.appendChild(this.buildDayBlocks());
     }
 
     buildMonthArrows() {
@@ -71,18 +74,43 @@ class DatePicker extends HTMLElement {
         arrowContainer.appendChild(leftArrow);
         arrowContainer.appendChild(rightArrow);
 
+        leftArrow.addEventListener('click', function(){
+            this.monthShift('left');
+        }.bind(this));
+
+        rightArrow.addEventListener('click', function(){
+            this.monthShift('right');
+        }.bind(this));
+
         return arrowContainer;
     }
 
-    buildDayBlocks(table){
-        table.appendChild(this.buildNameOfDays());
+    monthShift(direction){
+        let calendar = this.shadowRoot.getElementById('calendar');
+        let table = this.shadowRoot.getElementById('calendar-table');
+        if(direction === 'left'){
+            _date.setMonth(_date.getMonth() - 1);
+        }else{
+            _date.setMonth(_date.getMonth() + 1);
+        }
+        table.remove();
+        calendar.appendChild(this.buildDayBlocks());
 
+        // Emit bus event
+        Bus.emit('/update-date-header');
+    }
+
+    buildDayBlocks(){
+        let table = document.createElement('table');
+        table.id = 'calendar-table';
         let separator = document.createElement('div');
         separator.classList.add('calendar-name-separator');
         table.appendChild(separator);
 
-        let i = 0, date = new Date(_date.getFullYear(), _date.getMonth(), 1);
-        while(i < 5){
+        table.appendChild(this.buildNameOfDays());
+
+        let flag = true, date = new Date(_date.getFullYear(), _date.getMonth(), 1);
+        while(flag){
             let tr = document.createElement('tr');
             tr.classList.add('week-row');
 
@@ -102,6 +130,7 @@ class DatePicker extends HTMLElement {
 
                     if(date.getDate() === 1){
                         tr.appendChild(dayBlock);
+                        flag = false;
                         break;
                     }
                 }
@@ -109,8 +138,9 @@ class DatePicker extends HTMLElement {
             }
 
             table.appendChild(tr);
-            i++;
         }
+
+        return table;
     }
 
     buildNameOfDays(){
