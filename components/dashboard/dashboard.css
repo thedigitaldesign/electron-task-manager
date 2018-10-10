@@ -100,10 +100,10 @@
     flex-direction: column;
 }
 
-#create-task input[type="text"] {
-    max-width: 200px;
+.date-container {
+    display: flex;
 }
 
-#date-wrapper {
-    display: flex;
+date-picker {
+    margin-right: 20px;
 }

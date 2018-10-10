@@ -1,15 +1,14 @@
-let _date = new Date();
-let _dayOfWeekNames = ['d', 'l', 'm', 'm', 'j', 'v', 's'];
-let _selectedDate = {};
-
 class DatePicker extends HTMLElement {
     constructor(){
         super();
+        
+        this._date = new Date(), this.selectedDate = {};
+        this._dayOfWeekNames = ['d', 'l', 'm', 'm', 'j', 'v', 's'];
 
         const shadowRoot = this.attachShadow({mode: 'open'});
         shadowRoot.innerHTML = `
-            <i class="material-icons">date_range</i>
-            <input type="text" placeholder="Escoge una fecha">
+            <i class="material-icons" id="date-icon">date_range</i>
+            <input type="text" placeholder="Escoge una fecha" id="date-input">
         `;
 
         let style = document.createElement('style');
@@ -21,24 +20,27 @@ class DatePicker extends HTMLElement {
 
     connectedCallback(){
         // Show calendar modal
-        this.addEventListener('click', function(){
+        this.shadowRoot.getElementById('date-input').addEventListener('click', function(){
+            this.shadowRoot.getElementById('date-input').focus();
             this.showCalendarWindow();
-        }.bind(this), false);
-
-        this.removeCalendar();
-
-        // Bus events
-        Bus.listen('/update-date-header', function(){
-            let headerDate = this.shadowRoot.querySelector('#calendar-header h2');
-            headerDate.innerHTML = _date.toLocaleDateString('es-mx', { month: 'short' }) + ' ' + _date.getFullYear();
         }.bind(this));
+        this.shadowRoot.getElementById('date-icon').addEventListener('click', function(){
+            this.shadowRoot.getElementById('date-input').focus();
+            this.showCalendarWindow();
+        }.bind(this));
+
+        // Remove calendar
+        this.shadowRoot.getElementById('date-input').addEventListener('blur', function(){
+            this.removeCalendar();
+        }.bind(this));
+
+        if(this.getAttribute('placeholder')){
+            this.shadowRoot.getElementById('date-input').setAttribute('placeholder', this.getAttribute('placeholder'));
+        }
     }
 
     showCalendarWindow(){
         if(!this.shadowRoot.getElementById('calendar')){
-            let overlay = document.getElementsByClassName('overlay')[0];
-            overlay.classList.add('date-picker-overlay');
-
             let calendar = document.createElement('div');
             calendar.id = 'calendar';
             this.generateCalendar(calendar);
@@ -50,12 +52,12 @@ class DatePicker extends HTMLElement {
         let header = document.createElement('div');
         header.id = 'calendar-header';
         let monthAndYear = document.createElement('h2');
-        monthAndYear.innerHTML = _date.toLocaleDateString('es-mx', { month: 'short' }) + ' ' + _date.getFullYear();
+        monthAndYear.innerHTML = this._date.toLocaleDateString('es-mx', { month: 'short' }) + ' ' + this._date.getFullYear();
 
         header.appendChild(monthAndYear);
         header.appendChild(this.buildMonthArrows());
-        calendar.appendChild(header);
 
+        calendar.appendChild(header);
         calendar.appendChild(this.buildDayBlocks());
     }
 
@@ -77,7 +79,6 @@ class DatePicker extends HTMLElement {
         leftArrow.addEventListener('click', function(){
             this.monthShift('left');
         }.bind(this));
-
         rightArrow.addEventListener('click', function(){
             this.monthShift('right');
         }.bind(this));
@@ -89,15 +90,20 @@ class DatePicker extends HTMLElement {
         let calendar = this.shadowRoot.getElementById('calendar');
         let table = this.shadowRoot.getElementById('calendar-table');
         if(direction === 'left'){
-            _date.setMonth(_date.getMonth() - 1);
+            this._date.setMonth(this._date.getMonth() - 1);
         }else{
-            _date.setMonth(_date.getMonth() + 1);
+            this._date.setMonth(this._date.getMonth() + 1);
         }
         table.remove();
         calendar.appendChild(this.buildDayBlocks());
 
-        // Emit bus event
-        Bus.emit('/update-date-header');
+        this.updateCalendarDate();
+    }
+
+    updateCalendarDate(){
+        let headerDate = this.shadowRoot.getElementById('calendar-header');
+        let h2 = headerDate.getElementsByTagName('h2')[0];
+        h2.innerHTML = this._date.toLocaleDateString('es-mx', { month: 'short' }) + ' ' + this._date.getFullYear();
     }
 
     buildDayBlocks(){
@@ -109,7 +115,7 @@ class DatePicker extends HTMLElement {
 
         table.appendChild(this.buildNameOfDays());
 
-        let flag = true, date = new Date(_date.getFullYear(), _date.getMonth(), 1);
+        let flag = true, date = new Date(this._date.getFullYear(), this._date.getMonth(), 1);
         while(flag){
             let tr = document.createElement('tr');
             tr.classList.add('week-row');
@@ -121,9 +127,13 @@ class DatePicker extends HTMLElement {
                     let content = document.createElement('div');
                     content.classList.add('day-cell-content');
                     content.innerHTML = date.getDate().toString();
-
                     dayBlock.setAttribute('day-value', date.getDay().toString());
-                    dayBlock.setAttribute('date-value', date.toLocaleDateString());
+                    dayBlock.setAttribute('date-value', date.getDate().toString());
+
+                    content.addEventListener('click', function(){
+                        this.setCalendarDate(this._date.getFullYear(), this._date.getMonth(), content.parentNode.getAttribute('date-value'));
+                    }.bind(this));
+
                     dayBlock.appendChild(content);
 
                     date.setDate(date.getDate() + 1);
@@ -146,24 +156,29 @@ class DatePicker extends HTMLElement {
     buildNameOfDays(){
         let nameRow = document.createElement('tr');
         nameRow.id = 'week-header';
-        for(let i in _dayOfWeekNames){
+        for(let i in this._dayOfWeekNames){
             let cell = document.createElement('td');
-            cell.innerHTML = _dayOfWeekNames[i];
+            cell.innerHTML = this._dayOfWeekNames[i];
             nameRow.appendChild(cell);
         }
 
         return nameRow;
     }
 
+    setCalendarDate(year, month, date){
+        let newDate = new Date(parseInt(year), parseInt(month), parseInt(date));
+        this.selectedDate.date = newDate.getDate();
+        this.selectedDate.month = newDate.getMonth();
+        this.selectedDate.year = newDate.getFullYear();
+        let input = this.shadowRoot.getElementById('date-input');
+        input.value = date + '/' + (month + 1) + '/' + year;
+        this.removeCalendar();
+    }
+
     removeCalendar(){
-        // Remove calendar modal
-        let overlay = document.getElementsByClassName('overlay')[0];
-        overlay.addEventListener('click', function(){
-            if(overlay.classList.contains('date-picker-overlay')){
-                this.shadowRoot.getElementById('calendar').remove();
-                overlay.classList.remove('date-picker-overlay');
-            }
-        }.bind(this), false);
+        if(this.shadowRoot.getElementById('calendar')){
+            this.shadowRoot.getElementById('calendar').remove();
+        }
     }
 }
 

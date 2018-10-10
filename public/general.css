@@ -1,0 +1,13 @@
+body, html {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #f2f5f7 /* darker: #1b1e28, lighter: #2b2f3e */
+}
+
+:root {
+    --standard-font-size: 14px;
+}
+/* font color: #93a7b2 */

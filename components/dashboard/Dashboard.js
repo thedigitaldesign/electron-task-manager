@@ -38,7 +38,10 @@ class Dashboard extends HTMLElement{
             <div id="create-task" class="dashboard-section is-shown">
                 <h1 class="d-title">Nueva tarea</h1>
                 <app-input icon="default" icon-align="left" placeholder="Título"></app-input>
-                <date-picker></date-picker>
+                <div class="date-container">
+                    <date-picker placeholder="¿Cuándo empieza?"></date-picker>
+                    <date-picker placeholder="¿Cuándo termina?"></date-picker>
+                </div>
             </div>
         `;
 
