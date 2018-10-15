@@ -42,8 +42,13 @@ class Dashboard extends HTMLElement{
                     <date-picker placeholder="¿Cuándo empieza?"></date-picker>
                     <date-picker placeholder="¿Cuándo termina?"></date-picker>
                 </div>
-                <div id="task-prior-icon">
-                    <i class="material-icons">assignment_late</i>
+                <div id="task-priority">
+                    <i class="material-icons">flag</i>
+                    <div id="priority-selection">
+                        <i class="material-icons">flag</i>
+                        <i class="material-icons">flag</i>
+                        <i class="material-icons">flag</i>
+                    </div>
                 </div>
             </div>
         `;

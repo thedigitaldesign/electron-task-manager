@@ -173,7 +173,10 @@ class DatePicker extends HTMLElement {
         this.selectedDate.year = newDate.getFullYear();
         let input = this.shadowRoot.getElementById('date-input');
         input.value = date + '/' + (month + 1) + '/' + year;
-        this.removeCalendar();
+        this.value = date + '/' + (month + 1) + '/' + year;
+
+        let calendar = this.shadowRoot.getElementById('calendar');
+        calendar.blur();
     }
 
     removeCalendar(){
