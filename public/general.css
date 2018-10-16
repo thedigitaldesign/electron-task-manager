@@ -9,5 +9,7 @@ body, html {
 
 :root {
     --standard-font-size: 14px;
+    --standar-font-color: #999;
+    --dark-font-color: #666;
 }
 /* font color: #93a7b2 */

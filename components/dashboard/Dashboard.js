@@ -43,12 +43,10 @@ class Dashboard extends HTMLElement{
                     <date-picker placeholder="¿Cuándo termina?"></date-picker>
                 </div>
                 <div id="task-priority">
-                    <i class="material-icons">flag</i>
-                    <div id="priority-selection">
-                        <i class="material-icons">flag</i>
-                        <i class="material-icons">flag</i>
-                        <i class="material-icons">flag</i>
-                    </div>
+                    <i class="material-icons prior-opt" id="task-priority-icon">flag</i>
+                    <i class="material-icons prior-opt" priority-value="1">flag</i>
+                    <i class="material-icons prior-opt" priority-value="2">flag</i>
+                    <i class="material-icons prior-opt" priority-value="3">flag</i>
                 </div>
             </div>
         `;

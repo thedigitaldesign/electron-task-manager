@@ -111,43 +111,37 @@ date-picker {
 
 #task-priority {
     width: 25px;
-    height: 25px;
     background-color: rgba(0,0,0,0.1);
     border-radius: 3px;
-    display: flex;
     position: relative;
     align-items: center;
+    overflow: hidden;
+    height: 25px;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+#task-priority:hover {
+    height: 100px;
 }
 
 #task-priority i {
-    font-size: 16px !important;
-    text-align: center;
-    width: 100%;
-}
-
-#priority-selection {
-    display: none;
-    position: absolute;
+    width: 25px;
     height: 25px;
-    background: rgba(0,0,0,0.1);
-    top: 30px;
-    border-radius: 3px;
-    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px !important;
 }
 
-#priority-selection::after {
-    content: '';
-    display: block;
-    width: 0;
-    height: 0;
-    position: relative;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-bottom: 5px solid rgba(0,0,0,0.1);
-    top: -5px;
-    left: 5px;
+.prior-opt[priority-value="1"] {
+    color: #d73232;
 }
 
-#task-priority:hover > #priority-selection {
-    display: block;
+.prior-opt[priority-value="2"] {
+    color: #ffd31b;
+}
+
+.prior-opt[priority-value="3"] {
+    color: #63d740;
 }
