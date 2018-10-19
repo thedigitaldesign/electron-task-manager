@@ -109,7 +109,7 @@ date-picker {
     margin-right: 20px;
 }
 
-#task-priority {
+#new-task-priority {
     width: 25px;
     background-color: rgba(0,0,0,0.1);
     border-radius: 3px;
@@ -119,13 +119,23 @@ date-picker {
     height: 25px;
     transition: all 0.3s;
     cursor: pointer;
+    margin-bottom: 10px;
 }
 
-#task-priority:hover {
-    height: 100px;
+#new-task-priority:hover {
+    width: 100px;
 }
 
-#task-priority i {
+#priority-icons-wrapper {
+    width: 100px;
+    height: 25px;
+    position: relative;
+    top: 0;
+    left: 0;
+    display: flex;
+}
+
+#priority-icons-wrapper i {
     width: 25px;
     height: 25px;
     display: flex;
@@ -135,13 +145,34 @@ date-picker {
 }
 
 .prior-opt[priority-value="1"] {
-    color: #d73232;
+    color: rgb(222, 76, 74);
 }
 
 .prior-opt[priority-value="2"] {
-    color: #ffd31b;
+    color: rgb(255, 163, 86);
 }
 
 .prior-opt[priority-value="3"] {
-    color: #63d740;
+    color: rgb(255, 216, 116);
+}
+
+#create-task-btn {
+    width: 80px;
+    height: 25px;
+    background-color: rgba(221,64,91,1);
+    border: none;
+    border-radius: 3px;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    outline: none;
+}
+
+#create-task-btn:hover {
+    cursor: pointer;
+}
+
+.btn-disabled {
+    cursor: not-allowed !important;
+    opacity: 0.5;
 }

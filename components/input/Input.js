@@ -44,6 +44,11 @@ class Input extends HTMLElement {
         if(this.getAttribute('placeholder')){
             this.shadowRoot.getElementById('input').setAttribute('placeholder', this.getAttribute('placeholder'));
         }
+
+        let thiz = this;
+        this.shadowRoot.querySelector('#input').addEventListener('input', function(){
+            thiz.value = this.value;
+        })
     }
 
     setIconToLeft(){

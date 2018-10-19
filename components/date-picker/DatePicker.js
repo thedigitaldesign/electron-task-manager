@@ -172,8 +172,14 @@ class DatePicker extends HTMLElement {
         this.selectedDate.month = newDate.getMonth();
         this.selectedDate.year = newDate.getFullYear();
         let input = this.shadowRoot.getElementById('date-input');
-        input.value = date + '/' + (month + 1) + '/' + year;
-        this.value = date + '/' + (month + 1) + '/' + year;
+        const fullDate = this.datePadding(date) + '/' + this.datePadding((month + 1)) + '/' + year;
+        input.value = fullDate;
+        this.value = fullDate;
+
+        // Trigger 'change' event on this web component
+        const e = document.createEvent('HTMLEvents');
+        e.initEvent('change', false, true);
+        this.dispatchEvent(e);
 
         let calendar = this.shadowRoot.getElementById('calendar');
         calendar.blur();
@@ -183,6 +189,10 @@ class DatePicker extends HTMLElement {
         if(this.shadowRoot.getElementById('calendar')){
             this.shadowRoot.getElementById('calendar').remove();
         }
+    }
+
+    datePadding(el){
+        return ('0' + el).slice(-2)
     }
 }
 
