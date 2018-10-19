@@ -28,8 +28,8 @@ class Container extends HTMLElement {
     }
 
     connectedCallback(){
-        let session = JSON.parse(sessionStorage.getItem('user'));
-        if(!session){ // Change for: !session
+        let user = sessionStorage.getItem('userId');
+        if(!user){
             this.showLoginForm();
         }else{
             Render.appMenu();

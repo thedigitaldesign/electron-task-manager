@@ -54,7 +54,6 @@ class Input extends HTMLElement {
     setIconToLeft(){
         let icon = this.shadowRoot.querySelector('.icon');
         icon.style.left = 0;
-        icon.style.background = 'rgba(0,0,0,0.1)';
         let input = this.shadowRoot.getElementById('input');
         input.style.paddingLeft = '28px';
     }

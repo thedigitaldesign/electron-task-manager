@@ -2,12 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ec84c702-851b-4d8d-bd01-89a3e4bd5575" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/utilities/DateUtility.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/modal/Modal.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/modal/modal.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-config.json" beforeDir="false" afterPath="$PROJECT_DIR$/app-config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/app-menu/AppMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/app-menu/AppMenu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/container/Container.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/container/Container.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/dashboard/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/dashboard/Dashboard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/dashboard/dashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/components/dashboard/dashboard.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/date-picker/DatePicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/date-picker/DatePicker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/date-picker/date-picker.css" beforeDir="false" afterPath="$PROJECT_DIR$/components/date-picker/date-picker.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/input/Input.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/input/Input.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/input/input.css" beforeDir="false" afterPath="$PROJECT_DIR$/components/input/input.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/window-button-bar/WindowButtonBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/window-button-bar/WindowButtonBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/processors/AuthProcessor.js" beforeDir="false" afterPath="$PROJECT_DIR$/processors/AuthProcessor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/processors/TaskProcessor.js" beforeDir="false" afterPath="$PROJECT_DIR$/processors/TaskProcessor.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -24,17 +35,26 @@
       <file leaf-file-name="Dashboard.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/components/dashboard/Dashboard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="166">
-              <caret line="141" column="16" lean-forward="true" selection-start-line="141" selection-start-column="16" selection-end-line="147" selection-end-column="61" />
+            <state relative-caret-position="116">
+              <caret line="98" column="45" selection-start-line="98" selection-start-column="45" selection-end-line="98" selection-end-column="45" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dashboard.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/components/dashboard/dashboard.css">
+      <file leaf-file-name="Modal.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/components/modal/Modal.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="172">
-              <caret line="156" column="1" selection-start-line="156" selection-start-column="1" selection-end-line="156" selection-end-column="1" />
+            <state relative-caret-position="337">
+              <caret line="27" column="32" lean-forward="true" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="modal.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/components/modal/modal.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="354">
+              <caret line="60" column="17" selection-start-line="60" selection-start-column="17" selection-end-line="60" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -45,21 +65,13 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>append</find>
-      <find>auth</find>
-      <find>axios</find>
-      <find>date</find>
-      <find>200</find>
-      <find>material</find>
-      <find>place</find>
-      <find>week-ro</find>
       <find>icon</find>
       <find>i</find>
       <find>date-in</find>
@@ -82,6 +94,14 @@
       <find>task-pr</find>
       <find>prior-</find>
       <find>addeve</find>
+      <find>session</find>
+      <find>sessio</find>
+      <find>fd</find>
+      <find>final</find>
+      <find>2px</find>
+      <find>title</find>
+      <find>d-title</find>
+      <find>is-</find>
     </findStrings>
     <replaceStrings>
       <replace>mainWindow</replace>
@@ -99,15 +119,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/components/LoginForm.js" />
-        <option value="$PROJECT_DIR$/processes/ResponseHandler.js" />
         <option value="$PROJECT_DIR$/profile.html" />
         <option value="$PROJECT_DIR$/dashboard.html" />
         <option value="$PROJECT_DIR$/components/sidebar-tools/sidebar-tools.css" />
         <option value="$PROJECT_DIR$/components/sidebar-tools/SidebarTools.js" />
         <option value="$PROJECT_DIR$/components/title-bar/TitleBar.js" />
         <option value="$PROJECT_DIR$/components/window-button-bar/window-button-bar.css" />
-        <option value="$PROJECT_DIR$/components/window-button-bar/WindowButtonBar.js" />
         <option value="$PROJECT_DIR$/components/Jarvis.js" />
         <option value="$PROJECT_DIR$/components/module-button/ModuleButton.js" />
         <option value="$PROJECT_DIR$/components/switch-button/SwitchButton.js" />
@@ -126,30 +143,33 @@
         <option value="$PROJECT_DIR$/utilities/ResponseCodes.js" />
         <option value="$PROJECT_DIR$/sections/canvas.html" />
         <option value="$PROJECT_DIR$/sections/dashboard.html" />
-        <option value="$PROJECT_DIR$/components/app-menu/AppMenu.js" />
         <option value="$PROJECT_DIR$/main.js" />
         <option value="$PROJECT_DIR$/services/AuthorizationService.js" />
         <option value="$PROJECT_DIR$/components/login-form/LoginForm.js" />
-        <option value="$PROJECT_DIR$/processors/TaskProcessor.js" />
-        <option value="$PROJECT_DIR$/processors/AuthProcessor.js" />
         <option value="$PROJECT_DIR$/components/button/Button.js" />
         <option value="$PROJECT_DIR$/components/button/button.css" />
         <option value="$PROJECT_DIR$/components/app-content/AppContent.js" />
-        <option value="$PROJECT_DIR$/components/container/Container.js" />
         <option value="$PROJECT_DIR$/components/app-menu/app-menu.css" />
-        <option value="$PROJECT_DIR$/app-config.json" />
         <option value="$PROJECT_DIR$/sections/create-task.html" />
         <option value="$PROJECT_DIR$/processors/Renderer.js" />
         <option value="$PROJECT_DIR$/components/bus/Bus.js" />
-        <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/components/input/input.css" />
         <option value="$PROJECT_DIR$/components/date-picker/date-picker.css" />
         <option value="$PROJECT_DIR$/public/general.css" />
-        <option value="$PROJECT_DIR$/components/input/Input.js" />
-        <option value="$PROJECT_DIR$/components/date-picker/DatePicker.js" />
         <option value="$PROJECT_DIR$/utilities/DateUtility.js" />
-        <option value="$PROJECT_DIR$/components/dashboard/Dashboard.js" />
+        <option value="$PROJECT_DIR$/processors/AuthProcessor.js" />
+        <option value="$PROJECT_DIR$/processors/TaskProcessor.js" />
+        <option value="$PROJECT_DIR$/components/container/Container.js" />
+        <option value="$PROJECT_DIR$/app-config.json" />
+        <option value="$PROJECT_DIR$/components/input/Input.js" />
+        <option value="$PROJECT_DIR$/components/input/input.css" />
+        <option value="$PROJECT_DIR$/components/app-menu/AppMenu.js" />
+        <option value="$PROJECT_DIR$/components/date-picker/DatePicker.js" />
         <option value="$PROJECT_DIR$/components/dashboard/dashboard.css" />
+        <option value="$PROJECT_DIR$/components/window-button-bar/WindowButtonBar.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/components/dashboard/Dashboard.js" />
+        <option value="$PROJECT_DIR$/components/modal/Modal.js" />
+        <option value="$PROJECT_DIR$/components/modal/modal.css" />
       </list>
     </option>
   </component>
@@ -179,7 +199,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -202,12 +221,13 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../jarvis-task-manager-service" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -285,25 +305,27 @@
       <workItem from="1539447193245" duration="6794000" />
       <workItem from="1539614018770" duration="3980000" />
       <workItem from="1539879749109" duration="610000" />
-      <workItem from="1539905686913" duration="17185000" />
+      <workItem from="1539905686913" duration="17233000" />
+      <workItem from="1539962257736" duration="15087000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="306312000" />
+    <option name="totallyTimeSpent" value="321447000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22767857" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19866072" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32838285" />
       <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32838285" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.27557755" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="TypeScript" order="9" />
@@ -313,7 +335,6 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32838285" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -328,14 +349,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/node_modules/electron/electron.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149226">
-          <caret line="8781" column="5" selection-start-line="8781" selection-start-column="5" selection-end-line="8781" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/services/TestModule.js" />
     <entry file="file://$PROJECT_DIR$/processes/AuthProcess.js" />
     <entry file="file://$PROJECT_DIR$/public/fontawesome/js/all.js" />
     <entry file="file://$PROJECT_DIR$/public/fontawesome/css/fontawesome.css" />
@@ -354,13 +367,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="325">
           <caret line="33" column="1" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/window-button-bar/WindowButtonBar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="21" column="72" selection-start-line="21" selection-start-column="72" selection-end-line="21" selection-end-column="72" />
         </state>
       </provider>
     </entry>
@@ -431,25 +437,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sections/dashboard.html" />
-    <entry file="file://$PROJECT_DIR$/components/app-menu/AppMenu.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-459" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="24" lean-forward="true" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/processors/TaskProcessor.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="36" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/components/button/Button.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -471,13 +458,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/container/Container.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="40" column="29" lean-forward="true" selection-start-line="40" selection-start-column="29" selection-end-line="40" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/components/app-menu/app-menu.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-100">
@@ -489,20 +469,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="11" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app-config.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/processors/AuthProcessor.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="43" lean-forward="true" selection-start-line="6" selection-start-column="43" selection-end-line="6" selection-end-column="43" />
         </state>
       </provider>
     </entry>
@@ -541,13 +507,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/input/input.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/components/bus/Bus.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -562,24 +521,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/general.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/input/Input.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="49" column="36" selection-start-line="49" selection-start-column="36" selection-end-line="49" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -590,24 +535,108 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/date-picker/DatePicker.js">
+    <entry file="file://$PROJECT_DIR$/processors/AuthProcessor.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="176" column="30" lean-forward="true" selection-start-line="176" selection-start-column="30" selection-end-line="176" selection-end-column="30" />
+        <state relative-caret-position="272">
+          <caret line="40" column="56" selection-start-line="40" selection-start-column="56" selection-end-line="40" selection-end-column="56" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/dashboard/Dashboard.js">
+    <entry file="file://$PROJECT_DIR$/processors/TaskProcessor.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="141" column="16" lean-forward="true" selection-start-line="141" selection-start-column="16" selection-end-line="147" selection-end-column="61" />
+        <state relative-caret-position="374">
+          <caret line="31" column="56" selection-start-line="31" selection-start-column="56" selection-end-line="31" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-102">
+          <caret line="12" column="24" lean-forward="true" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app-config.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/container/Container.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="24" column="14" lean-forward="true" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/input/input.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="7" column="18" lean-forward="true" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/input/Input.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="55" column="28" selection-start-line="55" selection-start-column="28" selection-end-line="55" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/app-menu/AppMenu.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="20" column="14" lean-forward="true" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/date-picker/DatePicker.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="26" column="26" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/window-button-bar/WindowButtonBar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="42" column="43" lean-forward="true" selection-start-line="42" selection-start-column="43" selection-end-line="42" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="24" column="32" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/components/dashboard/dashboard.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="156" column="1" selection-start-line="156" selection-start-column="1" selection-end-line="156" selection-end-column="1" />
+        <state relative-caret-position="313">
+          <caret line="32" column="4" selection-start-line="32" selection-start-column="4" selection-end-line="35" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/dashboard/Dashboard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="98" column="45" selection-start-line="98" selection-start-column="45" selection-end-line="98" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/modal/Modal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="337">
+          <caret line="27" column="32" lean-forward="true" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/modal/modal.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="60" column="17" selection-start-line="60" selection-start-column="17" selection-end-line="60" selection-end-column="17" />
         </state>
       </provider>
     </entry>

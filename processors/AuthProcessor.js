@@ -33,8 +33,12 @@ class AuthProcessor {
 
             // Create session object
             let user = response.data;
-            user.expiresAt = Date.now() + appConfig['token-expiration-time'];
-            sessionStorage.setItem('user', JSON.stringify(user));
+            sessionStorage.setItem('expiresAt', Date.now() + appConfig['token-expiration-time']);
+            sessionStorage.setItem('userId', user._id);
+            sessionStorage.setItem('avatar', user.avatar);
+            sessionStorage.setItem('firstName', user.firstName);
+            sessionStorage.setItem('lastName', user.lastName);
+            sessionStorage.setItem('email', user.email);
 
             return ResponseHandler.handleHttp(response);
         }catch(err){

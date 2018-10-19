@@ -20,13 +20,12 @@ class DatePicker extends HTMLElement {
 
     connectedCallback(){
         // Show calendar modal
-        this.shadowRoot.getElementById('date-input').addEventListener('click', function(){
-            this.shadowRoot.getElementById('date-input').focus();
+        this.shadowRoot.getElementById('date-input').onfocus = function(){
             this.showCalendarWindow();
-        }.bind(this));
+        }.bind(this);
+
         this.shadowRoot.getElementById('date-icon').addEventListener('click', function(){
             this.shadowRoot.getElementById('date-input').focus();
-            this.showCalendarWindow();
         }.bind(this));
 
         if(this.getAttribute('placeholder')){
@@ -176,10 +175,7 @@ class DatePicker extends HTMLElement {
         input.value = fullDate;
         this.value = fullDate;
 
-        // Trigger 'change' event on this web component
-        const e = document.createEvent('HTMLEvents');
-        e.initEvent('change', false, true);
-        this.dispatchEvent(e);
+        this.triggerChange();
 
         let calendar = this.shadowRoot.getElementById('calendar');
         calendar.blur();
@@ -193,6 +189,13 @@ class DatePicker extends HTMLElement {
 
     datePadding(el){
         return ('0' + el).slice(-2)
+    }
+
+    // Trigger 'change' event on this web component
+    triggerChange(){
+        const e = document.createEvent('HTMLEvents');
+        e.initEvent('change', false, true);
+        this.dispatchEvent(e);
     }
 }
 

@@ -17,7 +17,7 @@ class AppMenu extends HTMLElement {
             {
                 'reference': 'tasks',
                 'icon': 'assignment',
-                'label': 'My tasks'
+                'label': 'Mis tareas'
             },
             {
                 'reference': 'smm',
@@ -45,10 +45,9 @@ class AppMenu extends HTMLElement {
 
     connectedCallback() {
         // Set user info
-        let session = JSON.parse(sessionStorage.getItem('user'));
         let userInfo = this.shadowRoot.getElementById('user-name');
-        userInfo.textContent = session.firstName + ' ' + session.lastName;
-        this.setAvatar(session.avatar);
+        userInfo.textContent = sessionStorage.getItem('firstName') + ' ' + sessionStorage.getItem('lastName');
+        this.setAvatar(sessionStorage.getItem('avatar'));
 
         let menu = this.shadowRoot.getElementById('menu');
         if(this.options.length === 0){

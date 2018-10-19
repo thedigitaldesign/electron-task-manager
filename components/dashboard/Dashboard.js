@@ -2,9 +2,8 @@ require('../button/Button');
 require('../input/Input');
 require('../date-picker/DatePicker');
 const TaskProcessor = require('../../processors/TaskProcessor');
-const ResponseCodes = require('../../utilities/ResponseCodes');
-const Render = require('../../processors/Renderer');
 const DateUtility = require('../../utilities/DateUtility');
+const Modal = require('../modal/Modal');
 
 let _newTaskReqFields = {
     title: false,
@@ -20,8 +19,11 @@ class Dashboard extends HTMLElement{
 
         const shadowRoot = this.attachShadow({mode: 'open'});
         shadowRoot.innerHTML = `
-            <div id="dashboard-main" class="dashboard-section">
+            <div id="dashboard-main" class="dashboard-section is-shown">
                 <h1 class="d-title">Dashboard</h1>
+                <div id="action-btn-container">
+                    <button id="show-task-modal">Crear tarea</button>
+                </div>
                 <div id="card-list">
                     <div id="task-card" class="d-card">
                         <i class="d-card-icon material-icons">bookmark</i>
@@ -42,13 +44,11 @@ class Dashboard extends HTMLElement{
                 </div>
             </div> 
             
-            <div id="create-task" class="dashboard-section is-shown">
+            <div id="create-task" class="dashboard-section">
                 <h1 class="d-title">Nueva tarea</h1>
                 <app-input id="new-task-title" icon="default" icon-align="left" placeholder="Título"></app-input>
-                <div class="date-container">
-                    <date-picker placeholder="¿Cuándo empieza?" id="new-task-sd"></date-picker>
-                    <date-picker placeholder="¿Cuándo termina?" id="new-task-fd"></date-picker>
-                </div>
+                <date-picker placeholder="¿Cuándo empieza?" id="new-task-sd"></date-picker>
+                <date-picker placeholder="¿Cuándo termina?" id="new-task-ed"></date-picker>
                 <div id="new-task-priority">
                     <div id="priority-icons-wrapper">
                         <i class="material-icons" id="new-task-priority-icon">flag</i>
@@ -83,11 +83,7 @@ class Dashboard extends HTMLElement{
     attributeChangedCallback(attr, newVal, oldVal){
         switch(attr){
             case 'state':
-                switch(newVal){
-                    case 'new-task':
-                        console.log('[new task state]');
-                        break;
-                }
+
                 break;
         }
     }
@@ -97,6 +93,12 @@ class Dashboard extends HTMLElement{
         this.showCreateTaskView();
         this.validateTaskFields();
         this.createNewTask();
+
+        this.shadowRoot.querySelector('#show-task-modal').addEventListener('click', function(){
+            let modal = new Modal();
+            modal.build('prueba', '<span>hola</span>');
+            modal.show();
+        })
     }
 
     validateTaskFields(){
@@ -123,16 +125,44 @@ class Dashboard extends HTMLElement{
     }
 
     createNewTask(){
+        let btn = this.shadowRoot.querySelector('#create-task-btn');
         Bus.listen('cnt', function(){
             let completed = Object.values(_newTaskReqFields).every(function(el){
                 return el === true;
             });
+
             if(completed){
-                this.shadowRoot.querySelector('#create-task-btn').classList.remove('btn-disabled');
+                btn.classList.remove('btn-disabled');
             }else{
-                this.shadowRoot.querySelector('#create-task-btn').classList.add('btn-disabled');
+                btn.classList.add('btn-disabled');
             }
         }.bind(this));
+
+        let title = this.shadowRoot.querySelector('#new-task-title');
+        let startDate = this.shadowRoot.querySelector('#new-task-sd');
+        let endDate = this.shadowRoot.querySelector('#new-task-ed');
+        let priority = this.shadowRoot.querySelector('#new-task-priority');
+
+        btn.addEventListener('click', function(){
+            if(!this.classList.contains('btn-disabled')){
+                let task = {
+                    title: title.value.trim(),
+                    startDate: startDate.value,
+                    endDate: endDate.value,
+                    priority: priority.getAttribute('priority-value')
+                };
+
+                btn.classList.add('btn-disabled'); // Set button disabled again to avoid duplicated calls
+
+                let processor = new TaskProcessor(task);
+               processor.save()
+                   .then(() => {
+                       console.log('%c[!] Task created successfully', 'color: green');
+                   }).catch((err) => {
+                       console.error('[!] Error creating task', err);
+               });
+            }
+        }, false);
     }
 
     setTaskPriorityColor(value){

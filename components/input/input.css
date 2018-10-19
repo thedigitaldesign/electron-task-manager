@@ -10,6 +10,8 @@
     width: 200px;
     position: relative;
     margin-bottom: 10px;
+    background-color: rgba(0,0,0,0.1);
+    border-radius: 3px;
     font-family: 'Open Sans';
 }
 
@@ -26,7 +28,6 @@
     display: flex !important;
     align-items: center;
     justify-content: center;
-    border-radius: 3px;
 }
 
 input {

@@ -6,7 +6,9 @@ const ResponseCodes = require('../utilities/ResponseCodes');
 const appConfig = require('../app-config');
 
 class TaskProcessor {
-    constructor(){}
+    constructor(task){
+        this.task = task || null;
+    }
 
     async getTasksByUser(){
         let httpResponse;
@@ -17,6 +19,21 @@ class TaskProcessor {
             httpResponse = response;
         }catch(err){
             console.error('[!] Get tasks service error: ' + err);
+            httpResponse = err.response;
+        }
+
+        return ResponseHandler.handleHttp(httpResponse);
+    }
+
+    async save(){
+        let httpResponse;
+        try{
+            this.task.owner = sessionStorage.getItem('userId');
+            let url = appConfig['task-endpoints']['create'];
+            let response = await axios.post(url, this.task);
+            httpResponse = response;
+        }catch(err){
+            console.error('[!] Save task service error: ' + err);
             httpResponse = err.response;
         }
 

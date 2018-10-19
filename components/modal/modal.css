@@ -1,0 +1,74 @@
+@import "../../node_modules/material-design-icons/iconfont/material-icons.css";
+
+* {
+    box-sizing: border-box;
+}
+
+.j-modal-container {
+    width: 100%;
+    height: calc(100vh - 30px);
+    display: flex;
+    position: fixed;
+    top: 30px;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 1000;
+}
+
+.j-modal {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    position: relative;
+    top: 50px;
+    min-width: 100px;
+    font-family: 'Open Sans', serif;
+    border-radius: 3px;
+    box-shadow: 0 0 6px #ccc;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.j-modal.is-shown {
+    animation: fadein .3s;
+    animation-fill-mode: forwards;
+}
+
+.m-header {
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.m-header h1, .m-header i {
+    margin: 0;
+    padding: 0;
+    font-size: 14px !important;
+    display: flex;
+    align-items: center;
+}
+
+.m-header h1 {
+    text-transform: uppercase;
+}
+
+.m-header i:hover {
+    cursor: pointer;
+}
+
+.m-content {
+    padding: 10px;
+}
+
+/* Animations */
+@keyframes fadein {
+    from {
+        opacity: 0;
+        visibility: hidden;
+    }
+    to {
+        opacity: 1;
+        visibility: visible;
+    }
+}

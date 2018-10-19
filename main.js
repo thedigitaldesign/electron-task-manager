@@ -7,26 +7,26 @@ let mainWindow;
 // Initialize all system functions
 function initialize(){
     function createWindow(){
-        // Create new window element
+        // Create new modal element
         mainWindow = new BrowserWindow({
             width: 800,
             height: 600,
             minHeight: 600,
             minWidth: 600,
-            frame: false, // Remove window frame
-            titleBarStyle: 'customButtonsOnHover' // For custom window buttons
+            frame: false, // Remove modal frame
+            titleBarStyle: 'customButtonsOnHover' // For custom modal buttons
         });
-        // Load file when window is open
+        // Load file when modal is open
         mainWindow.loadFile('index.html');
         //win.webContents.openDevTools(); // Stay dev tools open
 
-        // Delete window element when it is closed
+        // Delete modal element when it is closed
         mainWindow.on('closed', () => {
             mainWindow = null;
         });
     }
 
-    // When app is ready, open window
+    // When app is ready, open modal
     app.on('ready', () => {
         createWindow();
     });
@@ -39,7 +39,7 @@ function initialize(){
     });
 
     // Quit when all windows are closed.
-    app.on('window-all-closed', () => {
+    app.on('modal-all-closed', () => {
         // For macOS
         if (process.platform !== 'darwin') {
             app.quit()

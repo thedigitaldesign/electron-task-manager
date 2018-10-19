@@ -47,7 +47,7 @@ class WindowButtonBar extends HTMLElement {
                 window.maximize();
             }
         });
-        // Close window button
+        // Close modal button
         let closeBtn = this.shadowRoot.querySelector('#close-window');
         closeBtn.addEventListener('click', function(){
             window = remote.getCurrentWindow();
