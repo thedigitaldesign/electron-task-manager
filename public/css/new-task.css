@@ -1,0 +1,89 @@
+j-modal date-picker {
+    margin-bottom: 10px;
+    width: 200px;
+}
+
+#new-task-priority {
+    width: 25px;
+    border-radius: 3px;
+    position: relative;
+    align-items: center;
+    overflow: hidden;
+    height: 25px;
+    transition: all 0.3s;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+#new-task-priority:hover {
+    width: 100px;
+}
+
+#new-task-priority-icon {
+    color: #666;
+    background-color: rgba(0,0,0,0.1);
+}
+
+#new-task-priority-icon:after {
+    content: '';
+    width: 0;
+    height: 0;
+    display: block;
+    position: absolute;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    border-left: 4px solid rgba(0,0,0,0.1);
+    left: 25px;
+    top: 9px;
+}
+
+#priority-icons-wrapper {
+    width: 100px;
+    height: 25px;
+    position: relative;
+    top: 0;
+    left: 0;
+    display: flex;
+}
+
+#priority-icons-wrapper i {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px !important;
+}
+
+.prior-opt[priority-value="1"] {
+    color: rgb(222, 76, 74);
+}
+
+.prior-opt[priority-value="2"] {
+    color: rgb(255, 163, 86);
+}
+
+.prior-opt[priority-value="3"] {
+    color: rgb(255, 216, 116);
+}
+
+#create-task-btn {
+    width: 80px;
+    height: 25px;
+    background-color: rgba(221,64,91,1);
+    border: none;
+    border-radius: 3px;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    outline: none;
+}
+
+#create-task-btn:hover {
+    cursor: pointer;
+}
+
+.btn-disabled {
+    cursor: not-allowed !important;
+    opacity: 0.5;
+}

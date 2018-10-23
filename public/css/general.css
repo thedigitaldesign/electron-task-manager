@@ -4,12 +4,14 @@ body, html {
     padding: 0;
     height: 100%;
     width: 100%;
-    background-color: #f2f5f7 /* darker: #1b1e28, lighter: #2b2f3e */
+    background-color: #f2f5f7 /* darker: #1b1e28, lighter: #2b2f3e */;
+    overflow: hidden;
 }
 
 :root {
     --standard-font-size: 14px;
     --standar-font-color: #999;
     --dark-font-color: #666;
+    --pink-color: rgba(221,64,91,1);
 }
 /* font color: #93a7b2 */

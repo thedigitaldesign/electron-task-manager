@@ -1,42 +1,87 @@
-class Modal {
+class Modal extends HTMLElement {
     constructor(){
-        if(!this.modal){
-            this.modal = document.createElement('div');
-            this.modal.classList.add('j-modal-container');
-            this.modal.innerHTML = `
-                <div class="j-modal">
+        super();
+
+        const shadowRoot = this.attachShadow({mode: 'open'});
+
+        shadowRoot.innerHTML = `
+            <div class="j-modal-container">
+                <div class="shadow"></div>
+                <div class="modal">
                     <div class="m-header">
                         <h1 class="m-title"></h1>
-                        <i class="material-icons">close</i>
+                        <i class="material-icons close-modal">close</i>
                     </div>
-                    <div class="m-content"></div>
-                </div>  
-            `;
+                    <div class="m-content">
+                        <slot></slot>
+                    </div>
+                </div> 
+            </div> 
+        `;
 
-            let style = document.createElement('style');
-            style.textContent = `
-                @import url(./components/modal/modal.css);
-            `;
-            this.modal.appendChild(style);
+        let style = document.createElement('style');
+        style.textContent = `
+            @import url(./components/modal/modal.css);
+        `;
 
-            document.body.appendChild(this.modal);
-            this.modal.classList.add('is-shown');
+        shadowRoot.appendChild(style);
+    }
+
+    static get observedAttributes(){
+        return ['state'];
+    }
+
+    get state(){
+        return this.getAttribute('state');
+    }
+
+    set state(val){
+        this.setAttribute('state', val);
+    }
+
+    attributeChangedCallback(attr, oldVal, newVal){
+        switch(attr){
+            case 'state':
+                if(newVal === 'show'){
+                    document.onkeydown = function(e){
+                        if(e.key === 'Escape'){
+                            this.shadowRoot.querySelector('.j-modal-container').classList.remove('is-shown');
+                            this.state = 'hide';
+                        }
+                    }.bind(this);
+                }
+                break;
         }
     }
 
-    build(title, content){
-        console.log(this.modal);
-        this.modal.querySelector('.m-title').textContent = title;
-        if(content){
-            this.modal.querySelector('.m-content').innerHTML = content;
+    connectedCallback(){
+        this.setAttribute('state', 'hide');
+        if(this.getAttribute('modal-title')){
+            this.shadowRoot.querySelector('.m-title').textContent = this.getAttribute('modal-title');
         }
+
+        this.hide();
     }
 
+    // Add the class is-shown to modal-container to change visibility:visible and opacity:1
     show(){
-        this.modal.querySelector('.j-modal').classList.add('is-shown');
+        let container = this.shadowRoot.querySelector('.j-modal-container');
+        container.classList.add('is-shown');
+        container.tabIndex = 1; // Div does not have focus. Set tab index to can be set it
+        this.state = 'show';
     }
 
-    hide(){}
+    hide(){
+        this.shadowRoot.querySelector('.shadow').addEventListener('click', function(){
+            this.shadowRoot.querySelector('.j-modal-container').classList.remove('is-shown');
+            this.state = 'hide';
+        }.bind(this));
+
+        this.shadowRoot.querySelector('.close-modal').addEventListener('click', function(){
+            this.shadowRoot.querySelector('.j-modal-container').classList.remove('is-shown');
+            this.state = 'hide';
+        }.bind(this));
+    }
 }
 
-module.exports = Modal;
+window.customElements.define('j-modal', Modal);

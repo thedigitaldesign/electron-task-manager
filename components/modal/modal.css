@@ -5,33 +5,48 @@
 }
 
 .j-modal-container {
-    width: 100%;
+    width: 100vw;
     height: calc(100vh - 30px);
     display: flex;
     position: fixed;
     top: 30px;
+    left: 0;
+    background-color: rgba(0,0,0,0.4);
     justify-content: center;
     align-items: flex-start;
     z-index: 1000;
+    visibility: hidden;
+    opacity: 0;
+    transition:  opacity .3s, visibility .12s;
+    outline: none;
 }
 
-.j-modal {
+.is-shown {
+    opacity: 1;
+    visibility: visible;
+    transition:  opacity .3s, visibility .12s;
+}
+
+.j-modal-container .shadow {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.j-modal-container .modal {
     display: flex;
     flex-direction: column;
     background-color: #fff;
-    position: relative;
     top: 50px;
-    min-width: 100px;
+    position: relative;
     font-family: 'Open Sans', serif;
     border-radius: 3px;
-    box-shadow: 0 0 6px #ccc;
-    visibility: hidden;
-    opacity: 0;
-}
-
-.j-modal.is-shown {
-    animation: fadein .3s;
-    animation-fill-mode: forwards;
+    box-shadow: 0 0 6px #333;
+    min-width: 100px;
+    z-index: 1;
 }
 
 .m-header {
@@ -51,24 +66,17 @@
 
 .m-header h1 {
     text-transform: uppercase;
+    color: var(--dark-font-color);
 }
 
-.m-header i:hover {
+.close-modal {
+    color: var(--dark-font-color);
+}
+
+.close-modal:hover {
     cursor: pointer;
 }
 
 .m-content {
     padding: 10px;
-}
-
-/* Animations */
-@keyframes fadein {
-    from {
-        opacity: 0;
-        visibility: hidden;
-    }
-    to {
-        opacity: 1;
-        visibility: visible;
-    }
 }

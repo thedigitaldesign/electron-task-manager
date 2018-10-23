@@ -6,7 +6,8 @@
     <link href="./node_modules/material-design-icons/iconfont/material-icons.css" rel="stylesheet">
     <link href="https://storage.googleapis.com/non-spec-apps/mio-icons/latest/sharp.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
-    <link href="public/general.css" rel="stylesheet">
+    <link href="public/css/general.css" rel="stylesheet">
+    <link href="public/css/new-task.css" rel="stylesheet">
 
     <!-- HTML imports -->
     <link rel="import" href="sections/create-task.html" id="create-task">
@@ -18,7 +19,23 @@
         <!-- <switch-mode-button style="float: right; margin-top: 7.5px; margin-right: 5px;"></switch-mode-button> -->
     </title-bar>
     <!-- Everything goes here -->
-    <main-container></main-container>
+    <main-container>
+        <!-- Modals -->
+        <j-modal id="new-task-modal" modal-title="Nueva tarea">
+            <app-input id="new-task-title" icon="default" icon-align="left" placeholder="Título"></app-input>
+            <date-picker placeholder="¿Cuándo empieza?" id="new-task-sd"></date-picker>
+            <date-picker placeholder="¿Cuándo termina?" id="new-task-ed"></date-picker>
+            <div id="new-task-priority">
+                <div id="priority-icons-wrapper">
+                    <i class="material-icons" id="new-task-priority-icon">flag</i>
+                    <i class="material-icons prior-opt" priority-value="1">flag</i>
+                    <i class="material-icons prior-opt" priority-value="2">flag</i>
+                    <i class="material-icons prior-opt" priority-value="3">flag</i>
+                </div>
+            </div>
+            <button id="create-task-btn" class="btn-disabled">Crear tarea</button>
+        </j-modal>
+    </main-container>
 <script>
     // Components
     require('./components/bus/Bus');
@@ -30,6 +47,8 @@
     require('./components/login-form/LoginForm');
     require('./components/app-menu/AppMenu');
     require('./components/app-content/AppContent');
+
+    require('./public/js/new-task');
 </script>
 </body>
 </html>

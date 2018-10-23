@@ -60,19 +60,19 @@ class LoginForm extends HTMLElement {
         this.setAttribute('filled-count', value);
     }
 
-    attributeChangedCallback(attrName, oldValue, newValue){
-        switch(attrName){
+    attributeChangedCallback(attr, oldVal, newVal){
+        switch(attr){
             case 'username-filled':
             case 'password-filled':
-                if(parseInt(newValue) === 1 && parseInt(oldValue) === 0){
+                if(parseInt(newVal) === 1 && parseInt(oldVal) === 0){
                     this.filledCount++;
-                }else if(parseInt(newValue) === 0 && parseInt(oldValue) === 1){
+                }else if(parseInt(newVal) === 0 && parseInt(oldVal) === 1){
                     this.filledCount--;
                 }
                 break;
 
             case 'filled-count':
-                if(parseInt(newValue) === 2){
+                if(parseInt(newVal) === 2){
                     let loginButton = this.shadowRoot.querySelector('#login-button');
                     loginButton.classList.remove('disabled-button');
                     loginButton.classList.add('enabled-button');

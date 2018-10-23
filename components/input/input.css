@@ -7,7 +7,6 @@
 :host {
     display: flex;
     height: 25px;
-    width: 200px;
     position: relative;
     margin-bottom: 10px;
     background-color: rgba(0,0,0,0.1);
@@ -28,6 +27,7 @@
     display: flex !important;
     align-items: center;
     justify-content: center;
+    color: #666;
 }
 
 input {

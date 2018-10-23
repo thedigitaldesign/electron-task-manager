@@ -21,7 +21,7 @@ class Input extends HTMLElement {
         return ['state', 'config'];
     }
 
-    attributeChangedCallback(attr, newValue, oldValue){
+    attributeChangedCallback(attr, oldVal, newVal){
         switch(attr){
         }
     }
