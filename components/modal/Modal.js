@@ -60,7 +60,15 @@ class Modal extends HTMLElement {
             this.shadowRoot.querySelector('.m-title').textContent = this.getAttribute('modal-title');
         }
 
-        this.hide();
+        this.shadowRoot.querySelector('.shadow').addEventListener('click', function(){
+            this.shadowRoot.querySelector('.j-modal-container').classList.remove('is-shown');
+            this.state = 'hide';
+        }.bind(this));
+
+        this.shadowRoot.querySelector('.close-modal').addEventListener('click', function(){
+            this.shadowRoot.querySelector('.j-modal-container').classList.remove('is-shown');
+            this.state = 'hide';
+        }.bind(this));
     }
 
     // Add the class is-shown to modal-container to change visibility:visible and opacity:1
@@ -72,15 +80,12 @@ class Modal extends HTMLElement {
     }
 
     hide(){
-        this.shadowRoot.querySelector('.shadow').addEventListener('click', function(){
+        if(this.shadowRoot.querySelector('.j-modal-container').length != 0){
             this.shadowRoot.querySelector('.j-modal-container').classList.remove('is-shown');
             this.state = 'hide';
-        }.bind(this));
-
-        this.shadowRoot.querySelector('.close-modal').addEventListener('click', function(){
-            this.shadowRoot.querySelector('.j-modal-container').classList.remove('is-shown');
-            this.state = 'hide';
-        }.bind(this));
+        }else{
+            console.log('nada que ocultar');
+        }
     }
 }
 

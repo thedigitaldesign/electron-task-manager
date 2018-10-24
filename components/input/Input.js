@@ -18,7 +18,17 @@ class Input extends HTMLElement {
     }
 
     observedAttributes(){
-        return ['state', 'config'];
+        return ['state', 'config', 'value'];
+    }
+
+    get value(){
+        return this.getAttribute('value');
+        this.shadowRoot.querySelector('#input').value;
+    }
+
+    set value(val){
+        this.setAttribute('value', val);
+        this.shadowRoot.querySelector('#input').value = val;
     }
 
     attributeChangedCallback(attr, oldVal, newVal){

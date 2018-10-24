@@ -18,6 +18,16 @@ class DatePicker extends HTMLElement {
         shadowRoot.appendChild(style);
     }
 
+    get value(){
+        return this.getAttribute('value');
+        this.shadowRoot.querySelector('#date-input').value;
+    }
+
+    set value(val){
+        this.setAttribute('value', val);
+        this.shadowRoot.querySelector('#date-input').value = val;
+    }
+
     connectedCallback(){
         // Show calendar modal
         this.shadowRoot.getElementById('date-input').onfocus = function(){

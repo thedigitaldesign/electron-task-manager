@@ -8,8 +8,9 @@ let _newTaskReqFields = {
 };
 
 // Show create-new-task modal when user press 'q' key
-document.addEventListener('keypress', e => {
-    if(e.key === 't'){
+// as long as there exists a user session
+document.addEventListener('keydown', e => {
+    if(sessionStorage.getItem('email') && e.ctrlKey && e.key === 't'){
         let modal = document.getElementById('new-task-modal');
         modal.show();
     }
@@ -71,6 +72,11 @@ function createNewTask(){
            processor.save()
                .then(() => {
                    console.log('%c[!] Task created successfully', 'color: green');
+                    clearFields();
+                    showSuccess();
+
+                    Bus.emit('/new-task-created', task);
+
                }).catch((err) => {
                    console.error('[!] Error creating task', err);
            });
@@ -91,6 +97,29 @@ function setTaskPriorityColor(value){
             priorIcon.style.color = 'rgb(255, 216, 116)';
             break;
     }
+}
+
+function clearFields(){
+    document.getElementById('new-task-title').value = '';
+    document.getElementById('new-task-sd').value = '';
+    document.getElementById('new-task-ed').value = '';
+    document.getElementById('new-task-priority').style.color = '#666';
+    document.getElementById('new-task-priority-icon').removeAttribute('priority-value');
+}
+
+function showSuccess(){
+    let taskForm = document.getElementById('new-task-form');
+    let success = document.getElementById('task-created-content');
+
+    taskForm.classList.remove('shown');
+    success.classList.add('shown');
+    setTimeout(function(){
+        let modal = document.getElementById('new-task-modal');
+        modal.hide();
+
+        success.classList.remove('shown');
+        taskForm.classList.add('shown');
+    }, 2000);
 }
 
 validateTaskFields();
