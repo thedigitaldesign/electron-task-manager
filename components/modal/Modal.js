@@ -1,3 +1,30 @@
+function _fadeIn(el){
+    el.style.display = 'flex';
+    let opacity = 0;
+    let timer = setInterval(function(){
+        if(opacity < 1){
+            el.style.opacity = opacity;
+            opacity += 0.1;
+        }else{
+            clearInterval(timer);
+        }
+    }, 10);
+}
+
+function _fadeOut(el){
+    let opacity = 1;
+    let timer = setInterval(function(){
+        if(opacity > 0){
+            opacity -= 0.1;
+            el.style.opacity = opacity;
+        }else{
+            clearInterval(timer);
+            el.style.opacity = 0;
+            el.style.display = 'none';
+        }
+    }, 10);
+}
+
 class Modal extends HTMLElement {
     constructor(){
         super();
@@ -45,8 +72,7 @@ class Modal extends HTMLElement {
                 if(newVal === 'show'){
                     document.onkeydown = function(e){
                         if(e.key === 'Escape'){
-                            this.shadowRoot.querySelector('.j-modal-container').classList.remove('is-shown');
-                            this.state = 'hide';
+                            this._remove();
                         }
                     }.bind(this);
                 }
@@ -61,30 +87,30 @@ class Modal extends HTMLElement {
         }
 
         this.shadowRoot.querySelector('.shadow').addEventListener('click', function(){
-            this.shadowRoot.querySelector('.j-modal-container').classList.remove('is-shown');
-            this.state = 'hide';
+            this._remove();
         }.bind(this));
 
         this.shadowRoot.querySelector('.close-modal').addEventListener('click', function(){
-            this.shadowRoot.querySelector('.j-modal-container').classList.remove('is-shown');
-            this.state = 'hide';
+            this._remove();
         }.bind(this));
     }
 
-    // Add the class is-shown to modal-container to change visibility:visible and opacity:1
     show(){
         let container = this.shadowRoot.querySelector('.j-modal-container');
-        container.classList.add('is-shown');
+        _fadeIn(container);
         container.tabIndex = 1; // Div does not have focus. Set tab index to can be set it
         this.state = 'show';
     }
 
+    _remove(){
+        this.shadowRoot.querySelector('.j-modal-container').removeAttribute('tabIndex');
+        _fadeOut(this.shadowRoot.querySelector('.j-modal-container'));
+        this.state = 'hide';
+    }
+
     hide(){
         if(this.shadowRoot.querySelector('.j-modal-container').length != 0){
-            this.shadowRoot.querySelector('.j-modal-container').classList.remove('is-shown');
-            this.state = 'hide';
-        }else{
-            console.log('nada que ocultar');
+            this._remove();
         }
     }
 }

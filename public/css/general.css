@@ -4,11 +4,12 @@ body, html {
     padding: 0;
     height: 100%;
     width: 100%;
-    background-color: #f2f5f7 /* darker: #1b1e28, lighter: #2b2f3e */;
+    background-color: var(--bg-color) /* darker: #1b1e28, lighter: #2b2f3e */;
     overflow: hidden;
 }
 
 :root {
+    --bg-color: #f2f5f7;
     --standard-font-size: 14px;
     --standar-font-color: #999;
     --dark-font-color: #666;

@@ -1,6 +1,7 @@
 require('../button/Button');
 require('../input/Input');
 require('../date-picker/DatePicker');
+require('../calendar/Calendar');
 const TaskProcessor = require('../../processors/TaskProcessor');
 const DateUtility = require('../../utilities/DateUtility');
 
@@ -12,9 +13,13 @@ class Dashboard extends HTMLElement{
 
         const shadowRoot = this.attachShadow({mode: 'open'});
         shadowRoot.innerHTML = `
-            <div id="dashboard-main" class="dashboard-section is-shown">
+            <div id="dashboard-main" class="dashboard-section">
                 <h1 class="d-title">Dashboard</h1>
                 <div id="d-btn-container">
+                    <button id="new-proyect-btn">
+                        <i class="material-icons">add</i>
+                        Crear proyecto
+                    </button>
                     <button id="new-task-btn">
                         <i class="material-icons">add</i>
                         Crear tarea
@@ -26,8 +31,8 @@ class Dashboard extends HTMLElement{
                         <span class="d-card-title">tareas</span>
                     </div>
                     <div id="task-list-card" class="d-card">
-                        <i class="d-card-icon material-icons">list</i>
-                        <span class="d-card-title">listas</span>
+                        <i class="d-card-icon material-icons">calendar_today</i>
+                        <span class="d-card-title">Agenda</span>
                     </div>
                     <div id="task-lists-card" class="d-card">
                         <i class="d-card-icon material-icons">autorenew</i>
@@ -38,6 +43,9 @@ class Dashboard extends HTMLElement{
                         <span class="d-card-title">nueva app</span>
                     </div>
                 </div>
+            </div> 
+            <div class="dashboard-section is-shown">
+                <j-calendar></j-calendar>
             </div> 
         `;
 

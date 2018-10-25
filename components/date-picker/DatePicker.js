@@ -133,7 +133,7 @@ class DatePicker extends HTMLElement {
             for(let j=0; j < 7; j++){
                 let dayBlock = document.createElement('td');
                 dayBlock.classList.add('day-block');
-                if(date.getDay() === j){
+                if(date.getDay() === j){ // When they are equals set date info
                     let content = document.createElement('div');
                     content.classList.add('day-cell-content');
                     content.innerHTML = date.getDate().toString();

@@ -1,0 +1,120 @@
+@import "../../node_modules/material-design-icons/iconfont/material-icons.css";
+
+* {
+    box-sizing: border-box;
+}
+
+:host {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    max-height: 400px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#calendar-header {
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+#calendar-header h1 {
+    margin: 0;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-weight: 300;
+    flex-grow: 5;
+    color: var(--pink-color);
+}
+
+#calendar-header i {
+    flex-grow: 1;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-size: 24px;
+    width: 30px;
+    color: #666;
+}
+
+#days-of-week {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.week-day {
+    display: flex;
+    justify-content: center;
+    width: calc(100% / 7);
+    color: var(--pink-color);
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#calendar-table {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
+}
+
+.week-row {
+    display: flex;
+    flex-grow: 1;
+    width: 100%;
+}
+
+.block {
+    display: flex;
+    width: calc(100% / 7);
+    justify-content: center;
+    align-items: center;
+    color: #ccc;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.day {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    user-select: none;
+    cursor: default;
+    position: relative;
+}
+
+.day.enabled {
+    color: #666;
+}
+.day.enabled:hover {
+    background-color: rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+
+.day.has-events:after {
+    display: block;
+    content: '';
+    position: absolute;
+    right: -5px;
+    top: -5px;
+    width: 10px;
+    height: 10px;
+    border: 3px solid var(--bg-color);
+    border-radius: 0.5rem;
+    background-color: var(--pink-color);
+}
+
+.day-selected {
+    background-color: var(--pink-color);
+    color: #fff;
+}
+.day-selected:hover {
+    cursor: pointer;
+}

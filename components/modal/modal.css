@@ -7,7 +7,6 @@
 .j-modal-container {
     width: 100vw;
     height: calc(100vh - 30px);
-    display: flex;
     position: fixed;
     top: 30px;
     left: 0;
@@ -15,16 +14,11 @@
     justify-content: center;
     align-items: flex-start;
     z-index: 1000;
-    visibility: hidden;
+    display: none;
     opacity: 0;
     transition:  opacity .3s, visibility .12s;
     outline: none;
-}
-
-.is-shown {
-    opacity: 1;
-    visibility: visible;
-    transition:  opacity .3s, visibility .12s;
+    overflow: hidden;
 }
 
 .j-modal-container .shadow {
