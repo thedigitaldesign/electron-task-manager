@@ -76,6 +76,21 @@ class AppMenu extends HTMLElement {
         let avatar = this.shadowRoot.querySelector('#user-avatar');
         avatar.setAttribute('src', img);
     }
+
+    shrink(){
+        this.style.width = '60px';
+        // Remove user info, keep avatar
+        let info = this.shadowRoot.getElementById('user-info');
+        this.shadowRoot.getElementById('user-data').removeChild(info);
+
+        // Remove list text, keep icons
+        let list = this.shadowRoot.getElementById('menu').getElementsByTagName('li');
+        Array.from(list).forEach(function(el){
+            let span = el.getElementsByTagName('span')[0];
+            el.removeChild(span);
+            el.style.justifyContent = 'center';
+        });
+    }
 }
 
 window.customElements.define('app-menu', AppMenu);

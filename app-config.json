@@ -7,6 +7,9 @@
     "getByUser": "http://localhost:3002/task-manager-service/v1/task/{user-id}",
     "create": "http://localhost:3002/task-manager-service/v1/task"
   },
+  "calendar-endpoints": {
+      "getEvents": "http://localhost:3003/event-service/v1/event"
+  },
   "encrypt-secret": "teamo0605",
   "token-expiration-time": 300000
 }

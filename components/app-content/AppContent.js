@@ -17,6 +17,7 @@ class AppContent extends HTMLElement {
                 width: calc(100% - 180px);
                 height: 100%;
                 position: relative;
+                transition: width .5s;
             }
         `;
         shadowRoot.appendChild(style);
@@ -27,6 +28,10 @@ class AppContent extends HTMLElement {
             let dashboard = document.createElement('app-dashboard');
             this.appendChild(dashboard);
         }
+    }
+
+    expand(){
+        this.style.width = 'calc(100% - 60px)';
     }
 }
 

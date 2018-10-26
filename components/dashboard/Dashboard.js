@@ -44,9 +44,7 @@ class Dashboard extends HTMLElement{
                     </div>
                 </div>
             </div> 
-            <div class="dashboard-section is-shown">
-                <j-calendar></j-calendar>
-            </div> 
+            <j-calendar></j-calendar>
         `;
 
         let style = document.createElement('style');

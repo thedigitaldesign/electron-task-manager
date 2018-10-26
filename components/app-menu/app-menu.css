@@ -9,15 +9,18 @@
     height: 100%;
     background-color: #fff;
     padding: 10px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
     box-sizing: border-box;
+    overflow: hidden;
+    transition: width .5s;
+    z-index: 2;
 }
 
 #user-data {
     width: 100%;
     height: auto;
     display: flex;
-    font-family: "Open Sans";
+    font-family: "Open Sans", sans-serif;
 }
 
 #user-avatar {
@@ -82,6 +85,6 @@
     margin-left: 10px;
 }
 
-.material-icons.material-icons--sharp {
-    font-family: 'Material Icons Sharp';
+.shrink {
+    width: 60px;
 }
