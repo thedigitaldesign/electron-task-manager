@@ -64,7 +64,7 @@ class Calendar extends HTMLElement {
     init(){
         this.setMonthAndYear();
         this.setDaysOfWeek();
-        this.buildDays();
+        this.firstRender();
 
         this.updateSingleDay();
     }
@@ -101,7 +101,7 @@ class Calendar extends HTMLElement {
         }
     }
 
-    buildDays(){
+    firstRender(){
         let table = this.shadowRoot.getElementById('calendar-table');
         let i = 0, idx = 0, thiz = this;
         let date = new Date(currentDate.year, currentDate.month, 1);
