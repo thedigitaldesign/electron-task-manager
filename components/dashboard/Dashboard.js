@@ -13,7 +13,7 @@ class Dashboard extends HTMLElement{
 
         const shadowRoot = this.attachShadow({mode: 'open'});
         shadowRoot.innerHTML = `
-            <div id="dashboard-main" class="dashboard-section">
+            <div id="dashboard-main" class="dashboard-section is-shown">
                 <h1 class="d-title">Dashboard</h1>
                 <div id="d-btn-container">
                     <button id="new-proyect-btn">
@@ -30,7 +30,7 @@ class Dashboard extends HTMLElement{
                         <i class="d-card-icon material-icons">bookmark</i>
                         <span class="d-card-title">tareas</span>
                     </div>
-                    <div id="task-list-card" class="d-card">
+                    <div id="calendar-card" class="d-card">
                         <i class="d-card-icon material-icons">calendar_today</i>
                         <span class="d-card-title">Agenda</span>
                     </div>
@@ -45,6 +45,11 @@ class Dashboard extends HTMLElement{
                 </div>
             </div> 
             <j-calendar></j-calendar>
+            
+            <!-- Utility button to back to dashboard -->
+            <div id="back-to-dashboard-container">
+                <div id="back-to-dashboard">volver</div>
+            </div>
         `;
 
         let style = document.createElement('style');
@@ -81,6 +86,11 @@ class Dashboard extends HTMLElement{
             let modal = document.getElementById('new-task-modal');
             modal.show();
         }.bind(this));
+
+        let calendarCard = this.shadowRoot.querySelector('#calendar-card');
+        calendarCard.addEventListener('click', function(){
+            this.showCalendar();
+        }.bind(this));
     }
 
     switchSection(section){
@@ -89,6 +99,13 @@ class Dashboard extends HTMLElement{
 
         let createTask = this.shadowRoot.getElementById(section);
         createTask.classList.add('is-shown');
+    }
+
+    showCalendar(){
+        document.getElementsByTagName('app-menu')[0].shrink();
+        document.getElementsByTagName('app-content')[0].expand();
+        this.shadowRoot.querySelector('#dashboard-main').classList.remove('is-shown');
+        this.shadowRoot.querySelector('j-calendar').style.display = 'flex';
     }
 }
 

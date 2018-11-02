@@ -42,11 +42,6 @@ class Calendar extends HTMLElement {
     }
 
     connectedCallback(){
-        let appMenu = document.getElementsByTagName('app-menu')[0];
-        appMenu.shrink();
-        let appContent = document.getElementsByTagName('app-content')[0];
-        appContent.expand();
-
         this.init();
 
         this.shadowRoot.getElementById('backward').addEventListener('click', function(){
