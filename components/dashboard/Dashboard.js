@@ -44,11 +44,14 @@ class Dashboard extends HTMLElement{
                     </div>
                 </div>
             </div> 
-            <j-calendar></j-calendar>
+            <j-calendar class="dashboard-section"></j-calendar>
             
             <!-- Utility button to back to dashboard -->
-            <div id="back-to-dashboard-container">
-                <div id="back-to-dashboard">volver</div>
+            <div id="back-to-dashboard-btn">
+                <div id="back-to-dashboard">
+                    <i class="material-icons">keyboard_arrow_left</i>
+                    volver
+                </div>
             </div>
         `;
 
@@ -91,6 +94,10 @@ class Dashboard extends HTMLElement{
         calendarCard.addEventListener('click', function(){
             this.showCalendar();
         }.bind(this));
+
+        this.shadowRoot.querySelector('#back-to-dashboard-btn').addEventListener('click', function(){
+            this.backToDashboard();
+        }.bind(this));
     }
 
     switchSection(section){
@@ -105,7 +112,25 @@ class Dashboard extends HTMLElement{
         document.getElementsByTagName('app-menu')[0].shrink();
         document.getElementsByTagName('app-content')[0].expand();
         this.shadowRoot.querySelector('#dashboard-main').classList.remove('is-shown');
-        this.shadowRoot.querySelector('j-calendar').style.display = 'flex';
+        this.shadowRoot.querySelector('j-calendar').classList.add('is-shown');
+
+        this.showBackBtn();
+    }
+
+    showBackBtn(){
+        this.shadowRoot.querySelector('#back-to-dashboard-btn').style.display = 'flex';
+    }
+
+    backToDashboard(){
+        let children = this.shadowRoot.querySelector('.is-shown');
+        children.classList.remove('is-shown');
+
+        this.shadowRoot.querySelector('#dashboard-main').classList.add('is-shown');
+
+        document.getElementsByTagName('app-menu')[0].expand();
+        document.getElementsByTagName('app-content')[0].shrink();
+
+        this.shadowRoot.querySelector('#back-to-dashboard-btn').style.display = 'none';
     }
 }
 

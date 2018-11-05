@@ -83,7 +83,8 @@ class Calendar extends HTMLElement {
     setToday(date, day){
         if(date.getFullYear() === today.year &&
         date.getMonth() === today.month &&
-        date.getDate() === today.date){
+        date.getDate() === today.date &&
+        currentDate.month === today.month){
             day.classList.add('day-selected');
             day.classList.remove('enabled');
         }

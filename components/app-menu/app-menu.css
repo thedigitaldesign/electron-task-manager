@@ -12,8 +12,14 @@
     box-shadow: 0 0 20px rgba(0,0,0,0.2);
     box-sizing: border-box;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
     transition: width .5s;
     z-index: 2;
+}
+
+:host(.shrank) {
+    width: 60px !important;
 }
 
 #user-data {
@@ -29,6 +35,10 @@
     margin-bottom: 10px;
     border-radius: 4px;
     background-color: #b6c6cf;
+}
+
+.display-none {
+    display: none;
 }
 
 #user-info {

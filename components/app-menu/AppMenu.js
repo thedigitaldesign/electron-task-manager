@@ -78,17 +78,32 @@ class AppMenu extends HTMLElement {
     }
 
     shrink(){
-        this.style.width = '60px';
+        this.classList.add('shrank');
         // Remove user info, keep avatar
         let info = this.shadowRoot.getElementById('user-info');
-        this.shadowRoot.getElementById('user-data').removeChild(info);
+        info.classList.add('display-none');
 
         // Remove list text, keep icons
         let list = this.shadowRoot.getElementById('menu').getElementsByTagName('li');
         Array.from(list).forEach(function(el){
             let span = el.getElementsByTagName('span')[0];
-            el.removeChild(span);
+            span.classList.add('display-none');
             el.style.justifyContent = 'center';
+        });
+    }
+
+    expand(){
+        this.classList.remove('shrank');
+        // Add user info to avatar
+        let info = this.shadowRoot.getElementById('user-info');
+        info.classList.remove('display-none');
+
+        // Add text to icons list
+        let list = this.shadowRoot.getElementById('menu').getElementsByTagName('li');
+        Array.from(list).forEach(function(el){
+            let span = el.getElementsByTagName('span')[0];
+            span.classList.remove('display-none');
+            el.style.justifyContent = 'left';
         });
     }
 }

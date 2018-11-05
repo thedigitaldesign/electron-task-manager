@@ -33,6 +33,10 @@ class AppContent extends HTMLElement {
     expand(){
         this.style.width = 'calc(100% - 60px)';
     }
+
+    shrink(){
+        this.style.width = 'calc(100% - 180px)';
+    }
 }
 
 window.customElements.define('app-content', AppContent);
