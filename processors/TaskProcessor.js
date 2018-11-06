@@ -13,7 +13,7 @@ class TaskProcessor {
     async getTasksByUser(){
         let httpResponse;
         try{
-            let userId = JSON.parse(sessionStorage.getItem('user'))._id;
+            let userId = sessionStorage.getItem('userId');
             let url = appConfig['task-endpoints']['getByUser'].replace('{user-id}', userId);
             let response = await axios.get(url);
             httpResponse = response;

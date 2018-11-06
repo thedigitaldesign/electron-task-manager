@@ -24,9 +24,10 @@
         <!-- Global modal for create task -->
         <j-modal id="new-task-modal" modal-title="Nueva tarea">
             <div class="ntm-content shown" id="new-task-form">
-                <app-input id="new-task-title" icon="default" icon-align="left" placeholder="Título"></app-input>
-                <date-picker placeholder="¿Cuándo empieza?" id="new-task-sd"></date-picker>
-                <date-picker placeholder="¿Cuándo termina?" id="new-task-ed"></date-picker>
+                <div id="task-modal-row">
+                    <app-input id="new-task-title" icon="default" icon-align="left" placeholder="Título"></app-input>
+                    <date-picker placeholder="dd/mm/yyyy" id="new-task-deadline"></date-picker>
+                </div>
                 <div id="new-task-priority">
                     <div id="priority-icons-wrapper">
                         <i class="material-icons" id="new-task-priority-icon">flag</i>
@@ -55,7 +56,7 @@
     require('./components/app-menu/AppMenu');
     require('./components/app-content/AppContent');
 
-    require('./public/js/new-task');
+    require('./public/js/task/new-task-modal');
 </script>
 </body>
 </html>

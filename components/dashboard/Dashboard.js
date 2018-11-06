@@ -4,6 +4,7 @@ require('../date-picker/DatePicker');
 require('../calendar/Calendar');
 const TaskProcessor = require('../../processors/TaskProcessor');
 const DateUtility = require('../../utilities/DateUtility');
+const taskList = require('../../public/js/task/task-list');
 
 // Made with ❤ by Gutty Mora
 
@@ -44,7 +45,15 @@ class Dashboard extends HTMLElement{
                     </div>
                 </div>
             </div> 
-            <j-calendar class="dashboard-section"></j-calendar>
+            
+            <!-- Calendar -->
+            <j-calendar></j-calendar>
+            
+            <!-- Task list section -->
+            <div id="task-list-section" class="dashboard-section">
+                <h1 class="d-title">Lista de Tareas</h1>
+                <div class="list-container"></div>
+            </div>
             
             <!-- Utility button to back to dashboard -->
             <div id="back-to-dashboard-btn">
@@ -90,9 +99,14 @@ class Dashboard extends HTMLElement{
             modal.show();
         }.bind(this));
 
-        let calendarCard = this.shadowRoot.querySelector('#calendar-card');
-        calendarCard.addEventListener('click', function(){
+        this.shadowRoot.querySelector('#calendar-card').addEventListener('click', function(){
             this.showCalendar();
+        }.bind(this));
+
+        this.shadowRoot.querySelector('#task-card').addEventListener('click', function(){
+            this.switchSection('#task-list-section');
+
+            taskList.getAllTask(this.shadowRoot.querySelector('#task-list-section .list-container'));
         }.bind(this));
 
         this.shadowRoot.querySelector('#back-to-dashboard-btn').addEventListener('click', function(){
@@ -101,11 +115,10 @@ class Dashboard extends HTMLElement{
     }
 
     switchSection(section){
-        let sections = this.shadowRoot.querySelector('.is-shown');
-        sections.classList.remove('is-shown');
+        this.shadowRoot.querySelector('.is-shown').classList.remove('is-shown');
+        this.shadowRoot.querySelector(section).classList.add('is-shown');
 
-        let createTask = this.shadowRoot.getElementById(section);
-        createTask.classList.add('is-shown');
+        this.showBackBtn();
     }
 
     showCalendar(){

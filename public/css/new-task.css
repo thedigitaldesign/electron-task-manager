@@ -1,6 +1,14 @@
+j-modal app-input {
+    width: 150px;
+    margin-right: 10px;
+}
+
 j-modal date-picker {
-    margin-bottom: 10px;
-    width: 200px;
+    width: 100px;
+}
+
+#task-modal-row {
+    display: flex;
 }
 
 #new-task-priority {

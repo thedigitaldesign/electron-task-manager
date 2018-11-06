@@ -8,7 +8,7 @@ class DatePicker extends HTMLElement {
         const shadowRoot = this.attachShadow({mode: 'open'});
         shadowRoot.innerHTML = `
             <i class="material-icons" id="date-icon">date_range</i>
-            <input type="text" placeholder="Escoge una fecha" id="date-input">
+            <input type="text" maxlength="10" placeholder="Escoge una fecha" id="date-input">
         `;
 
         let style = document.createElement('style');
@@ -20,7 +20,6 @@ class DatePicker extends HTMLElement {
 
     get value(){
         return this.getAttribute('value');
-        this.shadowRoot.querySelector('#date-input').value;
     }
 
     set value(val){
@@ -29,30 +28,32 @@ class DatePicker extends HTMLElement {
     }
 
     connectedCallback(){
-        // Show calendar modal
-        this.shadowRoot.getElementById('date-input').onfocus = function(){
-            this.showCalendarWindow();
-        }.bind(this);
-
         this.shadowRoot.getElementById('date-icon').addEventListener('click', function(){
-            this.shadowRoot.getElementById('date-input').focus();
+            this.showCalendarWindow();
         }.bind(this));
 
         if(this.getAttribute('placeholder')){
             this.shadowRoot.getElementById('date-input').setAttribute('placeholder', this.getAttribute('placeholder'));
         }
+
+        this.initCalendar();
     }
 
     showCalendarWindow(){
+        let calendar = this.shadowRoot.getElementById('calendar');
+        calendar.classList.add('shown');
+        calendar.tabIndex = 0;
+        calendar.focus();
+    }
+
+    initCalendar(){
         if(!this.shadowRoot.getElementById('calendar')){
             let calendar = document.createElement('div');
             calendar.id = 'calendar';
             this.generateCalendar(calendar);
             this.shadowRoot.appendChild(calendar);
 
-            calendar.tabIndex = 1; // Div does not have focus. Set tab index to can be set it
-            calendar.focus(); // Set focus
-            calendar.onblur = function(){ // When calendar loses focus, remove itself
+            calendar.onblur = function(){
                 this.removeCalendar();
             }.bind(this);
         }
@@ -192,9 +193,9 @@ class DatePicker extends HTMLElement {
     }
 
     removeCalendar(){
-        if(this.shadowRoot.getElementById('calendar')){
-            this.shadowRoot.getElementById('calendar').remove();
-        }
+        let calendar = this.shadowRoot.getElementById('calendar');
+        calendar.removeAttribute('tabindex');
+        calendar.classList.remove('shown');
     }
 
     datePadding(el){

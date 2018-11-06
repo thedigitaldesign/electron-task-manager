@@ -1,51 +1,37 @@
-let TaskProcessor = require('../../processors/TaskProcessor');
-const DateUtility = require('../../utilities/DateUtility');
-
-let _newTaskReqFields = {
-    title: false,
-    sDate: false,
-    prior: false
-};
+let TaskProcessor = require('../../../processors/TaskProcessor');
+const DateUtility = require('../../../utilities/DateUtility');
 
 // Show create-new-task modal when user press 'q' key
 // as long as there exists a user session
 document.addEventListener('keydown', e => {
-    if(sessionStorage.getItem('email') && e.ctrlKey && e.key === 't'){
+    if(sessionStorage.getItem('email') && e.ctrlKey && (e.key === 't' || e.key === 'T')){
         let modal = document.getElementById('new-task-modal');
         modal.show();
     }
 });
 
-function validateTaskFields(){
-    let title = document.getElementById('new-task-title');
-    let startDate = document.getElementById('new-task-sd');
-    let priority = document.getElementById('new-task-priority');
+document.getElementById('new-task-title').addEventListener('input', function(){
+    if(this.value && this.value != ''){
+        Bus.emit('/new-task-btn', true);
+    }else{
+        Bus.emit('/new-task-btn', false);
+    }
+});
 
-    title.addEventListener('input', function(){
-        Bus.emit('cnt', _newTaskReqFields.title = (this.value.trim().length > 0));
-    });
-    startDate.addEventListener('change', function(){
-        Bus.emit('cnt', _newTaskReqFields.sDate = (DateUtility.validate(this.value)));
-    });
+let priority = document.getElementById('new-task-priority');
 
-    let priorOpts = priority.getElementsByClassName('prior-opt');
-    Array.from(priorOpts).forEach(function(el){
-        el.addEventListener('click', function(){
-            priority.setAttribute('priority-value', el.getAttribute('priority-value'));
-            setTaskPriorityColor(el.getAttribute('priority-value'));
-            Bus.emit('cnt', _newTaskReqFields.prior = true);
-        });
+let priorOpts = priority.getElementsByClassName('prior-opt');
+Array.from(priorOpts).forEach(function(el){
+    el.addEventListener('click', function(){
+        priority.setAttribute('priority-value', el.getAttribute('priority-value'));
+        setTaskPriorityColor(el.getAttribute('priority-value'));
     });
-}
+});
 
 function createNewTask(){
     let btn = document.getElementById('create-task-btn');
-    Bus.listen('cnt', function(){
-        let completed = Object.values(_newTaskReqFields).every(function(el){
-            return el === true;
-        });
-
-        if(completed){
+    Bus.listen('/new-task-btn', function(boolean){
+        if(boolean){
             btn.classList.remove('btn-disabled');
         }else{
             btn.classList.add('btn-disabled');
@@ -53,16 +39,14 @@ function createNewTask(){
     }.bind(this));
 
     let title = document.getElementById('new-task-title');
-    let startDate = document.getElementById('new-task-sd');
-    let endDate = document.getElementById('new-task-ed');
+    let deadline = document.getElementById('new-task-deadline');
     let priority = document.getElementById('new-task-priority');
 
     btn.addEventListener('click', function(){
         if(!this.classList.contains('btn-disabled')){
             let task = {
                 title: title.value.trim(),
-                startDate: startDate.value,
-                endDate: endDate.value,
+                deadline: deadline.value,
                 priority: priority.getAttribute('priority-value')
             };
 
@@ -101,8 +85,7 @@ function setTaskPriorityColor(value){
 
 function clearFields(){
     document.getElementById('new-task-title').value = '';
-    document.getElementById('new-task-sd').value = '';
-    document.getElementById('new-task-ed').value = '';
+    document.getElementById('new-task-deadline').value = '';
     document.getElementById('new-task-priority').style.color = '#666';
     document.getElementById('new-task-priority-icon').removeAttribute('priority-value');
 }
@@ -122,5 +105,4 @@ function showSuccess(){
     }, 2000);
 }
 
-validateTaskFields();
 createNewTask();

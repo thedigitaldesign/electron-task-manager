@@ -4,7 +4,7 @@
     "logout": "http://localhost:3000/account-service/v1/auth"
   },
   "task-endpoints": {
-    "getByUser": "http://localhost:3002/task-manager-service/v1/task/{user-id}",
+    "getByUser": "http://localhost:3002/task-manager-service/v1/user/{user-id}/task",
     "create": "http://localhost:3002/task-manager-service/v1/task"
   },
   "calendar-endpoints": {

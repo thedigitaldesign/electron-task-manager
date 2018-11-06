@@ -47,16 +47,23 @@ input {
     top: 24px;
     opacity: 0;
     left: 0;
-    display: flex;
+    display: none;
+    overflow: hidden;
     flex-direction: column;
     box-shadow: 0 2px 8px #333;
     border-radius: 3px;
     font-size: 12px;
     height: 10px;
-    animation: expandCalendar 0.4s;
-    animation-fill-mode: forwards;
+    padding-bottom: 10px;
     z-index: 90;
     outline: none;
+    transition: all .3s;
+}
+
+#calendar.shown {
+    display: flex;
+    opacity: 1;
+    height: auto;
 }
 
 #calendar-header {
@@ -147,20 +154,4 @@ input {
 
 .week-row {
     padding: 2px 0;
-}
-
-@keyframes expandCalendar {
-    0% {
-        height: 10px;
-        opacity: 0;
-    }
-
-    80% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 1;
-        height: auto;
-    }
 }
