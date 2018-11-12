@@ -1,6 +1,10 @@
+const monthNamesArray = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+
 class DateUtility {
     static getSeparator(date){
-        if(date.match(/\//g).length === 2){
+        if(!date){
+            return null;
+        }else if(date.match(/\//g).length === 2){
             return '/';
         }else if(date.match(/\-/g).length === 2){
             return '-';
@@ -20,10 +24,28 @@ class DateUtility {
                 return true
             }else{
                 console.log(dateSplit);
-                return null;
+                return false;
             }
         }else{
-            return null;
+            return false;
+        }
+    }
+
+    static setFormat(dateString, format){
+        if(!this.validate(dateString)){
+            return '';
+        }else{
+            let date = dateString;
+            const separator = this.getSeparator(date);
+            switch(format){
+                case 'dd Month yyyy':
+                    date = dateString.split(separator);
+
+                    date = date[0] + ' ' + monthNamesArray[parseInt(date[1])] + ' ' + date[2];
+                    break;
+            }
+
+            return date;
         }
     }
 }

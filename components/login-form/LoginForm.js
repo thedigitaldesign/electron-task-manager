@@ -99,23 +99,23 @@ class LoginForm extends HTMLElement {
         this.passwordFilled = 0;
         this.filledCount = 0;
 
-        let thiz = this;
+        let self = this;
         let emailField = this.shadowRoot.querySelector('.username-field');
         let passwordField = this.shadowRoot.querySelector('.password-field');
 
         emailField.focus();
         emailField.addEventListener('input', function(){
             if(this.value != null && this.value.trim() != ''){
-                thiz.usernameFilled = 1
+                self.usernameFilled = 1
             }else{
-                thiz.usernameFilled = 0;
+                self.usernameFilled = 0;
             }
         });
         passwordField.addEventListener('input', function(){
             if(this.value != null && this.value.trim() != ''){
-                thiz.passwordFilled = 1;
+                self.passwordFilled = 1;
             }else{
-                thiz.passwordFilled = 0;
+                self.passwordFilled = 0;
             }
         });
 
@@ -124,14 +124,22 @@ class LoginForm extends HTMLElement {
 
         // Enable login process
         loginButton.addEventListener('click', async function(){
-            thiz.login();
+            self.login();
+        });
+        this.shadowRoot.getElementById('login-form').addEventListener('keydown', e => {
+            if(e.key === 'Enter'){
+                self.login();
+            }
         });
     }
 
-    async login(){
+    async login() {
+        let loginButton = this.shadowRoot.querySelector('#login-button');
+        if(loginButton.classList.contains('disabled-button')){
+            return null;
+        }
         let thiz = this;
         let logo = this.shadowRoot.querySelector('.login-logo');
-        let loginButton = this.shadowRoot.querySelector('#login-button');
         let loginMessage = this.shadowRoot.querySelector('#login-message');
         let emailField = this.shadowRoot.querySelector('.username-field');
         let passwordField = this.shadowRoot.querySelector('.password-field');

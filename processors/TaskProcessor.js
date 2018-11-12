@@ -39,6 +39,20 @@ class TaskProcessor {
 
         return ResponseHandler.handleHttp(httpResponse);
     }
+
+    async update(){
+        let httpResponse;
+        try{
+            let url = appConfig['task-endpoints']['specific'].replace('{task-id}', this.task.id);
+            let response = await axios.put(url, this.task);
+            httpResponse = response;
+        }catch(err){
+            console.error('[!] Put task service error: ' + err);
+            httpResponse = err.response;
+        }
+
+        return ResponseHandler.handleHttp(httpResponse);
+    }
 }
 
 module.exports = TaskProcessor;

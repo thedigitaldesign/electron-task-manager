@@ -12,7 +12,7 @@
     position: relative;
     align-items: center;
     padding: 0 5px;
-    font-family: 'Open Sans';
+    font-family: 'Open Sans', sans-serif;
 }
 
 #date-icon {
@@ -34,6 +34,7 @@ input {
     font-size: var(--standard-font-size);
     padding-left: 5px;
     color: #666;
+    width: 100%;
 }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
@@ -42,12 +43,12 @@ input {
 
 /* Calendar modal */
 #calendar {
+    display: none;
     background-color: #fff;
     position: absolute;
     top: 24px;
     opacity: 0;
     left: 0;
-    display: none;
     overflow: hidden;
     flex-direction: column;
     box-shadow: 0 2px 8px #333;

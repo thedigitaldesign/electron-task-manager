@@ -52,7 +52,7 @@ class Dashboard extends HTMLElement{
             <!-- Task list section -->
             <div id="task-list-section" class="dashboard-section">
                 <h1 class="d-title">Lista de Tareas</h1>
-                <div class="list-container"></div>
+                <div class="task-list-container"></div>
             </div>
             
             <!-- Utility button to back to dashboard -->
@@ -106,7 +106,7 @@ class Dashboard extends HTMLElement{
         this.shadowRoot.querySelector('#task-card').addEventListener('click', function(){
             this.switchSection('#task-list-section');
 
-            taskList.getAllTask(this.shadowRoot.querySelector('#task-list-section .list-container'));
+            taskList.getAllTask(this.shadowRoot.querySelector('#task-list-section .task-list-container'));
         }.bind(this));
 
         this.shadowRoot.querySelector('#back-to-dashboard-btn').addEventListener('click', function(){

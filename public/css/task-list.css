@@ -1,0 +1,139 @@
+.task-list-container {
+    padding: 0 10px;
+}
+
+#task-list {
+    margin: 0;
+    padding: 0;
+    max-width: 600px;
+}
+
+#task-list li {
+    list-style: none;
+    font-size: 15px;
+    color: var(--standar-font-color);
+    height: 45px;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+    user-select: none;
+}
+
+.check-task-circle {
+    width: 20px;
+    height: 20px;
+    border: 2px solid;
+    border-radius: 50%;
+    margin-right: 8px;
+    transition: border .2s;
+}
+
+.check-task-circle[priority="0"] {
+    border-color: #999;
+}
+
+.check-task-circle[priority="1"] {
+    border-color: var(--red-color);
+}
+
+.check-task-circle[priority="2"] {
+    border-color: var(--orange-color);
+}
+
+.check-task-circle[priority="3"] {
+    border-color: var(--yellow-color);
+}
+
+.check-task-circle i {
+    opacity: 0;
+    font-size: 16px !important;
+    /*color: #4eb112;*/
+    transition: opacity .2s;
+}
+
+.check-task-circle i[priority="0"] {
+    color: #999;
+}
+
+.check-task-circle i[priority="1"] {
+    color: var(--red-color);
+}
+
+.check-task-circle i[priority="2"] {
+    color: var(--orange-color);
+}
+
+.check-task-circle i[priority="3"] {
+    color: var(--yellow-color);
+}
+
+.check-task-circle:hover {
+    cursor: pointer;
+}
+
+.check-task-circle:hover > i {
+    opacity: 1;
+}
+
+#task-list li .task-deadline {
+    font-size: 12px;
+}
+
+#task-list li .task-more {
+    margin-left: 8px;
+    height: 20px;
+    width: 20px;
+    font-size: 22px !important;
+    border-radius: 50%;
+}
+
+#task-list li .task-more:hover {
+    cursor: pointer;
+    background-color: #ddd;
+}
+
+.task-menu {
+    position: absolute;
+    right: 0;
+    width: 200px;
+    bottom: -60px;
+    background-color: var(--bg-color);
+    flex-direction: column;
+    z-index: 10;
+    border-radius: 3px;
+    display: none;
+    outline: none;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.task-menu-item {
+    font-size: 12px;
+    height: 30px;
+    padding: 0 5px;
+}
+
+.task-menu-item:hover {
+    cursor: pointer;
+    background-color: #ddd;
+}
+
+.task-menu-item i {
+    font-size: 16px !important;
+    margin-right: 5px;
+}
+
+.edit-task-input {
+    width: 160px;
+}
+
+.edit-task-deadline {
+    width: 110px;
+}
+
+.edit-task-deadline {
+    margin: 0 10px;
+}
+
+.cancel-edit-task-btn {
+    margin-left: 10px;
+}

@@ -1,4 +1,6 @@
 @import "../../node_modules/material-design-icons/iconfont/material-icons.css";
+@import "../../public/css/general.css";
+@import "../../public/css/task-list.css";
 
 * {
     box-sizing: border-box;
@@ -165,14 +167,4 @@ j-calendar {
     opacity: 0;
     /* Animation */
     transition: visibility 0s .12s linear , opacity .12s ease-in;
-}
-
-#task-list-section .list-container {
-    padding: 0 10px;
-}
-
-#task-list-section .list-container ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
 }

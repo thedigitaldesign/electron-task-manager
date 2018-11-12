@@ -8,7 +8,7 @@ class DatePicker extends HTMLElement {
         const shadowRoot = this.attachShadow({mode: 'open'});
         shadowRoot.innerHTML = `
             <i class="material-icons" id="date-icon">date_range</i>
-            <input type="text" maxlength="10" placeholder="Escoge una fecha" id="date-input">
+            <input type="text" maxlength="10" placeholder="dd/mm/yyyy" id="date-input">
         `;
 
         let style = document.createElement('style');

@@ -10,11 +10,13 @@ document.addEventListener('keydown', e => {
     }
 });
 
+let btn = document.getElementById('create-task-btn');
+
 document.getElementById('new-task-title').addEventListener('input', function(){
     if(this.value && this.value != ''){
-        Bus.emit('/new-task-btn', true);
+        btn.classList.remove('btn-disabled');
     }else{
-        Bus.emit('/new-task-btn', false);
+        btn.classList.add('btn-disabled');
     }
 });
 
@@ -28,45 +30,34 @@ Array.from(priorOpts).forEach(function(el){
     });
 });
 
-function createNewTask(){
-    let btn = document.getElementById('create-task-btn');
-    Bus.listen('/new-task-btn', function(boolean){
-        if(boolean){
-            btn.classList.remove('btn-disabled');
-        }else{
-            btn.classList.add('btn-disabled');
-        }
-    }.bind(this));
+btn.addEventListener('click', function(){
+    if(!this.classList.contains('btn-disabled')){
+        let title = document.getElementById('new-task-title');
+        let deadline = document.getElementById('new-task-deadline');
+        let priority = document.getElementById('new-task-priority');
 
-    let title = document.getElementById('new-task-title');
-    let deadline = document.getElementById('new-task-deadline');
-    let priority = document.getElementById('new-task-priority');
+        let task = {
+            title: title.value.trim(),
+            deadline: deadline.value,
+            priority: priority.getAttribute('priority-value')
+        };
 
-    btn.addEventListener('click', function(){
-        if(!this.classList.contains('btn-disabled')){
-            let task = {
-                title: title.value.trim(),
-                deadline: deadline.value,
-                priority: priority.getAttribute('priority-value')
-            };
+        btn.classList.add('btn-disabled'); // Set button disabled again to avoid duplicated calls
 
-            btn.classList.add('btn-disabled'); // Set button disabled again to avoid duplicated calls
+        let processor = new TaskProcessor(task);
+        processor.save()
+            .then(() => {
+                console.log('%c[!] Task created successfully', 'color: green');
+                clearFields();
+                showSuccess();
 
-            let processor = new TaskProcessor(task);
-           processor.save()
-               .then(() => {
-                   console.log('%c[!] Task created successfully', 'color: green');
-                    clearFields();
-                    showSuccess();
+                Bus.emit('/new-task-created', task);
 
-                    Bus.emit('/new-task-created', task);
-
-               }).catch((err) => {
-                   console.error('[!] Error creating task', err);
-           });
-        }
-    }, false);
-}
+            }).catch((err) => {
+            console.error('[!] Error creating task', err);
+        });
+    }
+}, false);
 
 function setTaskPriorityColor(value){
     let priorIcon = document.getElementById('new-task-priority-icon');
@@ -104,5 +95,3 @@ function showSuccess(){
         taskForm.classList.add('shown');
     }, 2000);
 }
-
-createNewTask();

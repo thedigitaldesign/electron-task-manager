@@ -1,4 +1,4 @@
-j-modal app-input {
+j-modal j-input {
     width: 150px;
     margin-right: 10px;
 }
@@ -9,6 +9,7 @@ j-modal date-picker {
 
 #task-modal-row {
     display: flex;
+    margin-bottom: 10px;
 }
 
 #new-task-priority {

@@ -18,12 +18,11 @@ class Input extends HTMLElement {
     }
 
     observedAttributes(){
-        return ['state', 'config', 'value'];
+        return ['state', 'value'];
     }
 
     get value(){
         return this.getAttribute('value');
-        this.shadowRoot.querySelector('#input').value;
     }
 
     set value(val){
@@ -42,10 +41,10 @@ class Input extends HTMLElement {
                 let icon = this.shadowRoot.querySelector('.icon');
                 icon.textContent = this.getAttribute('icon');
             }
-            if(this.getAttribute('icon-align') === 'left'){
-                this.setIconToLeft();
-            }else{
+            if(this.getAttribute('icon-align') === 'right'){
                 this.setIconToRight();
+            }else{
+                this.setIconToLeft();
             }
         }else{
             this.shadowRoot.querySelector('.icon').remove();
@@ -54,26 +53,29 @@ class Input extends HTMLElement {
         if(this.getAttribute('placeholder')){
             this.shadowRoot.getElementById('input').setAttribute('placeholder', this.getAttribute('placeholder'));
         }
+        if(this.getAttribute('value')){
+            this.shadowRoot.getElementById('input').value = this.getAttribute('value');
+        }
 
-        let thiz = this;
+        let self = this;
         this.shadowRoot.querySelector('#input').addEventListener('input', function(){
-            thiz.value = this.value;
-        })
+            self.value = this.value;
+        });
     }
 
     setIconToLeft(){
         let icon = this.shadowRoot.querySelector('.icon');
         icon.style.left = 0;
         let input = this.shadowRoot.getElementById('input');
-        input.style.paddingLeft = '28px';
+        input.style.paddingLeft = '25px';
     }
 
     setIconToRight(){
         let icon = this.shadowRoot.querySelector('.icon');
         icon.style.right = 0;
         let input = this.shadowRoot.getElementById('input');
-        input.style.paddingRight = '24px';
+        input.style.paddingRight = '25px';
     }
 }
 
-window.customElements.define('app-input', Input);
+window.customElements.define('j-input', Input);
