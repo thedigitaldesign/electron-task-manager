@@ -41,12 +41,20 @@ class DateUtility {
                 case 'dd Month yyyy':
                     date = dateString.split(separator);
 
-                    date = date[0] + ' ' + monthNamesArray[parseInt(date[1])] + ' ' + date[2];
+                    date = date[0] + ' ' + monthNamesArray[parseInt(date[1]) - 1] + ' ' + date[2];
+                    break;
+                default: // default format: dd/mm/yyyy
+                    date = dateString.split(separator);
+                    date = this.datePadding(date[0]) + '/' + this.datePadding(date[1]) + '/' + date[2];
                     break;
             }
 
             return date;
         }
+    }
+
+    static datePadding(el){
+        return ('0' + el).slice(-2)
     }
 }
 

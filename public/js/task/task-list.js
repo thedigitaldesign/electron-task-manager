@@ -1,8 +1,10 @@
 let TaskProcessor = require('../../../processors/TaskProcessor');
 const DateUtility = require('../../../utilities/DateUtility');
 const ResponseCodes = require('../../../utilities/ResponseCodes');
+let listContainer = null;
 
 async function getAllTask(container){
+    listContainer = container;
     let processor = new TaskProcessor();
     let response = await processor.getTasksByUser();
     container.innerHTML = '';
@@ -20,15 +22,16 @@ async function getAllTask(container){
 
             let li = document.createElement('li');
             li.classList.add('task-element', 'flex', 'justify-content-space-between', 'align-items-center');
+            li.setAttribute('data-id', el._id);
             li.innerHTML = `
                 <div class="flex align-items-center task-el">
                     <div class="check-task-circle flex justify-content-center align-items-center" priority=${priority}>
                         <i class="material-icons" priority=${priority}>done</i>
                     </div>
-                    <span class="task-title">${el.title}</span>
+                    <span class="task-title" data-value="${el.title}">${el.title}</span>
                 </div>
                 <div class="flex align-items-center task-el">
-                    <span class="task-deadline">${DateUtility.setFormat(el.deadline, 'dd Month yyyy')}</span>
+                    <span class="task-deadline" data-value="${DateUtility.setFormat(el.deadline)}">${DateUtility.setFormat(el.deadline, 'dd Month yyyy')}</span>
                     <i class="material-icons task-more flex justify-content-center align-items-center" data-toggle="hola">more_horiz</i>
                 </div>
                 <div class="task-menu">
@@ -80,12 +83,25 @@ async function getAllTask(container){
             el.parentNode.classList.remove('display-block');
         });
     });
+
+    // Check task as completed
+    Array.from(container.querySelectorAll('.check-task-circle')).forEach(function(el){
+         el.addEventListener('click', function(){
+                el.parentNode.parentNode.remove();
+         });
+    });
 }
 
 function taskAction(task, action){
     switch(action){
         case 'edit': // edit current task
-            let title = task.querySelector('.task-title').textContent;
+            if(task.parentNode.querySelector('.editing-task')){
+                restoreTaskFromEditing(task.parentNode.querySelector('.editing-task'));
+            }
+
+            task.classList.add('editing-task');
+            let title = task.querySelector('.task-title').dataset.value;
+            let deadline = task.querySelector('.task-deadline').dataset.value;
             Array.from(task.querySelectorAll('.task-el')).forEach(function(el){
                 el.style.display = 'none';
             });
@@ -93,17 +109,25 @@ function taskAction(task, action){
             editElement.className = 'flex align-items-center edit-task-container';
             editElement.innerHTML = `
                 <j-input class="edit-task-input" icon="default" value="${title}"></j-input>
-                <date-picker class="edit-task-deadline"></date-picker>
+                <date-picker class="edit-task-deadline" value="${deadline}"></date-picker>
                 <button class="edit-task-btn generic-btn">Guardar</button>
                 <button class="cancel-edit-task-btn empty-btn">Cancelar</button>
             `;
             task.appendChild(editElement);
 
             task.querySelector('.cancel-edit-task-btn').addEventListener('click', function(){
-                restoreTask(task);
+                restoreTaskFromEditing(task);
             });
             task.querySelector('.edit-task-btn').addEventListener('click', function(){
-                updateTaskBasicInfo(task);
+                updateTaskBasicInfo(task).then(function(res){
+                    if(res.rc === ResponseCodes.PROCESS_OK){
+                        changeTaskInfo(task, editElement);
+                        restoreTaskFromEditing(task);
+                    }else{
+                        let alert = document.getElementsByTagName('j-alert')[0];
+                        alert.show('Nombre de tarea inválido', 3000);
+                    }
+                });
             });
 
             break;
@@ -114,25 +138,35 @@ function taskAction(task, action){
     }
 }
 
-function restoreTask(task){
+function restoreTaskFromEditing(task){
+    task.classList.remove('editing-task');
     task.querySelector('.edit-task-container').remove();
     Array.from(task.querySelectorAll('.task-el')).forEach(function(el){
         el.style.display = 'flex';
     });
 }
 
+function changeTaskInfo(task, editElement){
+    let newTitle = editElement.querySelector('.edit-task-input').value;
+    let newDeadline = editElement.querySelector('.edit-task-deadline').value;
+    task.querySelector('.task-title').dataset.value = newTitle;
+    task.querySelector('.task-title').textContent = newTitle;
+
+    task.querySelector('.task-deadline').dataset.value = newDeadline;
+    task.querySelector('.task-deadline').textContent = DateUtility.setFormat(newDeadline, 'dd Month yyyy');
+}
+
 async function updateTaskBasicInfo(task){
+    let id = task.getAttribute('data-id');
     let title = task.querySelector('.edit-task-input').value;
     let deadline = task.querySelector('.edit-task-deadline').value;
-
-    console.log(title);
-    console.log(deadline);
 
     let processor = new TaskProcessor({
         title,
         deadline
     });
-    //let response = await processor.update();
+
+    return await processor.update(id);
 }
 
 module.exports = {

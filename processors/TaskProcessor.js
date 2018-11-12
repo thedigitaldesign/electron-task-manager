@@ -40,10 +40,10 @@ class TaskProcessor {
         return ResponseHandler.handleHttp(httpResponse);
     }
 
-    async update(){
+    async update(id){
         let httpResponse;
         try{
-            let url = appConfig['task-endpoints']['specific'].replace('{task-id}', this.task.id);
+            let url = appConfig['task-endpoints']['specific'].replace('{task-id}', id);
             let response = await axios.put(url, this.task);
             httpResponse = response;
         }catch(err){

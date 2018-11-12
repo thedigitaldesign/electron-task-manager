@@ -44,7 +44,7 @@ class Dashboard extends HTMLElement{
                         <span class="d-card-title">nueva app</span>
                     </div>
                 </div>
-            </div> 
+            </div>
             
             <!-- Calendar -->
             <j-calendar></j-calendar>
@@ -52,7 +52,7 @@ class Dashboard extends HTMLElement{
             <!-- Task list section -->
             <div id="task-list-section" class="dashboard-section">
                 <h1 class="d-title">Lista de Tareas</h1>
-                <div class="task-list-container"></div>
+                <div class="task-list-container" id="task-list-container"></div>
             </div>
             
             <!-- Utility button to back to dashboard -->

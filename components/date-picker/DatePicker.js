@@ -28,6 +28,7 @@ class DatePicker extends HTMLElement {
     }
 
     connectedCallback(){
+        let self = this;
         this.shadowRoot.getElementById('date-icon').addEventListener('click', function(){
             this.showCalendarWindow();
         }.bind(this));
@@ -35,6 +36,12 @@ class DatePicker extends HTMLElement {
         if(this.getAttribute('placeholder')){
             this.shadowRoot.getElementById('date-input').setAttribute('placeholder', this.getAttribute('placeholder'));
         }
+        if(this.getAttribute('value')){
+            this.shadowRoot.getElementById('date-input').value = this.getAttribute('value');
+        }
+        this.shadowRoot.getElementById('date-input').addEventListener('input', function(){
+             self.value = this.value;
+        });
 
         this.initCalendar();
     }
