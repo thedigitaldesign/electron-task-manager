@@ -28,7 +28,7 @@ class Dashboard extends HTMLElement{
                 </div>
                 <div id="card-list">
                     <div id="task-card" class="d-card">
-                        <i class="d-card-icon material-icons">bookmark</i>
+                        <i id="task-icon" class="d-card-icon material-icons">bookmark</i>
                         <span class="d-card-title">tareas</span>
                     </div>
                     <div id="calendar-card" class="d-card">
@@ -51,7 +51,7 @@ class Dashboard extends HTMLElement{
             
             <!-- Task list section -->
             <div id="task-list-section" class="dashboard-section">
-                <h1 class="d-title">Lista de Tareas</h1>
+                <h1 class="d-title">lista de tareas pendientes</h1>
                 <div class="task-list-container" id="task-list-container"></div>
             </div>
             
@@ -83,13 +83,7 @@ class Dashboard extends HTMLElement{
         this.setAttribute('state', val);
     }
 
-    attributeChangedCallback(attr, oldVal, newVal){
-        switch(attr){
-            case 'state':
-
-                break;
-        }
-    }
+    attributeChangedCallback(attr, oldVal, newVal){}
 
     connectedCallback(){
         this.state = 0;
@@ -112,6 +106,8 @@ class Dashboard extends HTMLElement{
         this.shadowRoot.querySelector('#back-to-dashboard-btn').addEventListener('click', function(){
             this.backToDashboard();
         }.bind(this));
+
+        this.showPendingTasksNotificion();
     }
 
     switchSection(section){
@@ -144,6 +140,18 @@ class Dashboard extends HTMLElement{
         document.getElementsByTagName('app-content')[0].shrink();
 
         this.shadowRoot.querySelector('#back-to-dashboard-btn').style.display = 'none';
+    }
+
+    // Get count of new tasks
+    async showPendingTasksNotificion(){
+        //let processor = new TaskProcessor();
+
+        let noti = document.createElement('div');
+        noti.classList.add('card-notification');
+        noti.textContent = 10; // Static value for now
+
+        let taskCard = this.shadowRoot.getElementById('task-card');
+        taskCard.appendChild(noti);
     }
 }
 

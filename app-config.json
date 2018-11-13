@@ -6,7 +6,8 @@
   "task-endpoints": {
     "getByUser": "http://localhost:3002/task-manager-service/v1/user/{user-id}/task",
     "create": "http://localhost:3002/task-manager-service/v1/task",
-    "specific": "http://localhost:3002/task-manager-service/v1/task/{task-id}"
+    "specific": "http://localhost:3002/task-manager-service/v1/task/{task-id}",
+    "patch": "http://localhost:3002/task-manager-service/v1/task/{task-id}/{attr-name}/{attr-value}"
   },
   "calendar-endpoints": {
       "getEvents": "http://localhost:3003/event-service/v1/event"

@@ -19,9 +19,10 @@ class Alert extends HTMLElement {
         }
     }
 
-    show(msg, timer){
+    show(type, msg, timer){
         let self = this;
         let tr = timer || 2000;
+        self.setAttribute('data-type', type);
         self.shadowRoot.querySelector('.alert-text').textContent = msg;
         self.classList.add('shown');
         setTimeout(function(){

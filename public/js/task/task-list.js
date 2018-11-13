@@ -1,12 +1,16 @@
 let TaskProcessor = require('../../../processors/TaskProcessor');
 const DateUtility = require('../../../utilities/DateUtility');
 const ResponseCodes = require('../../../utilities/ResponseCodes');
-let listContainer = null;
+const TaskStatus = require('../../../constants/TaskStatus');
+
+let alert = document.getElementsByTagName('j-alert')[0];
 
 async function getAllTask(container){
-    listContainer = container;
     let processor = new TaskProcessor();
-    let response = await processor.getTasksByUser();
+    let filter = { // Get just uncompleted tasks
+        status: TaskStatus.uncompleted
+    };
+    let response = await processor.getTasksByUser(filter);
     container.innerHTML = '';
 
     if(response.rc === ResponseCodes.PROCESS_OK){
@@ -87,7 +91,9 @@ async function getAllTask(container){
     // Check task as completed
     Array.from(container.querySelectorAll('.check-task-circle')).forEach(function(el){
          el.addEventListener('click', function(){
-                el.parentNode.parentNode.remove();
+             el.classList.add('completed');
+             el.textContent = '¡Tarea completada!';
+             taskAction(el.parentNode.parentNode, 'check');
          });
     });
 }
@@ -124,8 +130,7 @@ function taskAction(task, action){
                         changeTaskInfo(task, editElement);
                         restoreTaskFromEditing(task);
                     }else{
-                        let alert = document.getElementsByTagName('j-alert')[0];
-                        alert.show('Nombre de tarea inválido', 3000);
+                        alert.show('warning', res.msg, 3000);
                     }
                 });
             });
@@ -134,6 +139,9 @@ function taskAction(task, action){
         case 'delete': // delete current task
             break;
         case 'reminder': // add a new reminder to task
+            break;
+        case 'check': // Mark task as completed
+            markAsCompleted(task);
             break;
     }
 }
@@ -167,6 +175,27 @@ async function updateTaskBasicInfo(task){
     });
 
     return await processor.update(id);
+}
+
+function markAsCompleted(task){
+    let id = task.getAttribute('data-id');
+
+    task.style.opacity = 1;
+    setTimeout(function(){
+        let interval = setInterval(function(){
+            if(task.style.opacity > 0){
+                task.style.opacity -= 0.1;
+            }else{
+                clearInterval(interval);
+                task.remove();
+            }
+        },20);
+    }, 500);
+
+    let processor = new TaskProcessor({
+        status: TaskStatus.completed
+    });
+    processor.patch(id, 'status');
 }
 
 module.exports = {
